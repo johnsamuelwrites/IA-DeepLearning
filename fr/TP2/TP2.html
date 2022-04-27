@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Année: 2021-2022 &#8212; Artificial Intelligence and Deep Learning</title>
+    <title>Travaux pratiques 2 &#8212; Artificial Intelligence and Deep Learning</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Projet" href="../Projet/projet.html" />
+    <link rel="prev" title="Travaux pratiques 1" href="../TP1/TP1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,15 +103,25 @@ const thebe_selector_output = ".output, .cell_output"
   Français
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../README.html">
-   IA-DeepLearning
+   Instructions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Projet/miniprojet-notebook.html">
-   Année: 2021-2022
+  <a class="reference internal" href="../TP1/TP1.html">
+   Travaux pratiques 1
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Travaux pratiques 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Projet/projet.html">
+   Projet
   </a>
  </li>
 </ul>
@@ -121,22 +133,22 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../en/README.html">
-   IA-DeepLearning
+   Instructions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../en/practical1/practical1.html">
-   Academic year: 2021-2022
+   Practical Work 1
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../en/practical2/practical2.html">
-   Academic year: 2021-2022
+   Practical Work 2
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../en/Project/miniproject-notebook.html">
-   Academic year: 2021-2022
+  <a class="reference internal" href="../../en/Project/project.html">
+   Project
   </a>
  </li>
 </ul>
@@ -210,42 +222,30 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Année: 2021-2022
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectifs">
+   Objectifs
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#travaux-pratiques-2">
-   Travaux pratiques 2
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2-1">
+   Exercice 2.1
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectifs">
-     Objectifs
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2-2">
+   Exercice 2.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2-3">
+   Exercice 2.3
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modeles-lstm">
+     Modèles LSTM
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-2-1">
-     Exercice 2.1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-2-2">
-     Exercice 2.2
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-2-3">
-     Exercice 2.3
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#modeles-lstm">
-       Modèles LSTM
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -259,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Année: 2021-2022</h1>
+                <h1>Travaux pratiques 2</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -269,42 +269,30 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Année: 2021-2022
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectifs">
+   Objectifs
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#travaux-pratiques-2">
-   Travaux pratiques 2
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2-1">
+   Exercice 2.1
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectifs">
-     Objectifs
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2-2">
+   Exercice 2.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2-3">
+   Exercice 2.3
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modeles-lstm">
+     Modèles LSTM
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-2-1">
-     Exercice 2.1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-2-2">
-     Exercice 2.2
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-2-3">
-     Exercice 2.3
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#modeles-lstm">
-       Modèles LSTM
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -317,11 +305,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="section" id="annee-2021-2022">
-<h1>Année: 2021-2022<a class="headerlink" href="#annee-2021-2022" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="travaux-pratiques-2">
+  <div class="tex2jax_ignore mathjax_ignore section" id="travaux-pratiques-2">
 <h1>Travaux pratiques 2<a class="headerlink" href="#travaux-pratiques-2" title="Permalink to this headline">¶</a></h1>
+<p><strong>Année: 2021-2022</strong></p>
 <div class="section" id="objectifs">
 <h2>Objectifs<a class="headerlink" href="#objectifs" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
@@ -399,7 +385,21 @@ vous utilisez plus de deux packages, rédigez également un petit rapport sur la
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../TP1/TP1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Travaux pratiques 1</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Projet/projet.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Projet</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
