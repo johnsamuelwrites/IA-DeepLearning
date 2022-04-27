@@ -1,0 +1,1373 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working with Tensorflow and Tensorflow datasets &#8212; Artificial Intelligence and Deep Learning</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/deeplearning.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Artificial Intelligence and Deep Learning</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   IA-DeepLearning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Français
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../fr/README.html">
+   IA-DeepLearning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../fr/Projet/miniprojet-notebook.html">
+   Année: 2021-2022
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  English
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   IA-DeepLearning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../practical1/practical1.html">
+   Academic year: 2021-2022
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../practical2/practical2.html">
+   Academic year: 2021-2022
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="miniproject-notebook.html">
+   Academic year: 2021-2022
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/en/Project/Introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/johnsamuelwrites/DP-DataMining/main?urlpath=lab/tree/en/Project/Introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/johnsamuelwrites/DP-DataMining/blob/main/en/Project/Introduction.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Working with Tensorflow and Tensorflow datasets
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-information">
+   Dataset Information
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#label-details">
+       Label details
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#features-of-different-datasets">
+       Features of different datasets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-a-dataset">
+     Loading a dataset
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualization">
+     Visualization
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#splitting-datasets-for-training-and-testing">
+     Splitting datasets for training and testing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applying-modifications">
+     Applying modifications
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#batches">
+     Batches
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-a-training-model">
+     Building a training model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-summary">
+     Model Summary
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-the-model">
+     Visualizing the model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training">
+     Training
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#history-of-training">
+     History of training
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prediction">
+     Prediction
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Working with Tensorflow and Tensorflow datasets</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Working with Tensorflow and Tensorflow datasets
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-information">
+   Dataset Information
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#label-details">
+       Label details
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#features-of-different-datasets">
+       Features of different datasets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-a-dataset">
+     Loading a dataset
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualization">
+     Visualization
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#splitting-datasets-for-training-and-testing">
+     Splitting datasets for training and testing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applying-modifications">
+     Applying modifications
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#batches">
+     Batches
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-a-training-model">
+     Building a training model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-summary">
+     Model Summary
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-the-model">
+     Visualizing the model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training">
+     Training
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#history-of-training">
+     History of training
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prediction">
+     Prediction
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="working-with-tensorflow-and-tensorflow-datasets">
+<h1>Working with Tensorflow and Tensorflow datasets<a class="headerlink" href="#working-with-tensorflow-and-tensorflow-datasets" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow_datasets</span> <span class="k">as</span> <span class="nn">tfds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>List all the available datasets</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tfds</span><span class="o">.</span><span class="n">list_builders</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;abstract_reasoning&#39;,
+ &#39;accentdb&#39;,
+ &#39;aeslc&#39;,
+ &#39;aflw2k3d&#39;,
+ &#39;ag_news_subset&#39;,
+ &#39;ai2_arc&#39;,
+ &#39;ai2_arc_with_ir&#39;,
+ &#39;amazon_us_reviews&#39;,
+ &#39;anli&#39;,
+ &#39;arc&#39;,
+ &#39;bair_robot_pushing_small&#39;,
+ &#39;bccd&#39;,
+ &#39;beans&#39;,
+ &#39;big_patent&#39;,
+ &#39;bigearthnet&#39;,
+ &#39;billsum&#39;,
+ &#39;binarized_mnist&#39;,
+ &#39;binary_alpha_digits&#39;,
+ &#39;blimp&#39;,
+ &#39;bool_q&#39;,
+ &#39;c4&#39;,
+ &#39;caltech101&#39;,
+ &#39;caltech_birds2010&#39;,
+ &#39;caltech_birds2011&#39;,
+ &#39;cars196&#39;,
+ &#39;cassava&#39;,
+ &#39;cats_vs_dogs&#39;,
+ &#39;celeb_a&#39;,
+ &#39;celeb_a_hq&#39;,
+ &#39;cfq&#39;,
+ &#39;chexpert&#39;,
+ &#39;cifar10&#39;,
+ &#39;cifar100&#39;,
+ &#39;cifar10_1&#39;,
+ &#39;cifar10_corrupted&#39;,
+ &#39;citrus_leaves&#39;,
+ &#39;cityscapes&#39;,
+ &#39;civil_comments&#39;,
+ &#39;clevr&#39;,
+ &#39;clic&#39;,
+ &#39;clinc_oos&#39;,
+ &#39;cmaterdb&#39;,
+ &#39;cnn_dailymail&#39;,
+ &#39;coco&#39;,
+ &#39;coco_captions&#39;,
+ &#39;coil100&#39;,
+ &#39;colorectal_histology&#39;,
+ &#39;colorectal_histology_large&#39;,
+ &#39;common_voice&#39;,
+ &#39;coqa&#39;,
+ &#39;cos_e&#39;,
+ &#39;cosmos_qa&#39;,
+ &#39;covid19sum&#39;,
+ &#39;crema_d&#39;,
+ &#39;curated_breast_imaging_ddsm&#39;,
+ &#39;cycle_gan&#39;,
+ &#39;deep_weeds&#39;,
+ &#39;definite_pronoun_resolution&#39;,
+ &#39;dementiabank&#39;,
+ &#39;diabetic_retinopathy_detection&#39;,
+ &#39;div2k&#39;,
+ &#39;dmlab&#39;,
+ &#39;downsampled_imagenet&#39;,
+ &#39;dsprites&#39;,
+ &#39;dtd&#39;,
+ &#39;duke_ultrasound&#39;,
+ &#39;emnist&#39;,
+ &#39;eraser_multi_rc&#39;,
+ &#39;esnli&#39;,
+ &#39;eurosat&#39;,
+ &#39;fashion_mnist&#39;,
+ &#39;flic&#39;,
+ &#39;flores&#39;,
+ &#39;food101&#39;,
+ &#39;forest_fires&#39;,
+ &#39;fuss&#39;,
+ &#39;gap&#39;,
+ &#39;geirhos_conflict_stimuli&#39;,
+ &#39;genomics_ood&#39;,
+ &#39;german_credit_numeric&#39;,
+ &#39;gigaword&#39;,
+ &#39;glue&#39;,
+ &#39;goemotions&#39;,
+ &#39;gpt3&#39;,
+ &#39;groove&#39;,
+ &#39;gtzan&#39;,
+ &#39;gtzan_music_speech&#39;,
+ &#39;hellaswag&#39;,
+ &#39;higgs&#39;,
+ &#39;horses_or_humans&#39;,
+ &#39;i_naturalist2017&#39;,
+ &#39;imagenet2012&#39;,
+ &#39;imagenet2012_corrupted&#39;,
+ &#39;imagenet2012_real&#39;,
+ &#39;imagenet2012_subset&#39;,
+ &#39;imagenet_a&#39;,
+ &#39;imagenet_r&#39;,
+ &#39;imagenet_resized&#39;,
+ &#39;imagenet_v2&#39;,
+ &#39;imagenette&#39;,
+ &#39;imagewang&#39;,
+ &#39;imdb_reviews&#39;,
+ &#39;irc_disentanglement&#39;,
+ &#39;iris&#39;,
+ &#39;kitti&#39;,
+ &#39;kmnist&#39;,
+ &#39;lfw&#39;,
+ &#39;librispeech&#39;,
+ &#39;librispeech_lm&#39;,
+ &#39;libritts&#39;,
+ &#39;ljspeech&#39;,
+ &#39;lm1b&#39;,
+ &#39;lost_and_found&#39;,
+ &#39;lsun&#39;,
+ &#39;malaria&#39;,
+ &#39;math_dataset&#39;,
+ &#39;mctaco&#39;,
+ &#39;mnist&#39;,
+ &#39;mnist_corrupted&#39;,
+ &#39;movie_lens&#39;,
+ &#39;movie_rationales&#39;,
+ &#39;movielens&#39;,
+ &#39;moving_mnist&#39;,
+ &#39;multi_news&#39;,
+ &#39;multi_nli&#39;,
+ &#39;multi_nli_mismatch&#39;,
+ &#39;natural_questions&#39;,
+ &#39;natural_questions_open&#39;,
+ &#39;newsroom&#39;,
+ &#39;nsynth&#39;,
+ &#39;nyu_depth_v2&#39;,
+ &#39;omniglot&#39;,
+ &#39;open_images_challenge2019_detection&#39;,
+ &#39;open_images_v4&#39;,
+ &#39;openbookqa&#39;,
+ &#39;opinion_abstracts&#39;,
+ &#39;opinosis&#39;,
+ &#39;opus&#39;,
+ &#39;oxford_flowers102&#39;,
+ &#39;oxford_iiit_pet&#39;,
+ &#39;para_crawl&#39;,
+ &#39;patch_camelyon&#39;,
+ &#39;paws_wiki&#39;,
+ &#39;paws_x_wiki&#39;,
+ &#39;pet_finder&#39;,
+ &#39;pg19&#39;,
+ &#39;places365_small&#39;,
+ &#39;plant_leaves&#39;,
+ &#39;plant_village&#39;,
+ &#39;plantae_k&#39;,
+ &#39;qa4mre&#39;,
+ &#39;qasc&#39;,
+ &#39;quickdraw_bitmap&#39;,
+ &#39;radon&#39;,
+ &#39;reddit&#39;,
+ &#39;reddit_disentanglement&#39;,
+ &#39;reddit_tifu&#39;,
+ &#39;resisc45&#39;,
+ &#39;robonet&#39;,
+ &#39;rock_paper_scissors&#39;,
+ &#39;rock_you&#39;,
+ &#39;salient_span_wikipedia&#39;,
+ &#39;samsum&#39;,
+ &#39;savee&#39;,
+ &#39;scan&#39;,
+ &#39;scene_parse150&#39;,
+ &#39;scicite&#39;,
+ &#39;scientific_papers&#39;,
+ &#39;sentiment140&#39;,
+ &#39;shapes3d&#39;,
+ &#39;smallnorb&#39;,
+ &#39;snli&#39;,
+ &#39;so2sat&#39;,
+ &#39;speech_commands&#39;,
+ &#39;spoken_digit&#39;,
+ &#39;squad&#39;,
+ &#39;stanford_dogs&#39;,
+ &#39;stanford_online_products&#39;,
+ &#39;starcraft_video&#39;,
+ &#39;stl10&#39;,
+ &#39;sun397&#39;,
+ &#39;super_glue&#39;,
+ &#39;svhn_cropped&#39;,
+ &#39;ted_hrlr_translate&#39;,
+ &#39;ted_multi_translate&#39;,
+ &#39;tedlium&#39;,
+ &#39;tf_flowers&#39;,
+ &#39;the300w_lp&#39;,
+ &#39;tiny_shakespeare&#39;,
+ &#39;titanic&#39;,
+ &#39;trec&#39;,
+ &#39;trivia_qa&#39;,
+ &#39;tydi_qa&#39;,
+ &#39;uc_merced&#39;,
+ &#39;ucf101&#39;,
+ &#39;vctk&#39;,
+ &#39;vgg_face2&#39;,
+ &#39;visual_domain_decathlon&#39;,
+ &#39;voc&#39;,
+ &#39;voxceleb&#39;,
+ &#39;voxforge&#39;,
+ &#39;waymo_open_dataset&#39;,
+ &#39;web_questions&#39;,
+ &#39;wider_face&#39;,
+ &#39;wiki40b&#39;,
+ &#39;wikihow&#39;,
+ &#39;wikipedia&#39;,
+ &#39;wikipedia_toxicity_subtypes&#39;,
+ &#39;wine_quality&#39;,
+ &#39;winogrande&#39;,
+ &#39;wmt14_translate&#39;,
+ &#39;wmt15_translate&#39;,
+ &#39;wmt16_translate&#39;,
+ &#39;wmt17_translate&#39;,
+ &#39;wmt18_translate&#39;,
+ &#39;wmt19_translate&#39;,
+ &#39;wmt_t2t_translate&#39;,
+ &#39;wmt_translate&#39;,
+ &#39;wordnet&#39;,
+ &#39;xnli&#39;,
+ &#39;xquad&#39;,
+ &#39;xsum&#39;,
+ &#39;yelp_polarity_reviews&#39;,
+ &#39;yes_no&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="dataset-information">
+<h1>Dataset Information<a class="headerlink" href="#dataset-information" title="Permalink to this headline">¶</a></h1>
+<p>We will first use <code class="docutils literal notranslate"><span class="pre">tfds.builder</span></code> to obtain information related to a dataset like MNIST. Take a look at the available information for this dataset, especially the available features (<code class="docutils literal notranslate"><span class="pre">features</span></code>) and the total number of examples (<code class="docutils literal notranslate"><span class="pre">total_num_examples</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">builder</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tfds.core.DatasetInfo(
+    name=&#39;mnist&#39;,
+    version=3.0.1,
+    description=&#39;The MNIST database of handwritten digits.&#39;,
+    homepage=&#39;http://yann.lecun.com/exdb/mnist/&#39;,
+    features=FeaturesDict({
+        &#39;image&#39;: Image(shape=(28, 28, 1), dtype=tf.uint8),
+        &#39;label&#39;: ClassLabel(shape=(), dtype=tf.int64, num_classes=10),
+    }),
+    total_num_examples=70000,
+    splits={
+        &#39;test&#39;: 10000,
+        &#39;train&#39;: 60000,
+    },
+    supervised_keys=(&#39;image&#39;, &#39;label&#39;),
+    citation=&quot;&quot;&quot;@article{lecun2010mnist,
+      title={MNIST handwritten digit database},
+      author={LeCun, Yann and Cortes, Corinna and Burges, CJ},
+      journal={ATT Labs [Online]. Available: http://yann.lecun.com/exdb/mnist},
+      volume={2},
+      year={2010}
+    }&quot;&quot;&quot;,
+    redistribution_info=,
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">builder</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FeaturesDict({
+    &#39;image&#39;: Image(shape=(28, 28, 1), dtype=tf.uint8),
+    &#39;label&#39;: ClassLabel(shape=(), dtype=tf.int64, num_classes=10),
+})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="label-details">
+<h3>Label details<a class="headerlink" href="#label-details" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">builder</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">)</span>
+
+<span class="c1">#Number of classes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">num_classes</span><span class="p">)</span>
+
+<span class="c1"># Class names</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">names</span><span class="p">)</span>
+
+<span class="c1"># Get the number equiavalent to a label</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str2int</span><span class="p">(</span><span class="s1">&#39;8&#39;</span><span class="p">))</span>
+
+<span class="c1">#shape </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1">#type of label</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+[&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;]
+8
+{&#39;image&#39;: (28, 28, 1), &#39;label&#39;: ()}
+&lt;dtype: &#39;int64&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="features-of-different-datasets">
+<h3>Features of different datasets<a class="headerlink" href="#features-of-different-datasets" title="Permalink to this headline">¶</a></h3>
+<p>Remove the <code class="docutils literal notranslate"><span class="pre">break</span></code> from the following code and see the available features from the different datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">tfds</span><span class="o">.</span><span class="n">list_builders</span><span class="p">():</span>
+  <span class="n">builder</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">builder</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}\n</span><span class="s2"> description: </span><span class="se">{{</span><span class="s2">1</span><span class="se">}}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">builder</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">description</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="p">))</span>
+  <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: abstract_reasoning
+ description: Procedurally Generated Matrices (PGM) data from the paper Measuring Abstract Reasoning in Neural Networks, Barrett, Hill, Santoro et al. 2018. The goal is to infer the correct answer from the context panels based on abstract reasoning.
+
+To use this data set, please download all the *.tar.gz files from the data set page and place them in ~/tensorflow_datasets/abstract_reasoning/.
+
+$R$ denotes the set of relation types (progression, XOR, OR, AND, consistent union), $O$ denotes the object types (shape, line), and $A$ denotes the attribute types (size, colour, position, number). The structure of a matrix, $S$, is the set of triples $S={[r, o, a]}$ that determine the challenge posed by a particular matrix.
+Name: FeaturesDict({
+    &#39;answers&#39;: Video(Image(shape=(160, 160, 1), dtype=tf.uint8)),
+    &#39;context&#39;: Video(Image(shape=(160, 160, 1), dtype=tf.uint8)),
+    &#39;filename&#39;: Text(shape=(), dtype=tf.string),
+    &#39;meta_target&#39;: Tensor(shape=(12,), dtype=tf.int64),
+    &#39;relation_structure_encoded&#39;: Tensor(shape=(4, 12), dtype=tf.int64),
+    &#39;target&#39;: ClassLabel(shape=(), dtype=tf.int64, num_classes=8),
+})
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-a-dataset">
+<h2>Loading a dataset<a class="headerlink" href="#loading-a-dataset" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start with loading the MNIST dataset for handwriting recognition</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">shuffle_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">try_gcs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;_OptionsDataset shapes: {image: (28, 28, 1), label: ()}, types: {image: tf.uint8, label: tf.int64}&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Iterate over a dataset. Each entry in the dataset has 2 parts: image of a handwritten digit and the associated label.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">:</span>  <span class="c1"># example is `{&#39;image&#39;: tf.Tensor, &#39;label&#39;: tf.Tensor}`</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+  <span class="n">image</span> <span class="o">=</span> <span class="n">example</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">]</span>
+  <span class="n">label</span> <span class="o">=</span> <span class="n">example</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+  <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;image&#39;, &#39;label&#39;]
+(28, 28, 1) tf.Tensor(1, shape=(), dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obtain a tuple</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span>  <span class="n">as_supervised</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">try_gcs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">image</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">:</span>  <span class="c1"># example is (image, label)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+  <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tf.Tensor(4, shape=(), dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h2>
+<p>Another way is to use <code class="docutils literal notranslate"><span class="pre">take()</span></code> and pass a number <strong>n</strong> to select <strong>n</strong> examples from the dataset. Passing <code class="docutils literal notranslate"><span class="pre">with_info</span></code> with True helps to create the dataframe with necessary information for the visualization. Try changing the value of <code class="docutils literal notranslate"><span class="pre">with_info</span></code> to False and see the errors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">with_info</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">try_gcs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">tfds</span><span class="o">.</span><span class="n">as_dataframe</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style  type="text/css" >
+</style><table id="T_305d31d0_30b2_11eb_bcbb_0242ac1c0002" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >image</th>        <th class="col_heading level0 col1" >label</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_305d31d0_30b2_11eb_bcbb_0242ac1c0002level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_305d31d0_30b2_11eb_bcbb_0242ac1c0002row0_col0" class="data row0 col0" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAAzElEQVR4nGNgGPQg5F8qjMmEIRn1XwinRvnvp2QxdTIyMjAwMDDksd17jCnpeN6CgYGBQZfhAhbzLP+WMzAwyPz8IAkXQuh8ycDAwMAQyHr1ORZJYQYGBgYGKYYDDFgkAxgZGBikMxnnISQZYQz2J0KXjwvpqV00+YfpnsS/f//++/v3bxiSGAuMYfp97rN3b1cz7MDiEQgI+bcGmYsatlH/T+PUyPD2jwVOOaOP23Br3P3vZyZOO///v7qGARd4/EkBt7FvbuOWoyIAAPBxN9oBRuu9AAAAAElFTkSuQmCC" alt="Img" /></td>
+                        <td id="T_305d31d0_30b2_11eb_bcbb_0242ac1c0002row0_col1" class="data row0 col1" >4</td>
+            </tr>
+    </tbody></table></div></div>
+</div>
+<p>Change the parameter value of <code class="docutils literal notranslate"><span class="pre">ds.take()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">with_info</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">try_gcs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">tfds</span><span class="o">.</span><span class="n">as_dataframe</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style  type="text/css" >
+</style><table id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >image</th>        <th class="col_heading level0 col1" >label</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row0_col0" class="data row0 col0" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAAzElEQVR4nGNgGPQg5F8qjMmEIRn1XwinRvnvp2QxdTIyMjAwMDDksd17jCnpeN6CgYGBQZfhAhbzLP+WMzAwyPz8IAkXQuh8ycDAwMAQyHr1ORZJYQYGBgYGKYYDDFgkAxgZGBikMxnnISQZYQz2J0KXjwvpqV00+YfpnsS/f//++/v3bxiSGAuMYfp97rN3b1cz7MDiEQgI+bcGmYsatlH/T+PUyPD2jwVOOaOP23Br3P3vZyZOO///v7qGARd4/EkBt7FvbuOWoyIAAPBxN9oBRuu9AAAAAElFTkSuQmCC" alt="Img" /></td>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row0_col1" class="data row0 col1" >4</td>
+            </tr>
+            <tr>
+                        <th id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002level0_row1" class="row_heading level0 row1" >1</th>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row1_col0" class="data row1 col0" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAAmklEQVR4nGNgGOyAc/5KJlxyjIv+/TPEJan9798HWRgH3YhQBoZHj3HpfP/vVxQuOYF//54ieGjGNjEwXMalkeHbv3+eeCTfseAy1oCVYeofXBp3/f8lgUtO/su/azhtnPLvXwJOycv//uGU0//5bx1OySP//hngkuN5+u8tG4oIkj/VJBmO/8Il6cvAMBunlSIvX3DjlKQmAACHtTHZmy2LVAAAAABJRU5ErkJggg==" alt="Img" /></td>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row1_col1" class="data row1 col1" >1</td>
+            </tr>
+            <tr>
+                        <th id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002level0_row2" class="row_heading level0 row2" >2</th>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row2_col0" class="data row2 col0" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAA+0lEQVR4nM3QvyuEARzH8feVniSFiTBcKf8A85ESNqwkdbeY5NdmY/UXiM0z+Ad0SXZ1g0vJjw0Xi86pc13eD8NleJ47q3zG76tv3x/wJxk+jQ7bf8NldT9obdNl1fWW1nGh6mtLPIm0oJVWlvuIvOvMWx1qtqWa0U2aULNNNnCtT+MQapi0waK6CoR6mcS8Wuhq4Fqj1PZjU5NQnX0DUine433dD1qZBwjOrM/EsVc9AmCj6c5MWT8XADjX2mgMi+otABN1k0/YVncAFu/VLWLbPgNBduRxLBMQHe/FZ+Zs5EtLm8kP9F81MHrZTScNelZK6sFcXzP9o3wDadaKxdoXqEQAAAAASUVORK5CYII=" alt="Img" /></td>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row2_col1" class="data row2 col1" >0</td>
+            </tr>
+            <tr>
+                        <th id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002level0_row3" class="row_heading level0 row3" >3</th>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row3_col0" class="data row3 col0" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAA40lEQVR4nGNgGJpg//8OdCEWKM2obvgv/++6/zcZnJQebPuNqkjvLxI4IIgiJ3/v79/3b//9/fvv7993f/9NQzE2TZ6hc8J3JwYGBgaGK7cYeJE12n79+1cCxlH9+/cVB5LOlxy/pryHSUYyMO78gSR5W/vzU7gxfAz/cfq36fvfDw445Fr+/P3bg12KMebb37+7WbDKKSz89/fvNRmscjpb//79u0YBq5z0yb9//2bhcEvXv78fs1ixyzX//PsuHYc+gbvwAMcEmX//3kFzJxOc9YCRoesJLp3sx9+p4JIjGQAAnrpmBs0pxioAAAAASUVORK5CYII=" alt="Img" /></td>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row3_col1" class="data row3 col1" >7</td>
+            </tr>
+            <tr>
+                        <th id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002level0_row4" class="row_heading level0 row4" >4</th>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row4_col0" class="data row4 col0" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAABRUlEQVR4nM2RMUgCcRTGvwvFjjiuhqgIpG4Kg8QaQi6aWoo2JXAot6ZokxwdGxybWjJoapLCQRoaJBKkoIJuKDc7DAruIEmH967hvPJ/Nkdv+vh+fI//+/7Afxglyy+qK6UeW1MSg5p2twVp4lUMhGYuLSYiJiIec72AlzqNAVf1klUGYLaF3BqzXdQBbLJtc0Fgsx26ngQARA72miQLMEU08qM/PDkAAIgBC56TQV58apSZ+ex4Pw6k2fQdHly9fSYi7phmi6pRz/4uQZleVyUnPSo5wEPmAv2zYlFto9BgS+tnuRZXNGCJec6PgiWmExXALt8HRDS+U3n6zMkAhgxOCUg+YqJyEgAQp4bayxZr7OS7HYXfebtru8sT8w4MJQwAena4fihsjRjE9Ob+Zftc8ZUQWtan5KTkPN40i9VfCvi7+QIpz4HjFNztwwAAAABJRU5ErkJggg==" alt="Img" /></td>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row4_col1" class="data row4 col1" >8</td>
+            </tr>
+            <tr>
+                        <th id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002level0_row5" class="row_heading level0 row5" >5</th>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row5_col0" class="data row5 col0" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAAq0lEQVR4nGNgGHjAfvqtEU5Jib9/L7LDOExokvUMDHyiODQG/fv7dyuch6ZTg4HhWTIuK6/9+1uL4KHqjFRlYHiMS+PVv/9e8OHSKcjAMOETDo2xf/5+ZkXisyBLujAx/P6NQ6Phu79/q5AFkO1U4Wdg2IJLkoGBgcEah6kMa/7+/YviVmSdSuiq0Y1dj8NU++9//57HpZOLjYFhK4okUiDsLnS5ewiXY+kGAAwdLIh/5zVbAAAAAElFTkSuQmCC" alt="Img" /></td>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row5_col1" class="data row5 col1" >1</td>
+            </tr>
+            <tr>
+                        <th id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002level0_row6" class="row_heading level0 row6" >6</th>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row6_col0" class="data row6 col0" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAA8ElEQVR4nGNgoD9ghDGmGDHsePhiJzY17HP+/fv3/9+fE25YJGv/QcFtE0zJ6f/W1BaJSB/49e8cM4akXiVEbMe/f9k43Wf7498LOZyyzf/+2cE5TGiSmxgYdHFKMjAw+DLjknz1hkGFDcZhgdICUgx/bjEwMIiJMPR/R9PgeePfvx+V+mgOgoJf//79+/fvx+qEn/9+mqNL3v/37+kOSABehYgY+cMlE3/92ySh8Pjfv3//fj3d/fTp06dfvyG0Ot759+/o139w8GCxIVJ8+nUrsDL8Ot96g4Ehie3s6Q9vGJAkGRgM9BgO38cMkyEDAJC/dbTfCO84AAAAAElFTkSuQmCC" alt="Img" /></td>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row6_col1" class="data row6 col1" >2</td>
+            </tr>
+            <tr>
+                        <th id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002level0_row7" class="row_heading level0 row7" >7</th>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row7_col0" class="data row7 col0" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAA0UlEQVR4nGNgGMLA7sL3TGziPBza4RPP//27CCHEAqG4tjH8UhHnYPzPwPAZQ5LTlvE/w48v84XDmX9hSH72ZmBgePjxGYOZyicMyV87ILQAN+NDhCQTqqvUJf874JTUZWC4jE/yFrofGRgYGBj8a6K33fv793ETuoMYGBjmhHMzMP5n+MWGTaPC9lvHjj/9u40Xq7EMvAwM+/7ewy7HwMCg8PnvEyQuqms1uRjWIHFZUCQVGRme45QU/s+wH6exagwPLuGUZGD4+gOP5FoGqgAAaYI4iaIJhbYAAAAASUVORK5CYII=" alt="Img" /></td>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row7_col1" class="data row7 col1" >7</td>
+            </tr>
+            <tr>
+                        <th id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002level0_row8" class="row_heading level0 row8" >8</th>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row8_col0" class="data row8 col0" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAAqklEQVR4nGNgGBRA4/thKIsJU9KGWVsZl0avh/+eSOOQY9787/dCXBpb/v07hktO88u/354Qpgm6HNeyf/8WQdla6JLh//69scVhqMP3f3/jcdm499+/ibjkMn/+u8+HQ078/r9f2TjkWLb/+3cWl6EG//79CsQluebfv25ccqZf//3D5UWG5f/+7WLFISf24N8/ZzQxeGQLyjEw/MNlKtuUf29UcUnSEQAA9IU8OOTl5ywAAAAASUVORK5CYII=" alt="Img" /></td>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row8_col1" class="data row8 col1" >1</td>
+            </tr>
+            <tr>
+                        <th id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002level0_row9" class="row_heading level0 row9" >9</th>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row9_col0" class="data row9 col0" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAA4UlEQVR4nNXQr0oEURTH8cOGYRdhJhlk8QUsa7GJig+wZTEMNkWDGAwmiy9gGxA2WBaD2CxbFpZ5BcVi2CriKsKUW76/uQaLzN7bLJ54Pudw/pj9VbT7ZX8lhjdAEaZkKHD7YTxFzA7CtjVDL6thy0rpdSOyzC3QjdiRwx1GzASjmOVimsbwudZlzNYr0TPL9sbT4wXcQU9Lye4nwHUA75IzBPC19pNr/S4orswezs3S5WanaknKs1Ly243OeeW9fx/oftP7yWNz6InAvQmYdxaPEYBwo9ArLgA+il6A/kV8A83dcnYN8l6lAAAAAElFTkSuQmCC" alt="Img" /></td>
+                        <td id="T_31adbbcc_30b2_11eb_bcbb_0242ac1c0002row9_col1" class="data row9 col1" >6</td>
+            </tr>
+    </tbody></table></div></div>
+</div>
+</div>
+<div class="section" id="splitting-datasets-for-training-and-testing">
+<h2>Splitting datasets for training and testing<a class="headerlink" href="#splitting-datasets-for-training-and-testing" title="Permalink to this headline">¶</a></h2>
+<p>For tasks like classification, it is important to classify the data for training and testing. There are several ways it can be done. In the following example, we display the information of the dataset after the loading of the dataset. Take a look at different information like features, splits, total_num_examples etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">),</span> <span class="n">info</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">],</span> <span class="n">with_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tfds.core.DatasetInfo(
+    name=&#39;mnist&#39;,
+    version=3.0.1,
+    description=&#39;The MNIST database of handwritten digits.&#39;,
+    homepage=&#39;http://yann.lecun.com/exdb/mnist/&#39;,
+    features=FeaturesDict({
+        &#39;image&#39;: Image(shape=(28, 28, 1), dtype=tf.uint8),
+        &#39;label&#39;: ClassLabel(shape=(), dtype=tf.int64, num_classes=10),
+    }),
+    total_num_examples=70000,
+    splits={
+        &#39;test&#39;: 10000,
+        &#39;train&#39;: 60000,
+    },
+    supervised_keys=(&#39;image&#39;, &#39;label&#39;),
+    citation=&quot;&quot;&quot;@article{lecun2010mnist,
+      title={MNIST handwritten digit database},
+      author={LeCun, Yann and Cortes, Corinna and Burges, CJ},
+      journal={ATT Labs [Online]. Available: http://yann.lecun.com/exdb/mnist},
+      volume={2},
+      year={2010}
+    }&quot;&quot;&quot;,
+    redistribution_info=,
+)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To create a training dataset from the first 80% of the training split.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ds_train</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train[80%:]&#39;</span><span class="p">,</span> <span class="n">with_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="applying-modifications">
+<h2>Applying modifications<a class="headerlink" href="#applying-modifications" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">normalize_img</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Normalizes images: `uint8` -&gt; `float32`.&quot;&quot;&quot;</span>
+  <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.</span><span class="p">,</span> <span class="n">label</span>
+
+<span class="p">(</span><span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">),</span> <span class="n">info</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">],</span>  <span class="n">as_supervised</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">with_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">normalize_img</span><span class="p">)</span>
+<span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">normalize_img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="batches">
+<h2>Batches<a class="headerlink" href="#batches" title="Permalink to this headline">¶</a></h2>
+<p>For testing and training, it is important to create batches. Make use of <code class="docutils literal notranslate"><span class="pre">batch()</span></code> for creating batches of the specified size. For example, the code below will create batches of 128 samples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">),</span> <span class="n">info</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">],</span>  <span class="n">as_supervised</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">with_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+<span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BatchDataset shapes: ((None, 28, 28, 1), (None,)), types: (tf.uint8, tf.int64)&gt;
+&lt;BatchDataset shapes: ((None, 28, 28, 1), (None,)), types: (tf.uint8, tf.int64)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="building-a-training-model">
+<h2>Building a training model<a class="headerlink" href="#building-a-training-model" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
+  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span>
+    <span class="n">optimizer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="mf">0.001</span><span class="p">),</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="model-summary">
+<h2>Model Summary<a class="headerlink" href="#model-summary" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+flatten (Flatten)            (None, 784)               0         
+_________________________________________________________________
+dense (Dense)                (None, 128)               100480    
+_________________________________________________________________
+dense_1 (Dense)              (None, 10)                1290      
+=================================================================
+Total params: 101,770
+Trainable params: 101,770
+Non-trainable params: 0
+_________________________________________________________________
+None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualizing-the-model">
+<h2>Visualizing the model<a class="headerlink" href="#visualizing-the-model" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">import</span> <span class="n">plot_model</span>
+<span class="n">plot_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">show_shapes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Introduction_41_0.png" src="../../_images/Introduction_41_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="training">
+<h2>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">ds_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">validation_data</span><span class="o">=</span><span class="n">ds_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/10
+469/469 [==============================] - 9s 18ms/step - loss: 4.5828 - accuracy: 0.8607 - val_loss: 1.0424 - val_accuracy: 0.8870
+Epoch 2/10
+469/469 [==============================] - 2s 4ms/step - loss: 0.6286 - accuracy: 0.9065 - val_loss: 0.5155 - val_accuracy: 0.9125
+Epoch 3/10
+469/469 [==============================] - 2s 4ms/step - loss: 0.3348 - accuracy: 0.9298 - val_loss: 0.4471 - val_accuracy: 0.9238
+Epoch 4/10
+469/469 [==============================] - 2s 4ms/step - loss: 0.2251 - accuracy: 0.9451 - val_loss: 0.3874 - val_accuracy: 0.9342
+Epoch 5/10
+469/469 [==============================] - 2s 4ms/step - loss: 0.1797 - accuracy: 0.9522 - val_loss: 0.3685 - val_accuracy: 0.9371
+Epoch 6/10
+469/469 [==============================] - 2s 4ms/step - loss: 0.1640 - accuracy: 0.9544 - val_loss: 0.3468 - val_accuracy: 0.9372
+Epoch 7/10
+469/469 [==============================] - 2s 4ms/step - loss: 0.1475 - accuracy: 0.9596 - val_loss: 0.3021 - val_accuracy: 0.9421
+Epoch 8/10
+469/469 [==============================] - 2s 4ms/step - loss: 0.1377 - accuracy: 0.9618 - val_loss: 0.2941 - val_accuracy: 0.9469
+Epoch 9/10
+469/469 [==============================] - 2s 3ms/step - loss: 0.1327 - accuracy: 0.9633 - val_loss: 0.2778 - val_accuracy: 0.9500
+Epoch 10/10
+469/469 [==============================] - 2s 4ms/step - loss: 0.1278 - accuracy: 0.9645 - val_loss: 0.2909 - val_accuracy: 0.9455
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="history-of-training">
+<h2>History of training<a class="headerlink" href="#history-of-training" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list different data in history</span>
+<span class="k">for</span> <span class="n">histinfo</span> <span class="ow">in</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">histinfo</span><span class="si">}</span><span class="s2">: </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="n">histinfo</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loss: [4.582834720611572, 0.6286346316337585, 0.33484789729118347, 0.22512966394424438, 0.1796932816505432, 0.16398517787456512, 0.14754292368888855, 0.1377081573009491, 0.13270851969718933, 0.1278318166732788]
+accuracy: [0.8607000112533569, 0.9065166711807251, 0.9298166632652283, 0.9450500011444092, 0.9521999955177307, 0.9543833136558533, 0.9596499800682068, 0.9617833495140076, 0.9633333086967468, 0.9644666910171509]
+val_loss: [1.0423716306686401, 0.5154988765716553, 0.44706016778945923, 0.3874382972717285, 0.3684904873371124, 0.34679046273231506, 0.3020949959754944, 0.29413291811943054, 0.27784761786460876, 0.2909369468688965]
+val_accuracy: [0.8870000243186951, 0.9125000238418579, 0.923799991607666, 0.9341999888420105, 0.9370999932289124, 0.9372000098228455, 0.9420999884605408, 0.9469000101089478, 0.949999988079071, 0.9455000162124634]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Visualizing the history</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plot</span>
+
+<span class="n">plot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Training&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;val_accuracy&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Validation&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Accuracy&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Epochs&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;History of Training and Validation Accuracy across epochs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;History of Training and Validation Accuracy across epochs&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Introduction_47_1.png" src="../../_images/Introduction_47_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;loss&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Training&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;val_loss&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Validation&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Loss&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Epochs&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;History of Training and Validation Loss across epochs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;History of Training and Validation Loss across epochs&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Introduction_48_1.png" src="../../_images/Introduction_48_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="p">,</span> <span class="n">accuracy</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">ds_test</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2"> and loss:</span><span class="si">{</span><span class="n">loss</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy: 0.9455000162124634 and loss:0.2909369468688965
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="prediction">
+<h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a dataset for testing</span>
+<span class="n">ds_test</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mnist&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s1">&#39;test[20%:]&#39;</span><span class="p">,</span>  <span class="n">as_supervised</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shuffle_files</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Creating a probability model for different classes for obtaining the probabilty</span>
+<span class="c1"># for each class</span>
+<span class="n">probability_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">model</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Softmax</span><span class="p">()])</span>
+
+<span class="c1"># Creating batches</span>
+<span class="n">ds_test_batch</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+
+<span class="c1"># Prediction</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">probability_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">ds_test_batch</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obtaining the number of predictions made</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">predictions</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check the probability values for second prediction</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">predictions</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.08533739 0.08533739 0.08533739 0.08533739 0.08534175 0.08533739
+ 0.08533739 0.08533739 0.08533739 0.23195921]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Get the class with the highest probability</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predictions</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Get the class with the highest probability for all the classes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">predictedlabels</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">predictions</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Get the actual class or label from the test dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">as_numpy_iterator</span><span class="p">()</span>
+<span class="n">testdata</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">testdata</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">testdata</span><span class="p">))]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Evaluate the prediction using a confusion matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">confusionmatrix</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">predictedlabels</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusionmatrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tf.Tensor(
+[[745   0   4   0   3  12   6   2   3   2]
+ [  0 892   3   3   2   3   1   1  11   0]
+ [  4   4 740  25   2   3   6  10  13   3]
+ [  2   0   6 777   0  20   0   4   4   1]
+ [  0   1   2   0 756   2  10   1   7  20]
+ [  3   0   1  17   0 680   5   0   4   2]
+ [  6   2   0   0   6   6 741   0   2   0]
+ [  1   8  10  13   2   2   0 767   5  12]
+ [  9   2   3  19   4  13   3   3 706   9]
+ [  4   5   1  11  16  13   1   8   5 754]], shape=(10, 10), dtype=int32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Visualizing the confusion matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sn</span>
+
+<span class="n">sn</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">confusionmatrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f8e4ab4bf60&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Introduction_65_1.png" src="../../_images/Introduction_65_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./en/Project"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By John Samuel<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

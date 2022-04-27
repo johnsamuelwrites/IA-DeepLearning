@@ -1,0 +1,920 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Année: 2021-2022 &#8212; Artificial Intelligence and Deep Learning</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/deeplearning.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Artificial Intelligence and Deep Learning</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   IA-DeepLearning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Français
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   IA-DeepLearning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="miniprojet-notebook.html">
+   Année: 2021-2022
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  English
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../en/README.html">
+   IA-DeepLearning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../en/practical1/practical1.html">
+   Academic year: 2021-2022
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../en/practical2/practical2.html">
+   Academic year: 2021-2022
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../en/Project/miniproject-notebook.html">
+   Academic year: 2021-2022
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/fr/Projet/miniprojet.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Année: 2021-2022
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mini-projet">
+   Mini Projet
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectifs">
+     Objectifs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-1-1">
+     Exercice 1.1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#download">
+       Download
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creation-de-dataframe">
+       Création de dataframe
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#visualisation-de-la-traduction">
+       Visualisation de la traduction
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-1-2">
+     Exercice 1.2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-1-3">
+     Exercice 1.3
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-1-4">
+     Exercice 1.4
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-1-5">
+     Exercice 1.5
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#prevision">
+       Prévision
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#depot">
+     Dépôt
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Année: 2021-2022</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Année: 2021-2022
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mini-projet">
+   Mini Projet
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectifs">
+     Objectifs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-1-1">
+     Exercice 1.1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#download">
+       Download
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creation-de-dataframe">
+       Création de dataframe
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#visualisation-de-la-traduction">
+       Visualisation de la traduction
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-1-2">
+     Exercice 1.2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-1-3">
+     Exercice 1.3
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-1-4">
+     Exercice 1.4
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-1-5">
+     Exercice 1.5
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#prevision">
+       Prévision
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#depot">
+     Dépôt
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="annee-2021-2022">
+<h1>Année: 2021-2022<a class="headerlink" href="#annee-2021-2022" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="mini-projet">
+<h1>Mini Projet<a class="headerlink" href="#mini-projet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objectifs">
+<h2>Objectifs<a class="headerlink" href="#objectifs" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Comprendre le mode de traduction</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-1-1">
+<h2>Exercice 1.1<a class="headerlink" href="#exercice-1-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download">
+<h3>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
+<p>Téléchargez les données à partir de <a class="reference external" href="https://zenodo.org/record/3271358">https://zenodo.org/record/3271358</a>.</p>
+<p>Voir le contenu des données. Comme vous pouvez le voir dans les résultats, il y a quatre
+colonnes : horodatage, propriété, langue et type.</p>
+<p>Prenons un exemple de ligne de cet ensemble de données,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="mi">2013</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">10</span><span class="n">T22</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">54</span><span class="n">Z</span><span class="p">,</span><span class="n">P856</span><span class="p">,</span><span class="n">en</span><span class="p">,</span><span class="n">label</span>             
+</pre></div>
+</div>
+<p>correspond à l’action qu’un label anglais de la propriété P856
+ajouté pour la première fois à 2013-09-10T22:43:54Z.</p>
+<p>Vous trouverez ci-dessous une description de chaque colonne.</p>
+<ol class="simple">
+<li><p>horodatage : l’heure à laquelle une action a été effectuée. Par exemple,
+2013-09-10T22:43:54Z</p></li>
+<li><p>la propriété : Identificateur de propriété Wikidata. Il utilise le numéro P, par
+exemple, P856</p></li>
+<li><p>langue : la langue dans laquelle une étiquette/description/alias a été rédigée en premier
+traduit</p></li>
+<li><p>type : Il peut s’agir de l’une des valeurs suivantes : label(étiquette), description
+et alias</p></li>
+</ol>
+</div>
+<div class="section" id="creation-de-dataframe">
+<h3>Création de dataframe<a class="headerlink" href="#creation-de-dataframe" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+                <span class="n">dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;multilingual_wikidata_translation_flow.csv&quot;</span><span class="p">)</span>
+                <span class="c1"># remove duplicates</span>
+                <span class="n">dataframe</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+
+                <span class="c1"># remove rows with missing values</span>
+                <span class="n">dataframe</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">dataframe</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Obtenez une information détaillée du dataframe</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>               <span class="n">dataframe</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Examinons maintenant la traduction des étiquettes dans différents
+langues pour une propriété donnée.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>               <span class="n">dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;property&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;P856&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;label&quot;</span><span class="p">)]</span>             
+</pre></div>
+</div>
+<p>Nous allons vérifier les données disponibles pour une propriété comme P856.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="n">ptranslation</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;property&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;P856&quot;</span><span class="p">)]</span>
+              <span class="nb">print</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">)</span>             
+</pre></div>
+</div>
+<p>Vous pouvez également ajouter des conditions supplémentaires pour filtrer toute information.
+Le code ci-dessous permet de filtrer la traduction des étiquettes de la propriété P856.
+Veuillez copier le code ci-dessous et créer de nouvelles cellules pour les tests avec
+différentes propriétés et voir les résultats pour la traduction des descriptions
+et des alias. Quelles sont vos premières observations ? Veuillez les noter comme
+commentaires dans votre notebook.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>             <span class="n">ptranslation</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;property&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;P856&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;label&quot;</span><span class="p">)]</span>
+             <span class="nb">print</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">)</span>             
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualisation-de-la-traduction">
+<h3>Visualisation de la traduction<a class="headerlink" href="#visualisation-de-la-traduction" title="Permalink to this headline">¶</a></h3>
+<p>Notre prochain objectif est de tracer la traduction d’une propriété et de voir si
+nous pouvons observer n’importe quel mode de traduction. Veuillez copier le code ci-dessous et
+créer de nouvelles cellules pour les tests avec des propriétés différentes et tracer la
+résultats. Dans ce graphique, nous traçons le temps sur l’axe des x et la traduction
+tapez sur l’axe des y.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> 
+<span class="kn">import</span>  <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plot</span> 
+<span class="kn">from</span>  <span class="nn">dateutil</span> <span class="kn">import</span> <span class="n">parser</span> 
+<span class="kn">import</span>  <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+<span class="n">ptranslation</span>  <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;property&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;P856&quot;</span><span class="p">)]</span>  
+<span class="n">x</span>  <span class="o">=</span> <span class="p">[]</span> 
+<span class="n">y</span>  <span class="o">=</span> <span class="p">[]</span> 
+<span class="n">z</span>  <span class="o">=</span> <span class="p">[]</span> 
+<span class="k">for</span>  <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">])):</span>
+    <span class="c1">#parsing the date in string and converting it to datetime</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">z</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+<span class="c1">#creating  a plot</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> 
+<span class="n">colors</span>  <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">tcolors</span>  <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+      <span class="s1">&#39;description&#39;</span><span class="p">:</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+      <span class="s1">&#39;alias&#39;</span><span class="p">:</span><span class="n">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+     <span class="p">}</span>
+<span class="n">cs</span>  <span class="o">=</span> <span class="p">[</span><span class="n">tcolors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span>  
+<span class="n">fig</span><span class="p">,</span>  <span class="n">ax</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cs</span><span class="p">)</span>  
+
+<span class="n">plot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span> 
+<span class="n">plot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Translation type&quot;</span><span class="p">)</span>  
+
+<span class="c1">#annotating  the points </span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+   <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>             
+</pre></div>
+</div>
+<p>Maintenant, nous traçons un autre graphique, cette fois-ci, la langue sur l’axe des y et le temps
+sur l’axe des x.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plot</span> 
+<span class="kn">from</span> <span class="nn">dateutil</span> <span class="kn">import</span> <span class="n">parser</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+
+<span class="n">ptranslation</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;property&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;P279&quot;</span><span class="p">)]</span>  
+<span class="n">x</span> <span class="o">=</span> <span class="p">[]</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="p">[]</span> 
+<span class="n">z</span> <span class="o">=</span> <span class="p">[]</span> 
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">])):</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="c1">#parsing the date in string and converting it to datetime</span>
+      <span class="n">value</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+      <span class="k">continue</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">z</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  
+
+<span class="c1">#creating a plot </span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> 
+<span class="n">tcolors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+               <span class="s1">&#39;description&#39;</span><span class="p">:</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+               <span class="s1">&#39;alias&#39;</span><span class="p">:</span><span class="n">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="p">}</span> 
+
+<span class="n">cs</span> <span class="o">=</span> <span class="p">[</span><span class="n">tcolors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span>   
+
+<span class="n">plot</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>  
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cs</span><span class="p">)</span>   
+
+<span class="n">plot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span> 
+<span class="n">plot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Language&quot;</span><span class="p">)</span>  
+
+<span class="c1"># saving the plot in a file </span>
+<span class="n">plot</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;translation.png&#39;</span><span class="p">)</span> 
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>             
+</pre></div>
+</div>
+<p>Voici trois graphiques concernant les propriétés : P31, P279 et P856
+respectivement. Quelles sont vos observations sur les valeurs sur l’axe des y ?
+Veuillez les noter en tant que commentaires sur le notebook. Vous pouvez également constater que certains
+traductions peuvent même être effectuées en une seule fois. Veuillez vérifier une colonne de
+lignes rouges dans le premier graphique (P31).</p>
+<p><img alt="Translation plot of property P31" src="../../_images/p31.png" /></p>
+<p><img alt="Translation plot of property P279" src="../../_images/p279.png" /></p>
+<p><img alt="Translation plot of property P856" src="../../_images/p856.png" /></p>
+<p>Dans le code donné ci-dessous, nous sélectionnons quelques langues et voyons l’ordre de
+traduction. Copiez le code ci-dessous et tracez les graphiques pour les différents
+propriétés. Veuillez noter vos observations.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plot</span> 
+<span class="kn">from</span> <span class="nn">dateutil</span> <span class="kn">import</span> <span class="n">parser</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+
+<span class="c1">#list of languages under consideration </span>
+<span class="n">langlist</span>  <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;fr&quot;</span><span class="p">,</span> <span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="s2">&quot;de&quot;</span><span class="p">,</span> <span class="s2">&quot;it&quot;</span><span class="p">,</span> <span class="s2">&quot;pt&quot;</span><span class="p">,</span> <span class="s2">&quot;ja&quot;</span><span class="p">]</span> 
+<span class="n">ptranslation</span>  <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;property&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;P18&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;language&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span> <span class="p">(</span><span class="n">langlist</span><span class="p">))]</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">)</span>  
+
+<span class="n">x</span><span class="o">=</span> <span class="p">[]</span> 
+<span class="n">y</span><span class="o">=</span> <span class="p">[]</span> 
+<span class="n">z</span><span class="o">=</span> <span class="p">[]</span> 
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">])):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1">#parsing the date in string and converting it to datetime</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+      <span class="k">continue</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">z</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ptranslation</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  
+
+<span class="c1">#creating  a plot </span>
+<span class="n">colors</span>  <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> 
+<span class="n">tcolors</span>  <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+               <span class="s1">&#39;description&#39;</span><span class="p">:</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+               <span class="s1">&#39;alias&#39;</span><span class="p">:</span><span class="n">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+             <span class="p">}</span> 
+
+<span class="n">cs</span>  <span class="o">=</span> <span class="p">[</span><span class="n">tcolors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span>   
+<span class="n">plot</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  
+<span class="n">fig</span><span class="p">,</span>  <span class="n">ax</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>  <span class="n">z</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cs</span><span class="p">)</span>  
+
+<span class="n">plot</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;translation.png&#39;</span><span class="p">)</span> 
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>             
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice-1-2">
+<h2>Exercice 1.2<a class="headerlink" href="#exercice-1-2" title="Permalink to this headline">¶</a></h2>
+<p>Nous avons utilisé des techniques de traçage pour détecter manuellement certains modes de
+traduction. Nous utilisons maintenant d’autres algorithmes pour voir si des groupes de
+les langues sont toujours présentes ensemble</p>
+<p>Avant de continuer, nous devons installer la bibliothèque <em>mlxtend</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>             !pip install mlxtend               
+</pre></div>
+</div>
+<p>Ensuite, nous préparons l’ensemble des données linguistiques. Nous nous concentrerons sur la traduction
+de labels de propriété. Nous créons une liste des traductions disponibles
+d’étiquettes de toutes les propriétés de notre base de données</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#prepare dataset of languages </span>
+<span class="n">languageorder</span> <span class="o">=</span> <span class="p">[]</span> 
+<span class="n">labeldataframe</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;label&quot;</span><span class="p">)]</span> 
+<span class="n">groups</span> <span class="o">=</span> <span class="n">labeldataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;property&quot;</span><span class="p">])</span> 
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+   <span class="n">languageorder</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">groups</span><span class="o">.</span><span class="n">get_group</span><span class="p">((</span><span class="n">k</span><span class="p">))[</span><span class="s2">&quot;language&quot;</span><span class="p">]))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">languageorder</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Cela nous donnera le résultat suivant.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+               <span class="p">[[</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;it&#39;</span><span class="p">,</span> <span class="s1">&#39;fi&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;zh-hans&#39;</span><span class="p">,</span> <span class="s1">&#39;ru&#39;</span><span class="p">,</span> <span class="s1">&#39;hu&#39;</span><span class="p">,</span> <span class="s1">&#39;he&#39;</span><span class="p">,</span> <span class="s1">&#39;nl&#39;</span><span class="p">,</span> <span class="s1">&#39;pt&#39;</span><span class="p">,</span> <span class="s1">&#39;pl&#39;</span><span class="p">,</span> <span class="s1">&#39;ca&#39;</span><span class="p">,</span> <span class="s1">&#39;cs&#39;</span><span class="p">,</span> <span class="s1">&#39;ilo&#39;</span><span class="p">,</span> <span class="s1">&#39;zh&#39;</span><span class="p">,</span> <span class="s1">&#39;nb&#39;</span><span class="p">,</span> <span class="s1">&#39;ko&#39;</span><span class="p">,</span><span class="o">..</span>        
+
+</pre></div>
+</div>
+<p>Maintenant, nous calculons les ensembles d’éléments fréquents en utilisant l’algorithme <em>apriori</em>.
+Veuillez décommenter la ligne print pour voir le dataframe intermédiaire.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mlxtend.preprocessing</span> <span class="kn">import</span> <span class="n">TransactionEncoder</span>  
+<span class="kn">from</span> <span class="nn">mlxtend.frequent_patterns</span> <span class="kn">import</span> <span class="n">apriori</span>  
+
+<span class="n">te</span> <span class="o">=</span> <span class="n">TransactionEncoder</span><span class="p">()</span>  
+<span class="n">te_ary</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">languageorder</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">languageorder</span><span class="p">)</span>  
+
+<span class="c1"># preparation of data frame </span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">te_ary</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">te</span><span class="o">.</span><span class="n">columns_</span><span class="p">)</span> 
+
+<span class="c1">#print(df)  </span>
+<span class="c1">#use of apriori algorithm </span>
+<span class="n">frequent_itemsets</span> <span class="o">=</span> <span class="n">apriori</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">min_support</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">use_colnames</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+<span class="nb">print</span> <span class="p">(</span><span class="n">frequent_itemsets</span><span class="p">)</span>             
+</pre></div>
+</div>
+<p>Le programme utilise un soutien minimum de 0,75. On voit que les labels anglais
+sont présents pour toutes les propriétés, alors que les labels français ne sont
+disponible pour 93% des propriétés. Sur la prise en compte des paires de langues,
+on constate que l’anglais et l’arabe sont présents dans 93% des traductions.
+En allant plus loin, nous constatons des combinaisons de 3, 4, 5 langues, etc.</p>
+<p>Veuillez changer cette valeur entre 0 et 1 et voyez le résultat.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">S</span><span class="o">.</span><span class="n">No</span><span class="o">.</span>              <span class="n">support</span>                <span class="n">itemsets</span>
+  <span class="o">-------</span> <span class="o">----------</span> <span class="o">----------------------</span> <span class="o">----------</span>
+  <span class="mi">0</span>       <span class="mf">0.998424</span>   <span class="p">(</span><span class="n">ar</span><span class="p">)</span>                   
+  <span class="mi">1</span>       <span class="mf">0.759414</span>   <span class="p">(</span><span class="n">ca</span><span class="p">)</span>                   
+  <span class="mi">2</span>       <span class="mf">1.000000</span>   <span class="p">(</span><span class="n">en</span><span class="p">)</span>                   
+  <span class="mi">3</span>       <span class="mf">0.932409</span>   <span class="p">(</span><span class="n">fr</span><span class="p">)</span>                   
+  <span class="mi">4</span>       <span class="mf">0.993540</span>   <span class="p">(</span><span class="n">nl</span><span class="p">)</span>                   
+  <span class="mi">5</span>       <span class="mf">0.985978</span>   <span class="p">(</span><span class="n">uk</span><span class="p">)</span>                   
+  <span class="mi">6</span>       <span class="mf">0.758626</span>   <span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>               
+  <span class="mi">7</span>       <span class="mf">0.998424</span>   <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">ar</span><span class="p">)</span>               
+  <span class="mi">8</span>       <span class="mf">0.931621</span>   <span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>               
+  <span class="mi">9</span>       <span class="mf">0.992752</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">ar</span><span class="p">)</span>               
+  <span class="mi">10</span>      <span class="mf">0.985663</span>   <span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>               
+  <span class="mi">11</span>      <span class="mf">0.759414</span>   <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>               
+  <span class="mi">12</span>      <span class="mf">0.759256</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>               
+  <span class="mi">13</span>      <span class="mf">0.754215</span>   <span class="p">(</span><span class="n">uk</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>               
+  <span class="mi">14</span>      <span class="mf">0.932409</span>   <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>               
+  <span class="mi">15</span>      <span class="mf">0.993540</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">en</span><span class="p">)</span>               
+  <span class="mi">16</span>      <span class="mf">0.985978</span>   <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>               
+  <span class="mi">17</span>      <span class="mf">0.931779</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>               
+  <span class="mi">18</span>      <span class="mf">0.928155</span>   <span class="p">(</span><span class="n">uk</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>               
+  <span class="mi">19</span>      <span class="mf">0.985663</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>               
+  <span class="mi">20</span>      <span class="mf">0.758626</span>   <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>           
+  <span class="mi">21</span>      <span class="mf">0.758469</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>           
+  <span class="mi">22</span>      <span class="mf">0.753899</span>   <span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>           
+  <span class="mi">23</span>      <span class="mf">0.931621</span>   <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>           
+  <span class="mi">24</span>      <span class="mf">0.992752</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">ar</span><span class="p">)</span>           
+  <span class="mi">25</span>      <span class="mf">0.985663</span>   <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>           
+  <span class="mi">26</span>      <span class="mf">0.931149</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>           
+  <span class="mi">27</span>      <span class="mf">0.927997</span>   <span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>           
+  <span class="mi">28</span>      <span class="mf">0.985347</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>           
+  <span class="mi">29</span>      <span class="mf">0.759256</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>           
+  <span class="mi">30</span>      <span class="mf">0.754215</span>   <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>           
+  <span class="mi">31</span>      <span class="mf">0.754057</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>           
+  <span class="mi">32</span>      <span class="mf">0.931779</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>           
+  <span class="mi">33</span>      <span class="mf">0.928155</span>   <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>           
+  <span class="mi">34</span>      <span class="mf">0.985663</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>           
+  <span class="mi">35</span>      <span class="mf">0.927840</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>           
+  <span class="mi">36</span>      <span class="mf">0.758469</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>       
+  <span class="mi">37</span>      <span class="mf">0.753899</span>   <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>       
+  <span class="mi">38</span>      <span class="mf">0.753742</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>       
+  <span class="mi">39</span>      <span class="mf">0.931149</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>       
+  <span class="mi">40</span>      <span class="mf">0.927997</span>   <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>       
+  <span class="mi">41</span>      <span class="mf">0.985347</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>       
+  <span class="mi">42</span>      <span class="mf">0.927682</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">ar</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>       
+  <span class="mi">43</span>      <span class="mf">0.754057</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>       
+  <span class="mi">44</span>      <span class="mf">0.927840</span>   <span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">uk</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>       
+  <span class="mi">45</span>      <span class="mf">0.753742</span>   <span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">ca</span><span class="p">,</span> <span class="n">nl</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>   
+  <span class="mi">46</span>      <span class="mf">0.927682</span>   <span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">nl</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>   
+</pre></div>
+</div>
+<p>Répétez l’expérience ci-dessus pour les descriptions et les alias. Quels sont vos
+observations. Veuillez les noter dans le notebook en tant que commentaires.</p>
+</div>
+<div class="section" id="exercice-1-3">
+<h2>Exercice 1.3<a class="headerlink" href="#exercice-1-3" title="Permalink to this headline">¶</a></h2>
+<p>Notre prochain objectif est de générer les règles d’association, c’est-à-dire les règles de la forme: <em>A -&gt; C</em>,
+où A est l’antécédent et C est la conséquence.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mlxtend.frequent_patterns</span> <span class="kn">import</span> <span class="n">association_rules</span>  
+<span class="n">association_rules</span><span class="p">(</span><span class="n">frequent_itemsets</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;confidence&quot;</span><span class="p">,</span> <span class="n">min_threshold</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>             
+</pre></div>
+</div>
+<p>Cela nous donnera le résultat suivant.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">S</span><span class="o">.</span><span class="n">No</span><span class="o">.</span>   <span class="n">antecedents</span>   <span class="n">consequents</span>   <span class="n">antecedent</span> <span class="n">support</span>   <span class="n">consequent</span> <span class="n">support</span>   <span class="n">support</span>    <span class="n">confidence</span>   <span class="n">lift</span>       <span class="n">leverage</span>   <span class="n">conviction</span>
+  <span class="o">-------</span> <span class="o">-------------</span> <span class="o">-------------</span> <span class="o">--------------------</span> <span class="o">--------------------</span> <span class="o">----------</span> <span class="o">------------</span> <span class="o">----------</span> <span class="o">----------</span> <span class="o">------------</span>
+  <span class="mi">0</span>       <span class="p">(</span><span class="n">de</span><span class="p">)</span>          <span class="p">(</span><span class="n">en</span><span class="p">)</span>          <span class="mf">0.479193</span>             <span class="mf">0.988966</span>             <span class="mf">0.477932</span>   <span class="mf">0.997368</span>     <span class="mf">1.008496</span>   <span class="mf">0.004026</span>   <span class="mf">4.192938</span>
+  <span class="mi">1</span>       <span class="p">(</span><span class="n">de</span><span class="p">)</span>          <span class="p">(</span><span class="n">uk</span><span class="p">)</span>          <span class="mf">0.479193</span>             <span class="mf">0.960277</span>             <span class="mf">0.468789</span>   <span class="mf">0.978289</span>     <span class="mf">1.018757</span>   <span class="mf">0.008631</span>   <span class="mf">1.829646</span>
+  <span class="mi">2</span>       <span class="p">(</span><span class="n">es</span><span class="p">)</span>          <span class="p">(</span><span class="n">en</span><span class="p">)</span>          <span class="mf">0.389975</span>             <span class="mf">0.988966</span>             <span class="mf">0.388556</span>   <span class="mf">0.996362</span>     <span class="mf">1.007479</span>   <span class="mf">0.002884</span>   <span class="mf">3.033137</span>
+  <span class="mi">3</span>       <span class="p">(</span><span class="n">fr</span><span class="p">)</span>          <span class="p">(</span><span class="n">en</span><span class="p">)</span>          <span class="mf">0.713272</span>             <span class="mf">0.988966</span>             <span class="mf">0.708859</span>   <span class="mf">0.993812</span>     <span class="mf">1.004900</span>   <span class="mf">0.003457</span>   <span class="mf">1.783181</span>
+  <span class="mi">4</span>       <span class="p">(</span><span class="n">it</span><span class="p">)</span>          <span class="p">(</span><span class="n">en</span><span class="p">)</span>          <span class="mf">0.413934</span>             <span class="mf">0.988966</span>             <span class="mf">0.413146</span>   <span class="mf">0.998096</span>     <span class="mf">1.009232</span>   <span class="mf">0.003779</span>   <span class="mf">5.795082</span>
+  <span class="mi">5</span>       <span class="p">(</span><span class="n">ru</span><span class="p">)</span>          <span class="p">(</span><span class="n">en</span><span class="p">)</span>          <span class="mf">0.301387</span>             <span class="mf">0.988966</span>             <span class="mf">0.300441</span>   <span class="mf">0.996862</span>     <span class="mf">1.007984</span>   <span class="mf">0.002380</span>   <span class="mf">3.516183</span>
+  <span class="mi">6</span>       <span class="p">(</span><span class="n">en</span><span class="p">)</span>          <span class="p">(</span><span class="n">uk</span><span class="p">)</span>          <span class="mf">0.988966</span>             <span class="mf">0.960277</span>             <span class="mf">0.950189</span>   <span class="mf">0.960791</span>     <span class="mf">1.000534</span>   <span class="mf">0.000507</span>   <span class="mf">1.013087</span>
+  <span class="mi">7</span>       <span class="p">(</span><span class="n">uk</span><span class="p">)</span>          <span class="p">(</span><span class="n">en</span><span class="p">)</span>          <span class="mf">0.960277</span>             <span class="mf">0.988966</span>             <span class="mf">0.950189</span>   <span class="mf">0.989494</span>     <span class="mf">1.000534</span>   <span class="mf">0.000507</span>   <span class="mf">1.050303</span>
+  <span class="mi">8</span>       <span class="p">(</span><span class="n">es</span><span class="p">)</span>          <span class="p">(</span><span class="n">uk</span><span class="p">)</span>          <span class="mf">0.389975</span>             <span class="mf">0.960277</span>             <span class="mf">0.383039</span>   <span class="mf">0.982215</span>     <span class="mf">1.022845</span>   <span class="mf">0.008555</span>   <span class="mf">2.233492</span>
+  <span class="mi">9</span>       <span class="p">(</span><span class="n">fr</span><span class="p">)</span>          <span class="p">(</span><span class="n">uk</span><span class="p">)</span>          <span class="mf">0.713272</span>             <span class="mf">0.960277</span>             <span class="mf">0.689470</span>   <span class="mf">0.966630</span>     <span class="mf">1.006615</span>   <span class="mf">0.004531</span>   <span class="mf">1.190362</span>
+  <span class="mi">10</span>      <span class="p">(</span><span class="n">it</span><span class="p">)</span>          <span class="p">(</span><span class="n">uk</span><span class="p">)</span>          <span class="mf">0.413934</span>             <span class="mf">0.960277</span>             <span class="mf">0.405738</span>   <span class="mf">0.980198</span>     <span class="mf">1.020745</span>   <span class="mf">0.008246</span>   <span class="mf">2.005990</span>
+  <span class="mi">11</span>      <span class="p">(</span><span class="n">ru</span><span class="p">)</span>          <span class="p">(</span><span class="n">uk</span><span class="p">)</span>          <span class="mf">0.301387</span>             <span class="mf">0.960277</span>             <span class="mf">0.300126</span>   <span class="mf">0.995816</span>     <span class="mf">1.037009</span>   <span class="mf">0.010711</span>   <span class="mf">9.493695</span>
+  <span class="mi">12</span>      <span class="p">(</span><span class="n">de</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>      <span class="p">(</span><span class="n">en</span><span class="p">)</span>          <span class="mf">0.391393</span>             <span class="mf">0.988966</span>             <span class="mf">0.391078</span>   <span class="mf">0.999195</span>     <span class="mf">1.010343</span>   <span class="mf">0.004003</span>   <span class="mf">13.698770</span>
+  <span class="mi">13</span>      <span class="p">(</span><span class="n">de</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>      <span class="p">(</span><span class="n">en</span><span class="p">)</span>          <span class="mf">0.468789</span>             <span class="mf">0.988966</span>             <span class="mf">0.467686</span>   <span class="mf">0.997646</span>     <span class="mf">1.008777</span>   <span class="mf">0.004069</span>   <span class="mf">4.687894</span>
+</pre></div>
+</div>
+<p>Examinons l’une des règles d’association <em>(de, fr)-&gt;(en)</em>.
+Le score de confiance est de 0,999195. Mais cette règle stipule que lorsque nous avons
+des traductions en français et en allemand seront disponibles, nous aurons également la traduction anglaise.</p>
+<p>Vous pouvez changer la métrique “lift” et tester.</p>
+<p>Nous allons maintenant ajouter deux colonnes qui contiendront la longueur des antécédents
+et ses conséquences. Comme vous l’avez peut-être remarqué, les règles d’association sont
+des dataframes. Nous pouvons donc facilement écrire des conditions de filtrage pour obtenir des antécédents
+et les conséquences d’une longueur supérieure à 1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mlxtend.frequent_patterns</span> <span class="kn">import</span> <span class="n">association_rules</span>  
+<span class="n">arules</span> <span class="o">=</span> <span class="n">association_rules</span><span class="p">(</span><span class="n">frequent_itemsets</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;confidence&quot;</span><span class="p">,</span> <span class="n">min_threshold</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span> 
+
+<span class="n">arules</span><span class="p">[</span><span class="s2">&quot;antecedent_len&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arules</span><span class="p">[</span><span class="s2">&quot;antecedents&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> 
+<span class="n">arules</span><span class="p">[</span><span class="s2">&quot;consequent_len&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arules</span><span class="p">[</span><span class="s2">&quot;consequents&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  
+
+<span class="n">arules</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">arules</span><span class="p">[</span><span class="s2">&quot;antecedent_len&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span>                  
+   <span class="p">(</span><span class="n">arules</span><span class="p">[</span><span class="s2">&quot;consequent_len&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)]</span>             
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">S</span><span class="o">.</span><span class="n">No</span><span class="o">.</span>   <span class="n">antecedents</span>   <span class="n">consequents</span>   <span class="n">antecedent</span> <span class="n">support</span>   <span class="n">consequent</span> <span class="n">support</span>   <span class="n">support</span>    <span class="n">confidence</span>   <span class="n">lift</span>       <span class="n">leverage</span>   <span class="n">conviction</span>   <span class="n">antecedent</span>\<span class="n">_len</span>   <span class="n">consequent</span>\<span class="n">_len</span>
+  <span class="o">-------</span> <span class="o">-------------</span> <span class="o">-------------</span> <span class="o">--------------------</span> <span class="o">--------------------</span> <span class="o">----------</span> <span class="o">------------</span> <span class="o">----------</span> <span class="o">----------</span> <span class="o">------------</span> <span class="o">-----------------</span> <span class="o">-----------------</span>
+  <span class="mi">32</span>      <span class="p">(</span><span class="n">de</span><span class="p">,</span> <span class="n">fr</span><span class="p">)</span>      <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>      <span class="mf">0.391393</span>             <span class="mf">0.950189</span>             <span class="mf">0.383670</span>   <span class="mf">0.980266</span>     <span class="mf">1.031653</span>   <span class="mf">0.011772</span>   <span class="mf">2.524088</span>     <span class="mi">2</span>                 <span class="mi">2</span>
+  <span class="mi">35</span>      <span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">es</span><span class="p">)</span>      <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>      <span class="mf">0.332755</span>             <span class="mf">0.950189</span>             <span class="mf">0.326765</span>   <span class="mf">0.981999</span>     <span class="mf">1.033477</span>   <span class="mf">0.010585</span>   <span class="mf">2.767124</span>     <span class="mi">2</span>                 <span class="mi">2</span>
+  <span class="mi">38</span>      <span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">it</span><span class="p">)</span>      <span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">uk</span><span class="p">)</span>      <span class="mf">0.345523</span>             <span class="mf">0.950189</span>             <span class="mf">0.338430</span>   <span class="mf">0.979471</span>     <span class="mf">1.030817</span>   <span class="mf">0.010117</span>   <span class="mf">2.426342</span>     <span class="mi">2</span>                 <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Répétez l’expérience ci-dessus pour la traduction des descriptions et des alias.
+Veuillez noter vos observations sous forme de commentaires.</p>
+</div>
+<div class="section" id="exercice-1-4">
+<h2>Exercice 1.4<a class="headerlink" href="#exercice-1-4" title="Permalink to this headline">¶</a></h2>
+<p>Notre prochain objectif est de visualiser le flux de traduction. À cette fin,
+nous installons des packages holoviews et bokeh.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install holoviews bokeh --upgrade             
+</pre></div>
+</div>
+<p>Tout d’abord, nous créons des groupes pour différentes traductions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">languageorder</span> <span class="o">=</span> <span class="p">[]</span> 
+<span class="n">labeldataframe</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;label&quot;</span><span class="p">)]</span> 
+
+<span class="n">groups</span> <span class="o">=</span> <span class="n">labeldataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;property&quot;</span><span class="p">])</span> 
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+     <span class="n">languageorder</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">groups</span><span class="o">.</span><span class="n">get_group</span><span class="p">((</span><span class="n">k</span><span class="p">))[</span><span class="s2">&quot;language&quot;</span><span class="p">]))</span>  
+
+<span class="n">languagepairs</span> <span class="o">=</span> <span class="p">[]</span> 
+<span class="k">for</span> <span class="n">lo</span> <span class="ow">in</span> <span class="n">languageorder</span><span class="p">:</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lo</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">languagepairs</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">lo</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lo</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">lpdataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">languagepairs</span><span class="p">)</span> 
+<span class="n">lpdataframe</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]</span>  
+
+<span class="n">groups</span> <span class="o">=</span> <span class="n">lpdataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;source&quot;</span><span class="p">,</span><span class="s2">&quot;target&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>             
+</pre></div>
+</div>
+<p>Ensuite, nous les visualisons en utilisant un graphique circulaire. Notez le code ci-dessous, nous
+n’ont pris que 500 combinaisons de paires de langues.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plot</span>  
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">groups</span><span class="p">[:</span><span class="mi">500</span><span class="p">],</span> <span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">)</span>  
+
+<span class="n">plot</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>  
+
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> 
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>             
+</pre></div>
+</div>
+<p>Copiez le code ci-dessus et vérifiez le flux des traductions pour toutes les langues
+de votre choix (nombre de langues &gt; 20).</p>
+<p>Utilisez également la disposition des chords de Bokeh/Holoviews pour visualiser les poids.</p>
+</div>
+<div class="section" id="exercice-1-5">
+<h2>Exercice 1.5<a class="headerlink" href="#exercice-1-5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prevision">
+<h3>Prévision<a class="headerlink" href="#prevision" title="Permalink to this headline">¶</a></h3>
+<p>Notre objectif final est de prévoir la ou les prochaine(s) langue(s) qui seront
+traduit, compte tenu d’une séquence de traductions disponibles.</p>
+<p>Prenons par exemple, supposons que nous ayons vu les séquences suivantes de
+traduction.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="p">[[</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;it&#39;</span><span class="p">,</span> <span class="s1">&#39;fi&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;nl&#39;</span><span class="p">,</span> <span class="s1">&#39;pt&#39;</span><span class="p">,</span> <span class="s1">&#39;pl&#39;</span><span class="p">,</span> <span class="s1">&#39;ca&#39;</span><span class="p">,</span> <span class="s1">&#39;cs&#39;</span><span class="p">]</span>
+                <span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;it&#39;</span><span class="p">,</span> <span class="s1">&#39;fi&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;ilo&#39;</span><span class="p">,</span> <span class="s1">&#39;zh&#39;</span><span class="p">,</span> <span class="s1">&#39;nb&#39;</span><span class="p">]</span>
+                <span class="p">[</span><span class="s1">&#39;ru&#39;</span><span class="p">,</span> <span class="s1">&#39;hu&#39;</span><span class="p">,</span> <span class="s1">&#39;he&#39;</span><span class="p">,</span> <span class="s1">&#39;nl&#39;</span><span class="p">,</span> <span class="s1">&#39;pt&#39;</span><span class="p">,</span> <span class="s1">&#39;pl&#39;</span><span class="p">,</span> <span class="s1">&#39;ca&#39;</span><span class="p">,</span> <span class="s1">&#39;cs&#39;</span><span class="p">],</span>
+                <span class="o">...</span>              <span class="p">]</span>            
+
+</pre></div>
+</div>
+<p>Une fois que votre modèle a été formé à l’utilisation de ces données, il peut être en mesure
+prévoir la ou les prochaine(s) traduction(s) possibles.</p>
+<p><strong>Exemple 1</strong> : Si l’utilisateur saisit la séquence suivante,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="p">[</span><span class="s1">&#39;pt&#39;</span><span class="p">]</span>             
+</pre></div>
+</div>
+<p>votre modèle peut renvoyer la langue suivante</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="p">[</span><span class="s1">&#39;pl&#39;</span><span class="p">]</span>             
+</pre></div>
+</div>
+<p><strong>Exemple 2</strong>: Si l’utilisateur saisit la séquence suivante,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="p">[</span><span class="s1">&#39;it&#39;</span><span class="p">,</span> <span class="s1">&#39;fi&#39;</span><span class="p">]</span>             
+</pre></div>
+</div>
+<p>votre modèle peut renvoyer la langue suivante</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="p">[</span><span class="s1">&#39;fr&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Exemple 3</strong>: Si l’utilisateur saisit la séquence suivante,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="p">[</span><span class="s1">&#39;nl&#39;</span><span class="p">,</span> <span class="s1">&#39;pt&#39;</span><span class="p">,</span> <span class="s1">&#39;pl&#39;</span><span class="p">]</span>             
+</pre></div>
+</div>
+<p>votre modèle peut renvoyer les langues suivantes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="p">[</span><span class="s1">&#39;ca&#39;</span><span class="p">,</span> <span class="s1">&#39;cs&#39;</span><span class="p">]</span>             
+</pre></div>
+</div>
+<p>Votre objectif dans cet exercice est de former un modèle de réseau neuronal qui peut
+prévoir la ou les prochaine(s) traduction(s) probables des étiquettes (ou descriptions ou
+alias).</p>
+<p>Pour créer ce modèle, vous devez utiliser la séquence de traduction des propriétés de
+Wikidata vues ci-dessus. Vous devez séparer les séquences de traduction
+dans des séquences d’entraînement et de test. Veuillez indiquer les mesures de précision de
+votre modèle.</p>
+<p>Il est important de faire la distinction entre les séquences de traduction des étiquettes, des descriptions et des alias, c’est-à-dire que l’utilisateur peut demander la prochaine langue(s) probable(s) pour l’une des trois.</p>
+<p>Veuillez commenter votre code et noter vos observations. Par exemple,
+quelle est la longueur maximale de la séquence d’entrée et de la séquence de sortie ?
+Quelle est la métrique de précision ? Pourquoi avez-vous choisi un réseau de neurones donné
+modèle ? …</p>
+<p><strong>Indice:</strong> Vous pouvez utiliser un réseau neuronal récurrent avec LSTM (Long
+mémoire à court terme) ou des modèles de ‘word embeddings’.</p>
+</div>
+</div>
+<div class="section" id="depot">
+<h2>Dépôt<a class="headerlink" href="#depot" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Renommez votre carnet en Nom1_Nom2_[Nom3].ipynb, où Nom1,
+Nom2 sont vos noms.</p></li>
+<li><p>Déposez votre notebook en ligne.</p></li>
+<li><p>Veuillez ne pas soumettre vos fichiers JSON, TSV et CSV.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./fr/Projet"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By John Samuel<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
