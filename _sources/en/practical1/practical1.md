@@ -1,14 +1,14 @@
 # Practical Work 1 
 
-**Academic year: 2021-2022**
+**Academic year: 2022-2023**
 
 ## Goals
-1.  Recalls on numpy, pandas, scikit-learn etc.
+1.  Recalls on numpy, scikit-learn etc.
 2.  Implementation of perceptron in Python
 3.  Introduction to Tensorflow 2.0+.
 
 ## Exercise 1.1 [★]
-Your first exercise consists of downloading the [Python Jupiter notebook](../../fr/TP1/TP1.ipynb) and familiarizing yourself with the different methods of the libraries: numpy, pandas, scikit-learn etc.
+Your first exercise consists of downloading the [Python Jupyter notebook](./practical1.ipynb) and familiarizing yourself with the different methods of the libraries: numpy, scikit-learn etc.
 
 ## Exercise 1.2 [★★]
 Implement perceptron in Python with the following features
