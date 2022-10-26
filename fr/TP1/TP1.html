@@ -315,7 +315,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercice-1-3">
-   Exercice 1.3 [★★★]
+   Exercice 1.3 [★★]
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -359,7 +359,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercice-1-3">
-   Exercice 1.3 [★★★]
+   Exercice 1.3 [★★]
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -401,6 +401,26 @@ title="Print to PDF"
 </section>
 <section id="exercice-1-2">
 <h2>Exercice 1.2 [★★]<a class="headerlink" href="#exercice-1-2" title="Permalink to this headline">#</a></h2>
+<p>En poursuivant l’analyse de la page Wikipédia téléchargée, écrivez un programme pour mettre en œuvre les tâches suivantes:</p>
+<ul class="simple">
+<li><p>Appliquer les algorithmes de racination PorterStemmer et SnowballStemmer sur le texte de la page Wikipedia. Rappelez-vous que l’algorithme Porter Stemming a été créé pour la langue anglaise. Comparez les résultats des deux algorithmes, en particulier l’occurrence des racines les plus courantes et le nombre de racines uniques.</p></li>
+<li><p>Extrayez tous les 1-grammes (mots), 2-grammes (bi-grammes), 3-grammes, 4-grammes et 5-grammes du texte de Wikipedia et affichez les n occurrences les plus courantes de chacun.</p></li>
+<li><p>Étiquetage en parties du discours (PoS)</p></li>
+<li><p>Lemmatisation</p></li>
+<li><p>Analyse morphologique</p></li>
+<li><p>Reconnaissance d’entités nommées</p></li>
+<li><p>Word embeddings à l’aide de modèles Word2Vec (CPOW et Skip-gram)</p></li>
+</ul>
+<p>Vous pouvez utiliser un ou plusieurs des packages suivants, dans la mesure du possible. Si
+vous utilisez plus de deux packages, rédigez également un petit rapport sur la comparaison de vos résultats.</p>
+<ol class="simple">
+<li><p>nltk</p></li>
+<li><p>spaCy</p></li>
+<li><p>gensim</p></li>
+</ol>
+</section>
+<section id="exercice-1-3">
+<h2>Exercice 1.3 [★★]<a class="headerlink" href="#exercice-1-3" title="Permalink to this headline">#</a></h2>
 <p>Implémenter perceptron en Python avec les caractéristiques suivantes</p>
 <ol class="simple">
 <li><p>Fonction d’activation configurable</p></li>
@@ -409,63 +429,6 @@ title="Print to PDF"
 <li><p>Effectuer des prévisions</p></li>
 </ol>
 <p>Tester votre modèle avec des fonctions simple.</p>
-</section>
-<section id="exercice-1-3">
-<h2>Exercice 1.3 [★★★]<a class="headerlink" href="#exercice-1-3" title="Permalink to this headline">#</a></h2>
-<p>Mettez à jour tensorflow avec la dernière version.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              !pip install tensorflow --upgrade              
-</pre></div>
-</div>
-<p>Voir la version installée sur votre machine</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-              <span class="nb">print</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>              
-</pre></div>
-</div>
-<p>Par exemple, vous pouvez voir la valeur suivante (2.0+)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="mf">2.3.1</span>             
-</pre></div>
-</div>
-<p><img alt="Artificial neural networks" src="../../_images/Colored_neural_network.svg" /></p>
-<p>Afin de créer le modèle de réseau neuronal ci-dessus, vous pouvez tester le
-code suivant.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
- <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Conv2D</span>
- <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">MaxPool2D</span>
- <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Flatten</span>
- <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span>
- 
- <span class="c1"># Creating a sequential model</span>
- <span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
- <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,)))</span>
- <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
-
- <span class="c1"># compiling the model</span>
- <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mse&#39;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-<p>Dans le modèle ci-dessus, nous utilisons l’optimiseur de descente de gradient stochastique et
-l’erreur quadratique moyenne comme calculateur de perte.</p>
-<p>Dans le code ci-dessous, nous utilisons un optimiseur SGD utilisant un taux d’apprentissage de 0,01.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
- <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Conv2D</span>
- <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">MaxPool2D</span>
- <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Flatten</span>
- <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span>
- <span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">SGD</span>
-
- <span class="c1"># Creating a sequential model</span>
- <span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span> 
- <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,)))</span>
- <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
-
- <span class="c1"># compiling the model</span>
- <span class="n">sgd</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
- <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">sgd</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-<p>Observez les différentes couches. Choisissez un ensemble de données de Tensorflow :
-<a class="reference external" href="https://www.tensorflow.org/datasets/catalog/overview">https://www.tensorflow.org/datasets/catalog/overview</a> et construisez un modèle
-pour votre hypothèse. Vous pouvez également utiliser les modèles existants.</p>
 </section>
 <section id="exercice-1-4">
 <h2>Exercice 1.4 [★★★]<a class="headerlink" href="#exercice-1-4" title="Permalink to this headline">#</a></h2>
