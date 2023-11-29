@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -139,6 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../README.html">
@@ -286,6 +287,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -295,6 +297,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -329,9 +332,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectifs">Objectifs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-1">Exercice 1.1 [★]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-2">Exercice 1.2 [★★]</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-3">Exercice 1.3 [★★]</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-4">Exercice 1.4 [★★★]</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">Références</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-3">Exercice 1.3 [★★★]</a></li>
 </ul>
             </nav>
         </div>
@@ -386,33 +387,10 @@ vous utilisez plus de deux packages, rédigez également un petit rapport sur la
 </ol>
 </section>
 <section id="exercice-1-3">
-<h2>Exercice 1.3 [★★]<a class="headerlink" href="#exercice-1-3" title="Permalink to this heading">#</a></h2>
-<p>Implémenter perceptron en Python avec les caractéristiques suivantes</p>
-<ol class="arabic simple">
-<li><p>Fonction d’activation configurable</p></li>
-<li><p>Nombre d’entrées configurables</p></li>
-<li><p>Nombre d’époques et taux de formation configurables</p></li>
-<li><p>Effectuer des prévisions</p></li>
-</ol>
-<p>Tester votre modèle avec des fonctions simple.</p>
-</section>
-<section id="exercice-1-4">
-<h2>Exercice 1.4 [★★★]<a class="headerlink" href="#exercice-1-4" title="Permalink to this heading">#</a></h2>
-<p>Créer un modèle de réseau de neurones en utilisant Tensorflow. Votre objectif est de configurer les différents paramètres de votre modèle et tester le modèle avec l’ensemble de données d’écriture manuscrite du MNIST.</p>
-<ol class="arabic simple">
-<li><p>Le nombre de couches cachées</p></li>
-<li><p>La configuration des couches cachées comme la fonction d’activation</p></li>
-<li><p>Le taux d’abandon de votre modèle</p></li>
-<li><p>Algorithmes d’optimisation</p></li>
-<li><p>Fonctions de perte</p></li>
-</ol>
-<p>Évaluez votre modèle en utilisant les différents indicateurs disponibles (précision etc.)</p>
-</section>
-<section id="references">
-<h2>Références<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://machinelearningmastery.com/implement-perceptron-algorithm-scratch-python/">How To Implement The Perceptron Algorithm From Scratch In Python</a></p></li>
-</ul>
+<h2>Exercice 1.3 [★★★]<a class="headerlink" href="#exercice-1-3" title="Permalink to this heading">#</a></h2>
+<p>On vous a demandé de modéliser la base de connaissances d’une école concernant les élèves, leurs informations personnelles,
+leurs groupes de projet, la gestion de leurs notes et leurs différents modules. Ecrivez un programme GNU Prolog avec quelques
+exemples et montrez les différentes règles que vous allez alimenter dans votre base de connaissances.</p>
 </section>
 </section>
 
@@ -444,7 +422,7 @@ vous utilisez plus de deux packages, rédigez également un petit rapport sur la
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../README.html"
@@ -482,9 +460,7 @@ vous utilisez plus de deux packages, rédigez également un petit rapport sur la
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectifs">Objectifs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-1">Exercice 1.1 [★]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-2">Exercice 1.2 [★★]</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-3">Exercice 1.3 [★★]</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-4">Exercice 1.4 [★★★]</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">Références</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-3">Exercice 1.3 [★★★]</a></li>
 </ul>
   </nav></div>
 
@@ -506,6 +482,7 @@ By John Samuel
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2021.
@@ -532,8 +509,8 @@ By John Samuel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
