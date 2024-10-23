@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Installation of Packages &#8212; Artificial Intelligence and Deep Learning</title>
+    <title>Practical Work 1 &#8212; Artificial Intelligence and Deep Learning</title>
   
   
   
@@ -16,17 +16,19 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -36,10 +38,11 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -57,8 +60,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'en/practical1/practical1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -66,6 +67,7 @@
     <link rel="prev" title="Instructions" href="../README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +83,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -101,7 +92,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +99,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +116,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +147,17 @@
     
     
     <img src="../../_static/deeplearning.svg" class="logo__image only-light" alt="Artificial Intelligence and Deep Learning - Home"/>
-    <script>document.write(`<img src="../../_static/deeplearning.svg" class="logo__image only-dark" alt="Artificial Intelligence and Deep Learning - Home"/>`);</script>
+    <img src="../../_static/deeplearning.svg" class="logo__image only-dark pst-js-only" alt="Artificial Intelligence and Deep Learning - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -193,9 +180,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">English</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../README.html">Instructions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Installation of Packages</a></li>
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Practical Work 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../practical2/practical2.html">Practical Work 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Project/project.html">Project</a></li>
 </ul>
@@ -354,24 +339,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -385,7 +362,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Installation of Packages</h1>
+    <h1>Practical Work 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -395,40 +372,69 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Installation of Packages</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers">Complex Numbers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">Absolute value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#academic-year-2024-2025">Academic year: 2024-2025</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-0">Exercise 1.0 [★]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-1">Exercise 1.1 [★]</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-and-inspect-the-csv-file">Step 1: Load and Inspect the CSV File</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evenly-spaced-numbers">Evenly spaced numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-propositions-based-on-the-data">Step 2: Define Propositions Based on the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-define-the-logical-expressions">Step 3: Define the Logical Expressions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-test-the-expressions">Step 4: Test the Expressions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-a-compound-proposition-with-negation-and-disjunction">Step 5: Add a Compound Proposition with Negation and Disjunction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-count-satisfying-rows-for-each-expression">Step 6: Count Satisfying Rows for Each Expression</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mean">Mean</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-mean">Arithmetic mean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-mean">Geometric Mean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-mean">Harmonic Mean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-2">Exercise 1.2 [★]</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-and-import-z3">Step 1: Install and Import Z3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-the-attributes-as-first-order-logic-variablesm">Step 2: Define the Attributes as First-Order Logic Variablesm</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-iris-dataset">Understanding IRIS dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importation-of-packages">Importation of packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-the-dataset">Description of the Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-features">Input features</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-feature">Target feature</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-number-of-records">Verify number of records</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visulizing-the-dataset">Visulizing the dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training">Training</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardization-of-features">Standardization of features</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-report">Classification report</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">Confusion matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-encode-logical-propositions-in-fol">Step 3: Encode Logical Propositions in FOL</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-solve-for-satisfiability">Step 4: Solve for Satisfiability</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-additional-constraints">Step 5: Add Additional Constraints</a></li>
 </ul>
 </li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-3">Exercise 1.3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-z3-variables-dynamically-from-csv-data">Step 2: Define Z3 Variables Dynamically from CSV Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-encode-propositions-in-fol">Step 3: Encode Propositions in FOL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Step 4: Solve for Satisfiability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Step 5: Add Additional Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-introduce-an-unsatisfiable-constraint">Step 6: Introduce an Unsatisfiable Constraint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-4">Exercise 1.4 [★★]</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-wikipedia-page-paris">Analysis of Wikipedia Page: Paris</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-download-the-html-page">Step 1: Download the HTML Page</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-load-the-html-content">Step 2: Load the HTML Content</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extract-and-analyze-words">Step 3: Extract and Analyze Words</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-extract-links">Step 4: Extract Links</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-extract-images-and-their-sizes">Step 5: Extract Images and Their Sizes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-extract-numbers-dates-and-geographical-coordinates">Step 6: Extract Numbers, Dates, and Geographical Coordinates</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-identify-proper-nouns">Step 7: Identify Proper Nouns</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-extract-structured-data-tables">Step 8: Extract Structured Data (Tables)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-9-differentiate-sections-and-paragraphs">Step 9: Differentiate Sections and Paragraphs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-5">Exercise 1.5 [★★★]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-the-wikipedia-page">Step 1: Load the Wikipedia Page</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-apply-stemming-algorithms">Step 2: Apply Stemming Algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extract-n-grams">Step 3: Extract N-grams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-part-of-speech-pos-tagging">Step 4: Part-of-Speech (PoS) Tagging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-lemmatization">Step 5: Lemmatization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-morphological-analysis">Step 6: Morphological Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-named-entity-recognition-ner">Step 7: Named Entity Recognition (NER)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-frequency-distribution-of-words">Step 8: Frequency Distribution of Words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-9-create-a-word-cloud">Step 9: Create a Word Cloud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-10-visualization-of-named-entities">Step 10: Visualization of Named Entities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-11-visualization-of-most-common-nouns">Step 11: Visualization of Most Common Nouns</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -439,474 +445,535 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="installation-of-packages">
-<h1>Installation of Packages<a class="headerlink" href="#installation-of-packages" title="Link to this heading">#</a></h1>
-<p>First install packages like numpy, scikit-learn, matplotlib</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="practical-work-1">
+<h1>Practical Work 1<a class="headerlink" href="#practical-work-1" title="Link to this heading">#</a></h1>
+<section id="academic-year-2024-2025">
+<h2>Academic year: 2024-2025<a class="headerlink" href="#academic-year-2024-2025" title="Link to this heading">#</a></h2>
+</section>
+<section id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Reinforce concepts using tools like NumPy and scikit-learn.</p></li>
+<li><p>Apply propositional logic and test it on image datasets.</p></li>
+<li><p>Explore predicate logic and validate it on image datasets.</p></li>
+<li><p>Understand text analysis techniques, including stemming, lemmatization, and morphological analysis.</p></li>
+</ol>
+<section id="exercise-1-0">
+<h3>Exercise 1.0 [★]<a class="headerlink" href="#exercise-1-0" title="Link to this heading">#</a></h3>
+<p>Test the Python Jupyter notebook <a class="reference internal" href="#./practical0.ipynb"><span class="xref myst">recalls</span></a> and familiarize yourself with the different methods of the libraries: numpy, scikit-learn etc.</p>
+</section>
+<section id="exercise-1-1">
+<h3>Exercise 1.1 [★]<a class="headerlink" href="#exercise-1-1" title="Link to this heading">#</a></h3>
+<p>The first exercise involves testing the propositional logic. The CSV file (<code class="docutils literal notranslate"><span class="pre">image_data.csv</span></code>) contains attributes like color, shape, size, texture, and classification after image analysis process. Define the propositions given below and test logical expressions based on these attributes to evaluate relationships within the data.</p>
+<section id="step-1-load-and-inspect-the-csv-file">
+<h4>Step 1: Load and Inspect the CSV File<a class="headerlink" href="#step-1-load-and-inspect-the-csv-file" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Read the CSV file into a pandas DataFrame.</p></li>
+<li><p>Print the first few rows of the DataFrame to understand the structure.</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>scikit-learn<span class="w"> </span>matplotlib
-</pre></div>
-</div>
-</div>
-</div>
-<section id="complex-numbers">
-<h2>Complex Numbers<a class="headerlink" href="#complex-numbers" title="Link to this heading">#</a></h2>
-<p>A complex number <span class="math notranslate nohighlight">\(z\)</span> is represented by <span class="math notranslate nohighlight">\(z = x + j* y\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are real numbers.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">c2</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># Load the CSV file</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../data/image_data.csv&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="absolute-value">
-<h3>Absolute value<a class="headerlink" href="#absolute-value" title="Link to this heading">#</a></h3>
-<p>Absolute value of a complex number <span class="math notranslate nohighlight">\(z  = x + j* y\)</span> is obtained by the formula <span class="math notranslate nohighlight">\(\sqrt {(x^2 + y^2)}\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
-
-<span class="n">absc2</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">absc2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Another way is to use the function <span class="math notranslate nohighlight">\(abs()\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">absc2</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">absc2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">absc1</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">absc1</span><span class="p">)</span>
+<span class="c1"># Inspect the data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="evenly-spaced-numbers">
-<h2>Evenly spaced numbers<a class="headerlink" href="#evenly-spaced-numbers" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="mean">
-<h1>Mean<a class="headerlink" href="#mean" title="Link to this heading">#</a></h1>
-<section id="arithmetic-mean">
-<h2>Arithmetic mean<a class="headerlink" href="#arithmetic-mean" title="Link to this heading">#</a></h2>
-<p>If  <span class="math notranslate nohighlight">\(a_1, a_2, \ldots, a_n\)</span> are numbers, then the arithmetic mean is obtained by:</p>
-<div class="math notranslate nohighlight">
-\[A=\frac{1}{n}\sum_{i=1}^n a_i=\frac{a_1+a_2+\cdots+a_n}{n}\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="geometric-mean">
-<h2>Geometric Mean<a class="headerlink" href="#geometric-mean" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">gmean</span>
-
-<span class="n">g</span> <span class="o">=</span> <span class="n">gmean</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>If  <span class="math notranslate nohighlight">\(a_1, a_2, \ldots, a_n\)</span> are numbers, then the arithmetic mean is obtained by:</p>
-<div class="math notranslate nohighlight">
-\[\left(\prod_{i=1}^n a_i\right)^\frac{1}{n} = \sqrt[n]{a_1 a_2 \cdots a_n}\]</div>
-<p>If  <span class="math notranslate nohighlight">\(a_1, a_2, \ldots, a_n\)</span> are numbers, then the harmonic mean is obtained by:</p>
-<div class="math notranslate nohighlight">
-\[H = \frac{n}{\frac1{a_1} + \frac1{a_2} + \cdots + \frac1{a_n}} = \frac{n}{\sum\limits_{i=1}^n \frac1{a_i}} = \left(\frac{\sum\limits_{i=1}^n a_i^{-1}}{n}\right)^{-1}.\]</div>
-</section>
-<section id="harmonic-mean">
-<h2>Harmonic Mean<a class="headerlink" href="#harmonic-mean" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">hmean</span>
-
-<span class="n">h</span> <span class="o">=</span> <span class="n">hmean</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="classification">
-<h1>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h1>
-<section id="understanding-iris-dataset">
-<h2>Understanding IRIS dataset<a class="headerlink" href="#understanding-iris-dataset" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
-
-<span class="c1"># Target Classes and Names</span>
-<span class="k">for</span> <span class="n">target</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">target_names</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Features</span>
-<span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">feature_names</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data size: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Printing the data</span>
-
-<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">target_names</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-
-<span class="c1"># Random state ensures reproducibility</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
-<span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training data size: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test data size: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">ConfusionMatrixDisplay</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plot</span>
-
-
-<span class="k">def</span> <span class="nf">display_confusion_matrix</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
-    <span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span>
-        <span class="n">classifier</span><span class="p">,</span>
-        <span class="n">X_test</span><span class="p">,</span>
-        <span class="n">Y_test</span><span class="p">,</span>
-        <span class="n">display_labels</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">target_names</span><span class="p">,</span>
-        <span class="n">cmap</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">,</span>
-        <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-    <span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Classifier</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span><span class="p">,</span> <span class="n">metrics</span>
-
-<span class="k">for</span> <span class="n">kernel</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;rbf&quot;</span><span class="p">,</span> <span class="s2">&quot;poly&quot;</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">classifier</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="n">kernel</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-    <span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
-
-    <span class="n">predicted_values</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
-
-    <span class="c1"># classification report</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;SVM classifier with&quot;</span> <span class="o">+</span> <span class="n">kernel</span> <span class="o">+</span> <span class="s2">&quot; kernel&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">predicted_values</span><span class="p">))</span>
-    <span class="n">display_confusion_matrix</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="importation-of-packages">
-<h2>Importation of packages<a class="headerlink" href="#importation-of-packages" title="Link to this heading">#</a></h2>
-<p>We import the necessary packages</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Perceptron</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">metrics</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plot</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">ConfusionMatrixDisplay</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="load-dataset">
-<h2>Load Dataset<a class="headerlink" href="#load-dataset" title="Link to this heading">#</a></h2>
-<p>We load the necessary IRIS dataset.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="description-of-the-dataset">
-<h2>Description of the Dataset<a class="headerlink" href="#description-of-the-dataset" title="Link to this heading">#</a></h2>
-<section id="input-features">
-<h3>Input features<a class="headerlink" href="#input-features" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="target-feature">
-<h2>Target feature<a class="headerlink" href="#target-feature" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="verify-number-of-records">
-<h2>Verify number of records<a class="headerlink" href="#verify-number-of-records" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Input Records: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Target Records: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="visulizing-the-dataset">
-<h2>Visulizing the dataset<a class="headerlink" href="#visulizing-the-dataset" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
-
-<span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="training">
-<h2>Training<a class="headerlink" href="#training" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
-
-<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Training Records (input): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Training Records (target): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Test Records (input): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Test Records (input): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="standardization-of-features">
-<h2>Standardization of features<a class="headerlink" href="#standardization-of-features" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-<span class="n">sc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean: </span><span class="si">{</span><span class="n">sc</span><span class="o">.</span><span class="n">mean_</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">Variance=</span><span class="si">{</span><span class="n">sc</span><span class="o">.</span><span class="n">var_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_train_std</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
-<span class="n">x_test_std</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classifier</span> <span class="o">=</span> <span class="n">Perceptron</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">eta0</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-
-<span class="c1"># training</span>
-<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train_std</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="classification-report">
-<h2>Classification report<a class="headerlink" href="#classification-report" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_target</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test_std</span><span class="p">)</span>
-
-<span class="c1"># classification report</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_target</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="confusion-matrix">
-<h2>Confusion matrix<a class="headerlink" href="#confusion-matrix" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_target</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;pred&quot;</span><span class="p">)</span>
-<span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="o">=</span><span class="n">cm</span><span class="p">,</span> <span class="n">display_labels</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span>
-<span class="n">disp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_target</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
-<span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="o">=</span><span class="n">cm</span><span class="p">,</span> <span class="n">display_labels</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span>
-<span class="n">disp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<section id="step-2-define-propositions-based-on-the-data">
+<h3>Step 2: Define Propositions Based on the Data<a class="headerlink" href="#step-2-define-propositions-based-on-the-data" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create boolean propositions based on the columns in the CSV file.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://matplotlib.org/matplotblog/posts/animated-fractals/">Animate Your Own Fractals in Python with Matplotlib</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Arithmetic_mean">Arithmetic mean</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Geometric_mean">Geometric mean</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_mean">Harmonic mean</a></p></li>
-<li><p><a class="reference external" href="https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-12-8">Predicting sample size required for classification performance</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Cross_entropy">Cross entropy</a></p></li>
-<li><p><a class="reference external" href="https://machinelearningmastery.com/cross-entropy-for-machine-learning/">A Gentle Introduction to Cross-Entropy for Machine Learning</a></p></li>
-<li><p><a class="reference external" href="https://towardsdatascience.com/gradient-descent-the-learning-rate-and-the-importance-of-feature-scaling-6c0b416596e1">Gradient Descent, the Learning Rate, and the importance of Feature Scaling</a></p></li>
-<li><p><a class="reference external" href="https://stats.stackexchange.com/questions/315027/why-is-mean-normalization-useful-in-gradient-descent">Why is mean normalization useful in gradient descent?</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Feature_scaling">Feature scaling</a></p></li>
-<li><p><a class="reference external" href="https://www.jeremyjordan.me/batch-normalization/">Normalizing your data (specifically, input and batch normalization)</a></p></li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html">The Iris Dataset</a></p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/stable/gallery/mplot3d/scatter3d.html">3D scatterplot</a></p></li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">sklearn.preprocessing.StandardScaler</a></p></li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">sklearn.model_selection.train_test_split</a></p></li>
-<li><p><a class="reference external" href="https://www.kaggle.com/code/choihanbin/iris-classification-with-sklearn-perceptron">Iris classification with sklearn perceptron</a></p></li>
-<li><p><a class="reference external" href="https://stackoverflow.com/questions/60776749/plot-confusion-matrix-without-estimator">plot_confusion_matrix without estimator</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P</span></code>: Checks if the color is blue.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Q</span></code>: Checks if the shape is a circle.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code>: Checks if the classification is animal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S</span></code>: Checks if the size is large (define a threshold for ‘large’).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: Checks if the texture is rough.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">U</span></code>: Checks if the classification is vehicle.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">V</span></code>: Checks if the classification is building.</p></li>
 </ul>
+</li>
+</ol>
+</section>
+<section id="step-3-define-the-logical-expressions">
+<h3>Step 3: Define the Logical Expressions<a class="headerlink" href="#step-3-define-the-logical-expressions" title="Link to this heading">#</a></h3>
+<p>Create logical expressions based on the propositions defined in Step 2.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">expr1</span></code>: If color is blue and shape is a circle, then the classification is animal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">expr2</span></code>: If size is large and texture is rough, then the classification is vehicle.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">expr3</span></code>: If classification is building, shape is circle, color is blue, and size is large, then classification is building.</p></li>
+</ul>
+</section>
+<section id="step-4-test-the-expressions">
+<h3>Step 4: Test the Expressions<a class="headerlink" href="#step-4-test-the-expressions" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Test the logical expressions on each row of the DataFrame.</p></li>
+<li><p>Output the results of the expressions for each row.</p></li>
+</ol>
+<section id="step-5-add-a-compound-proposition-with-negation-and-disjunction">
+<h4>Step 5: Add a Compound Proposition with Negation and Disjunction<a class="headerlink" href="#step-5-add-a-compound-proposition-with-negation-and-disjunction" title="Link to this heading">#</a></h4>
+<p>Create a new complex expression that tests the following:</p>
+<ul class="simple">
+<li><p>If the object is <strong>not blue</strong> or <strong>has a smooth texture</strong>, then it is classified as <strong>not an object</strong>.</p></li>
+</ul>
+</section>
+<section id="step-6-count-satisfying-rows-for-each-expression">
+<h4>Step 6: Count Satisfying Rows for Each Expression<a class="headerlink" href="#step-6-count-satisfying-rows-for-each-expression" title="Link to this heading">#</a></h4>
+<p>Count the number of rows where each logical expression is <code class="docutils literal notranslate"><span class="pre">True</span></code> and compare the frequencies of satisfied propositions.</p>
+</section>
+</section>
+<section id="exercise-1-2">
+<h3>Exercise 1.2 [★]<a class="headerlink" href="#exercise-1-2" title="Link to this heading">#</a></h3>
+<section id="step-1-install-and-import-z3">
+<h4>Step 1: Install and Import Z3<a class="headerlink" href="#step-1-install-and-import-z3" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Install the Z3 solver library (<code class="docutils literal notranslate"><span class="pre">z3-solver</span></code>).</p></li>
+<li><p>Import Z3 and familiarize yourself with its basic functions.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>z3-solver
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-define-the-attributes-as-first-order-logic-variablesm">
+<h4>Step 2: Define the Attributes as First-Order Logic Variablesm<a class="headerlink" href="#step-2-define-the-attributes-as-first-order-logic-variablesm" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Define variables for each column (e.g., <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code>).</p></li>
+<li><p>Specify the possible values (e.g., <code class="docutils literal notranslate"><span class="pre">color</span></code> can be blue, red, green, etc.).</p></li>
+<li><p>Define constraints for attributes such as <strong>size</strong> being an integer and other attributes being strings.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declare Z3 variables</span>
+<span class="n">Color</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">)</span>
+<span class="n">Shape</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">)</span>
+<span class="n">Size</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">)</span>
+<span class="n">Texture</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="s1">&#39;texture&#39;</span><span class="p">)</span>
+<span class="n">Classification</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="s1">&#39;classification&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="step-3-encode-logical-propositions-in-fol">
+<h3>Step 3: Encode Logical Propositions in FOL<a class="headerlink" href="#step-3-encode-logical-propositions-in-fol" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Encode the provided propositions using Z3’s logic (See exercise 1.1).</p></li>
+<li><p>Example: If the object is blue and circular, then it is classified as an animal (<code class="docutils literal notranslate"><span class="pre">Implies(And(Color</span> <span class="pre">==</span> <span class="pre">&quot;blue&quot;,</span> <span class="pre">Shape</span> <span class="pre">==</span> <span class="pre">&quot;circle&quot;),</span> <span class="pre">Classification</span> <span class="pre">==</span> <span class="pre">&quot;animal&quot;)</span></code>).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define constraints</span>
+<span class="n">valid_colors</span> <span class="o">=</span> <span class="n">Or</span><span class="p">(</span><span class="n">Color</span> <span class="o">==</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">Color</span> <span class="o">==</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">Color</span> <span class="o">==</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">Color</span> <span class="o">==</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="n">Color</span> <span class="o">==</span> <span class="s2">&quot;purple&quot;</span><span class="p">)</span>
+<span class="n">valid_shapes</span> <span class="o">=</span> <span class="n">Or</span><span class="p">(</span><span class="n">Shape</span> <span class="o">==</span> <span class="s2">&quot;circle&quot;</span><span class="p">,</span> <span class="n">Shape</span> <span class="o">==</span> <span class="s2">&quot;square&quot;</span><span class="p">,</span> <span class="n">Shape</span> <span class="o">==</span> <span class="s2">&quot;triangle&quot;</span><span class="p">,</span> <span class="n">Shape</span> <span class="o">==</span> <span class="s2">&quot;rectangle&quot;</span><span class="p">,</span> <span class="n">Shape</span> <span class="o">==</span> <span class="s2">&quot;ellipse&quot;</span><span class="p">)</span>
+<span class="n">valid_size</span> <span class="o">=</span> <span class="n">Size</span> <span class="o">&gt;=</span> <span class="mi">100</span>  <span class="c1"># Size constraint</span>
+<span class="n">valid_textures</span> <span class="o">=</span> <span class="n">Or</span><span class="p">(</span><span class="n">Texture</span> <span class="o">==</span> <span class="s2">&quot;polka dot&quot;</span><span class="p">,</span> <span class="n">Texture</span> <span class="o">==</span> <span class="s2">&quot;smooth&quot;</span><span class="p">,</span> <span class="n">Texture</span> <span class="o">==</span> <span class="s2">&quot;patterned&quot;</span><span class="p">,</span> <span class="n">Texture</span> <span class="o">==</span> <span class="s2">&quot;rough&quot;</span><span class="p">)</span>
+<span class="n">valid_classifications</span> <span class="o">=</span> <span class="n">Or</span><span class="p">(</span><span class="n">Classification</span> <span class="o">==</span> <span class="s2">&quot;animal&quot;</span><span class="p">,</span> <span class="n">Classification</span> <span class="o">==</span> <span class="s2">&quot;plant&quot;</span><span class="p">,</span> <span class="n">Classification</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="n">Classification</span> <span class="o">==</span> <span class="s2">&quot;vehicle&quot;</span><span class="p">,</span> <span class="n">Classification</span> <span class="o">==</span> <span class="s2">&quot;building&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add these constraints to the solver</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">Solver</span><span class="p">()</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">valid_colors</span><span class="p">,</span> <span class="n">valid_shapes</span><span class="p">,</span> <span class="n">valid_size</span><span class="p">,</span> <span class="n">valid_textures</span><span class="p">,</span> <span class="n">valid_classifications</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="step-4-solve-for-satisfiability">
+<h4>Step 4: Solve for Satisfiability<a class="headerlink" href="#step-4-solve-for-satisfiability" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Use the Z3 solver to check whether the propositions are satisfiable.</p></li>
+<li><p>Print the results.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if the solver finds a solution that satisfies the constraints</span>
+<span class="k">if</span> <span class="n">solver</span><span class="o">.</span><span class="n">check</span><span class="p">()</span> <span class="o">==</span> <span class="n">sat</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The propositions are satisfiable.&quot;</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The propositions are not satisfiable.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-5-add-additional-constraints">
+<h4>Step 5: Add Additional Constraints<a class="headerlink" href="#step-5-add-additional-constraints" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Add a constraint that restricts certain combinations, such as “if the object is green, it cannot be circular.”</p></li>
+<li><p>Add another constraint where “polka dot objects cannot be vehicles.”</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="exercise-1-3">
+<h2>Exercise 1.3<a class="headerlink" href="#exercise-1-3" title="Link to this heading">#</a></h2>
+<p>Read the CSV file <code class="docutils literal notranslate"><span class="pre">image_data.csv</span></code> and define attributes as Z3 variables based on the file’s data. Encode logical propositions and constraints using first-order logic for each row, then solve for satisfiability.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Load CSV data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../data/image_data.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Initialize Z3 solver</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">Solver</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="step-2-define-z3-variables-dynamically-from-csv-data">
+<h3>Step 2: Define Z3 Variables Dynamically from CSV Data<a class="headerlink" href="#step-2-define-z3-variables-dynamically-from-csv-data" title="Link to this heading">#</a></h3>
+<p>For each row in the CSV, define the attributes as Z3 variables and ensure the types are consistent.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define Z3 variables for each attribute dynamically for each row</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;color_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;shape_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;size_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">texture</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;texture_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">classification</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;classification_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Add constraints for valid values</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Or</span><span class="p">(</span><span class="n">color</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span> <span class="n">shape</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;shape&#39;</span><span class="p">],</span> <span class="n">size</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">],</span> <span class="n">texture</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;texture&#39;</span><span class="p">],</span> <span class="n">classification</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;classification&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-encode-propositions-in-fol">
+<h3>Step 3: Encode Propositions in FOL<a class="headerlink" href="#step-3-encode-propositions-in-fol" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Write logical propositions for each row, like “if an object is blue and circular, then it is classified as an animal.”</p></li>
+<li><p>Use exercise 1.1 and add additional propositions</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example FOL for each row</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">expr1</span> <span class="o">=</span> <span class="n">Implies</span><span class="p">(</span><span class="n">And</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;color_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">String</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;shape_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;circle&quot;</span><span class="p">),</span> <span class="n">String</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;classification_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;animal&quot;</span><span class="p">)</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">expr1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Step 4: Solve for Satisfiability<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Check whether the logical propositions for the CSV data are satisfiable.</p>
+</section>
+<section id="id2">
+<h3>Step 5: Add Additional Constraints<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Include new constraints (e.g., “green objects cannot be circular”) and check the result again.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">no_green_circle</span> <span class="o">=</span> <span class="n">Implies</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;color_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">String</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;shape_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;circle&quot;</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">no_green_circle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-6-introduce-an-unsatisfiable-constraint">
+<h3>Step 6: Introduce an Unsatisfiable Constraint<a class="headerlink" href="#step-6-introduce-an-unsatisfiable-constraint" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Add a conflicting constraint that forces an object to have two mutually exclusive attributes (e.g., being both blue and red).</p></li>
+<li><p>Check for satisfiability and show that the model becomes unsatisfiable.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add a conflicting constraint: Object must be both blue and red (which is impossible)</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+    <span class="n">conflicting_constraint</span> <span class="o">=</span> <span class="n">And</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;color_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">String</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;color_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">conflicting_constraint</span><span class="p">)</span>
+
+<span class="c1"># Check satisfiability after adding the conflicting constraint</span>
+<span class="k">if</span> <span class="n">solver</span><span class="o">.</span><span class="n">check</span><span class="p">()</span> <span class="o">==</span> <span class="n">sat</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The propositions are still satisfiable.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The model is now unsatisfiable due to conflicting constraints.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-1-4">
+<h3>Exercise 1.4 [★★]<a class="headerlink" href="#exercise-1-4" title="Link to this heading">#</a></h3>
+<p>Download this webpage of Wikipedia: <a class="reference external" href="https://fr.wikipedia.org/wiki/Paris">https://fr.wikipedia.org/wiki/Paris</a> and save the file as an HTML. Analyze the Wikipedia page by extracting and counting words, links, images, numbers, dates, proper nouns, and structured data from tables, while differentiating between sections and paragraphs. This involves downloading the HTML, parsing it, and systematically identifying relevant content. Write a program to implement these tasks:</p>
+<ol class="arabic simple">
+<li><p><strong>Download HTML</strong>: Fetch and save the Wikipedia page as an HTML file.</p></li>
+<li><p><strong>Load Content</strong>: Read and parse the HTML file for analysis.</p></li>
+<li><p><strong>Word Analysis</strong>: Count word occurrences in the text.</p></li>
+<li><p><strong>Extract Links</strong>: Identify and categorize internal and external links.</p></li>
+<li><p><strong>Image Extraction</strong>: Locate images and gather their URLs and sizes.</p></li>
+<li><p><strong>Number and Date Extraction</strong>: Identify numbers, dates, and geographical coordinates.</p></li>
+<li><p><strong>Proper Nouns</strong>: Extract names of people and places.</p></li>
+<li><p><strong>Table Data</strong>: Locate and extract data from tables.</p></li>
+<li><p><strong>Section Differentiation</strong>: Identify sections and paragraphs in the content.</p></li>
+</ol>
+<section id="analysis-of-wikipedia-page-paris">
+<h4>Analysis of Wikipedia Page: Paris<a class="headerlink" href="#analysis-of-wikipedia-page-paris" title="Link to this heading">#</a></h4>
+<p>In this notebook, tasks will be performed to extract and analyze various elements from the Wikipedia page of Paris.</p>
+</section>
+<section id="step-1-download-the-html-page">
+<h4>Step 1: Download the HTML Page<a class="headerlink" href="#step-1-download-the-html-page" title="Link to this heading">#</a></h4>
+<p>First, download the HTML content of the specified Wikipedia page and save it as an HTML file.</p>
+<ul class="simple">
+<li><p><strong>Hint</strong>: Use the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library to handle the HTTP request. Remember to check the response status to confirm that the page was downloaded successfully.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># URL of the Wikipedia page</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://fr.wikipedia.org/wiki/Paris&quot;</span>
+
+<span class="c1"># Send a GET request to the URL</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="c1"># Save the content as an HTML file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;paris.html&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HTML page downloaded and saved as paris.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-load-the-html-content">
+<h4>Step 2: Load the HTML Content<a class="headerlink" href="#step-2-load-the-html-content" title="Link to this heading">#</a></h4>
+<p>Load the downloaded HTML file for further analysis.</p>
+<ul class="simple">
+<li><p><strong>Comment</strong>: Parsing the HTML is crucial for extracting data. Make sure to use a library like BeautifulSoup that can navigate the HTML structure effectively.</p></li>
+<li><p><strong>Hint</strong>: Familiarize yourself with the <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> methods to find elements in the HTML, such as <code class="docutils literal notranslate"><span class="pre">find()</span></code> and <code class="docutils literal notranslate"><span class="pre">find_all()</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="c1"># Load the HTML file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;paris.html&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">html_content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># Parse the HTML content using BeautifulSoup</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HTML content loaded.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-extract-and-analyze-words">
+<h4>Step 3: Extract and Analyze Words<a class="headerlink" href="#step-3-extract-and-analyze-words" title="Link to this heading">#</a></h4>
+<p>Count the occurrences of each word in the page.</p>
+<ul class="simple">
+<li><p><strong>Comment</strong>: Consider normalizing the text by converting it to lowercase to avoid counting the same word in different cases separately.</p></li>
+<li><p><strong>Hint</strong>: Use regular expressions to effectively filter out non-word characters when splitting the text into words.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># Extract text from the HTML content</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+
+<span class="c1"># Clean and split text into words</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="n">word_count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+
+<span class="c1"># Display the 10 most common words</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word_count</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4-extract-links">
+<h4>Step 4: Extract Links<a class="headerlink" href="#step-4-extract-links" title="Link to this heading">#</a></h4>
+<p>Identify all internal and external links from the page.</p>
+<ul class="simple">
+<li><p><strong>Comment</strong>: Understanding the difference between internal and external links is important for categorization.</p></li>
+<li><p><strong>Hint</strong>: Check the <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute of the anchor (<code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code>) tags to determine the type of link.</p></li>
+</ul>
+</section>
+<section id="step-5-extract-images-and-their-sizes">
+<h4>Step 5: Extract Images and Their Sizes<a class="headerlink" href="#step-5-extract-images-and-their-sizes" title="Link to this heading">#</a></h4>
+<p>Identify all images on the page and get their sizes.</p>
+<ul class="simple">
+<li><p><strong>Comment</strong>: Be aware that images may not always be stored in the same format. Ensure you construct the correct URLs for them.</p></li>
+<li><p><strong>Hint</strong>: You may need to check the attributes of the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tags to get additional information, such as the size of the images if available.</p></li>
+</ul>
+</section>
+<section id="step-6-extract-numbers-dates-and-geographical-coordinates">
+<h4>Step 6: Extract Numbers, Dates, and Geographical Coordinates<a class="headerlink" href="#step-6-extract-numbers-dates-and-geographical-coordinates" title="Link to this heading">#</a></h4>
+<p>Identify numbers, dates, and geographical coordinates from the text.</p>
+<ul class="simple">
+<li><p><strong>Comment</strong>: Different formats for dates and numbers can complicate extraction. Consider the various ways these can appear on the page.</p></li>
+<li><p><strong>Hint</strong>: Use regular expressions tailored for specific patterns (e.g., date formats or geographic coordinates) to accurately identify them.</p></li>
+</ul>
+</section>
+<section id="step-7-identify-proper-nouns">
+<h4>Step 7: Identify Proper Nouns<a class="headerlink" href="#step-7-identify-proper-nouns" title="Link to this heading">#</a></h4>
+<p>Extract proper nouns from the text.</p>
+<ul class="simple">
+<li><p><strong>Comment</strong>: Proper nouns can include names of people, places, and organizations. Identifying them correctly can enhance your data analysis.</p></li>
+<li><p><strong>Hint</strong>: Use Natural Language Processing (NLP) techniques, such as named entity recognition, to automate the identification of proper nouns.</p></li>
+</ul>
+</section>
+<section id="step-8-extract-structured-data-tables">
+<h4>Step 8: Extract Structured Data (Tables)<a class="headerlink" href="#step-8-extract-structured-data-tables" title="Link to this heading">#</a></h4>
+<p>Identify and extract data from tables present in the HTML.</p>
+<ul class="simple">
+<li><p><strong>Comment</strong>: Tables often contain organized data that can be useful for analysis. Make sure to capture both header and data cells.</p></li>
+<li><p><strong>Hint</strong>: Familiarize yourself with the structure of HTML tables, including how to navigate rows (<code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code>) and cells (<code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code>).</p></li>
+</ul>
+</section>
+<section id="step-9-differentiate-sections-and-paragraphs">
+<h4>Step 9: Differentiate Sections and Paragraphs<a class="headerlink" href="#step-9-differentiate-sections-and-paragraphs" title="Link to this heading">#</a></h4>
+<p>Identify and separate sections and paragraphs in the content.</p>
+<ul class="simple">
+<li><p><strong>Comment</strong>: Sections help in understanding the organization of the content. Recognizing different heading levels can aid in content navigation.</p></li>
+<li><p><strong>Hint</strong>: Use appropriate tags (<code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code>, etc.) to differentiate between sections and ensure you capture their associated content, like paragraphs.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="exercise-1-5">
+<h2>Exercise 1.5 [★★★]<a class="headerlink" href="#exercise-1-5" title="Link to this heading">#</a></h2>
+<p>Analyze the text from the downloaded Wikipedia page by applying stemming, n-gram extraction, PoS tagging, lemmatization, morphological analysis, named entity recognition, and word embedding using Word2Vec models. Compare the results from NLTK, spaCy, and Gensim to evaluate their effectiveness in text analysis tasks.</p>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h3>
+<p>Make sure you have the required libraries installed. You can install them using pip if you haven’t already:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>nltk<span class="w"> </span>spacy<span class="w"> </span>gensim<span class="w"> </span>wordcloud<span class="w"> </span>seaborn
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>spacy<span class="w"> </span>download<span class="w"> </span>fr_core_news_sm<span class="w">  </span>#<span class="w"> </span>For<span class="w"> </span>French<span class="w"> </span>language<span class="w"> </span>processing
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-1-load-the-wikipedia-page">
+<h3>Step 1: Load the Wikipedia Page<a class="headerlink" href="#step-1-load-the-wikipedia-page" title="Link to this heading">#</a></h3>
+<p>Start by loading the HTML file you saved earlier and extracting the text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="c1"># Load the HTML file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;paris.html&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">html_content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># Parse the HTML content</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-apply-stemming-algorithms">
+<h3>Step 2: Apply Stemming Algorithms<a class="headerlink" href="#step-2-apply-stemming-algorithms" title="Link to this heading">#</a></h3>
+<p>Use the Porter and Snowball stemmers from NLTK to stem the words from the text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span><span class="p">,</span> <span class="n">SnowballStemmer</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># Tokenize and clean the text</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+<span class="c1"># Initialize stemmers</span>
+<span class="n">porter_stemmer</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
+<span class="n">snowball_stemmer</span> <span class="o">=</span> <span class="n">SnowballStemmer</span><span class="p">(</span><span class="s2">&quot;english&quot;</span><span class="p">)</span>
+
+<span class="c1"># Apply stemming</span>
+<span class="n">porter_stems</span> <span class="o">=</span> <span class="p">[</span><span class="n">porter_stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+<span class="n">snowball_stems</span> <span class="o">=</span> <span class="p">[</span><span class="n">snowball_stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+
+<span class="c1"># Count unique stems</span>
+<span class="n">porter_stem_count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">porter_stems</span><span class="p">)</span>
+<span class="n">snowball_stem_count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">snowball_stems</span><span class="p">)</span>
+
+<span class="c1"># Display the most common stems and count of unique stems</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Most common Porter stems:&quot;</span><span class="p">,</span> <span class="n">porter_stem_count</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unique Porter stems count:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">porter_stem_count</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Most common Snowball stems:&quot;</span><span class="p">,</span> <span class="n">snowball_stem_count</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unique Snowball stems count:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">snowball_stem_count</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-extract-n-grams">
+<h3>Step 3: Extract N-grams<a class="headerlink" href="#step-3-extract-n-grams" title="Link to this heading">#</a></h3>
+<p>Generate and display the most common n-grams (1-grams to 5-grams) from the text.</p>
+</section>
+<section id="step-4-part-of-speech-pos-tagging">
+<h3>Step 4: Part-of-Speech (PoS) Tagging<a class="headerlink" href="#step-4-part-of-speech-pos-tagging" title="Link to this heading">#</a></h3>
+<p>Use NLTK or spaCy to perform PoS tagging on the text.</p>
+</section>
+<section id="step-5-lemmatization">
+<h3>Step 5: Lemmatization<a class="headerlink" href="#step-5-lemmatization" title="Link to this heading">#</a></h3>
+<p>Apply lemmatization using NLTK or spaCy.</p>
+</section>
+<section id="step-6-morphological-analysis">
+<h3>Step 6: Morphological Analysis<a class="headerlink" href="#step-6-morphological-analysis" title="Link to this heading">#</a></h3>
+<p>Use spaCy to perform morphological analysis on the text.</p>
+</section>
+<section id="step-7-named-entity-recognition-ner">
+<h3>Step 7: Named Entity Recognition (NER)<a class="headerlink" href="#step-7-named-entity-recognition-ner" title="Link to this heading">#</a></h3>
+<p>Use spaCy to identify named entities in the text.</p>
+</section>
+<section id="step-8-frequency-distribution-of-words">
+<h3>Step 8: Frequency Distribution of Words<a class="headerlink" href="#step-8-frequency-distribution-of-words" title="Link to this heading">#</a></h3>
+<p>Visualize the frequencydistribution of words using Matplotlib.</p>
+</section>
+<section id="step-9-create-a-word-cloud">
+<h3>Step 9: Create a Word Cloud<a class="headerlink" href="#step-9-create-a-word-cloud" title="Link to this heading">#</a></h3>
+<p>Generate a word cloud to visualize the most frequent words.</p>
+</section>
+<section id="step-10-visualization-of-named-entities">
+<h3>Step 10: Visualization of Named Entities<a class="headerlink" href="#step-10-visualization-of-named-entities" title="Link to this heading">#</a></h3>
+<p>Visualize the named entities recognized in the text using Matplotlib.</p>
+</section>
+<section id="step-11-visualization-of-most-common-nouns">
+<h3>Step 11: Visualization of Most Common Nouns<a class="headerlink" href="#step-11-visualization-of-most-common-nouns" title="Link to this heading">#</a></h3>
+<p>Visualize the most common nouns in the text, which can provide insights into the main subjects discussed.</p>
+</section>
 </section>
 </section>
 
@@ -965,7 +1032,8 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -974,40 +1042,69 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Installation of Packages</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers">Complex Numbers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">Absolute value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#academic-year-2024-2025">Academic year: 2024-2025</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-0">Exercise 1.0 [★]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-1">Exercise 1.1 [★]</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-and-inspect-the-csv-file">Step 1: Load and Inspect the CSV File</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evenly-spaced-numbers">Evenly spaced numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-propositions-based-on-the-data">Step 2: Define Propositions Based on the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-define-the-logical-expressions">Step 3: Define the Logical Expressions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-test-the-expressions">Step 4: Test the Expressions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-a-compound-proposition-with-negation-and-disjunction">Step 5: Add a Compound Proposition with Negation and Disjunction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-count-satisfying-rows-for-each-expression">Step 6: Count Satisfying Rows for Each Expression</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mean">Mean</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-mean">Arithmetic mean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-mean">Geometric Mean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-mean">Harmonic Mean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-2">Exercise 1.2 [★]</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-and-import-z3">Step 1: Install and Import Z3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-the-attributes-as-first-order-logic-variablesm">Step 2: Define the Attributes as First-Order Logic Variablesm</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-iris-dataset">Understanding IRIS dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importation-of-packages">Importation of packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-the-dataset">Description of the Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-features">Input features</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-feature">Target feature</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-number-of-records">Verify number of records</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visulizing-the-dataset">Visulizing the dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training">Training</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardization-of-features">Standardization of features</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-report">Classification report</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">Confusion matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-encode-logical-propositions-in-fol">Step 3: Encode Logical Propositions in FOL</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-solve-for-satisfiability">Step 4: Solve for Satisfiability</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-additional-constraints">Step 5: Add Additional Constraints</a></li>
 </ul>
 </li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-3">Exercise 1.3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-z3-variables-dynamically-from-csv-data">Step 2: Define Z3 Variables Dynamically from CSV Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-encode-propositions-in-fol">Step 3: Encode Propositions in FOL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Step 4: Solve for Satisfiability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Step 5: Add Additional Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-introduce-an-unsatisfiable-constraint">Step 6: Introduce an Unsatisfiable Constraint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-4">Exercise 1.4 [★★]</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-wikipedia-page-paris">Analysis of Wikipedia Page: Paris</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-download-the-html-page">Step 1: Download the HTML Page</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-load-the-html-content">Step 2: Load the HTML Content</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extract-and-analyze-words">Step 3: Extract and Analyze Words</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-extract-links">Step 4: Extract Links</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-extract-images-and-their-sizes">Step 5: Extract Images and Their Sizes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-extract-numbers-dates-and-geographical-coordinates">Step 6: Extract Numbers, Dates, and Geographical Coordinates</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-identify-proper-nouns">Step 7: Identify Proper Nouns</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-extract-structured-data-tables">Step 8: Extract Structured Data (Tables)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-9-differentiate-sections-and-paragraphs">Step 9: Differentiate Sections and Paragraphs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-5">Exercise 1.5 [★★★]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-the-wikipedia-page">Step 1: Load the Wikipedia Page</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-apply-stemming-algorithms">Step 2: Apply Stemming Algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extract-n-grams">Step 3: Extract N-grams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-part-of-speech-pos-tagging">Step 4: Part-of-Speech (PoS) Tagging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-lemmatization">Step 5: Lemmatization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-morphological-analysis">Step 6: Morphological Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-named-entity-recognition-ner">Step 7: Named Entity Recognition (NER)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-frequency-distribution-of-words">Step 8: Frequency Distribution of Words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-9-create-a-word-cloud">Step 9: Create a Word Cloud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-10-visualization-of-named-entities">Step 10: Visualization of Named Entities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-11-visualization-of-most-common-nouns">Step 11: Visualization of Most Common Nouns</a></li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>
@@ -1055,8 +1152,8 @@ By John Samuel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
