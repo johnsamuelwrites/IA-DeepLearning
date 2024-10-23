@@ -171,9 +171,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Français</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../fr/README.html">Instructions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../fr/TP1/TP1.html">Installation of Packages</a></li>
-
-
+<li class="toctree-l1"><a class="reference internal" href="../../fr/TP1/TP1.html">Travaux pratiques 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../fr/TP2/TP2.html">Travaux pratiques 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../fr/Projet/projet.html">Projet</a></li>
 </ul>
@@ -377,44 +375,46 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-0">Exercise 1.0 [★]</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-1">Exercise 1.1 [★]</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-and-inspect-the-csv-file">Step 1: Load and Inspect the CSV File</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-propositions-based-on-the-data">Step 2: Define Propositions Based on the Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-define-the-logical-expressions">Step 3: Define the Logical Expressions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-test-the-expressions">Step 4: Test the Expressions</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-a-compound-proposition-with-negation-and-disjunction">Step 5: Add a Compound Proposition with Negation and Disjunction</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-count-satisfying-rows-for-each-expression">Step 6: Count Satisfying Rows for Each Expression</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-propositions-based-on-the-data">Step 2: Define Propositions Based on the Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-define-the-logical-expressions">Step 3: Define the Logical Expressions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-test-the-expressions">Step 4: Test the Expressions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-a-compound-proposition-with-negation-and-disjunction">Step 5: Add a Compound Proposition with Negation and Disjunction</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-count-satisfying-rows-for-each-expression">Step 6: Count Satisfying Rows for Each Expression</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-2">Exercise 1.2 [★]</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-and-import-z3">Step 1: Install and Import Z3</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-the-attributes-as-first-order-logic-variablesm">Step 2: Define the Attributes as First-Order Logic Variablesm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-encode-logical-propositions-in-fol">Step 3: Encode Logical Propositions in FOL</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-solve-for-satisfiability">Step 4: Solve for Satisfiability</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-additional-constraints">Step 5: Add Additional Constraints</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-encode-logical-propositions-in-fol">Step 3: Encode Logical Propositions in FOL</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-solve-for-satisfiability">Step 4: Solve for Satisfiability</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-additional-constraints">Step 5: Add Additional Constraints</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-3">Exercise 1.3</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-3">Exercise 1.3 [★★]</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-z3-variables-dynamically-from-csv-data">Step 2: Define Z3 Variables Dynamically from CSV Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-encode-propositions-in-fol">Step 3: Encode Propositions in FOL</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Step 4: Solve for Satisfiability</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Step 5: Add Additional Constraints</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-introduce-an-unsatisfiable-constraint">Step 6: Introduce an Unsatisfiable Constraint</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-4">Exercise 1.4 [★★]</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-wikipedia-page-paris">Analysis of Wikipedia Page: Paris</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-download-the-html-page">Step 1: Download the HTML Page</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-load-the-html-content">Step 2: Load the HTML Content</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extract-and-analyze-words">Step 3: Extract and Analyze Words</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-extract-links">Step 4: Extract Links</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-extract-images-and-their-sizes">Step 5: Extract Images and Their Sizes</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-extract-numbers-dates-and-geographical-coordinates">Step 6: Extract Numbers, Dates, and Geographical Coordinates</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-identify-proper-nouns">Step 7: Identify Proper Nouns</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-extract-structured-data-tables">Step 8: Extract Structured Data (Tables)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-9-differentiate-sections-and-paragraphs">Step 9: Differentiate Sections and Paragraphs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-wikipedia-page-paris">Analysis of Wikipedia Page: Paris</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-download-the-html-page">Step 1: Download the HTML Page</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-load-the-html-content">Step 2: Load the HTML Content</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extract-and-analyze-words">Step 3: Extract and Analyze Words</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-extract-links">Step 4: Extract Links</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-extract-images-and-their-sizes">Step 5: Extract Images and Their Sizes</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-extract-numbers-dates-and-geographical-coordinates">Step 6: Extract Numbers, Dates, and Geographical Coordinates</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-identify-proper-nouns">Step 7: Identify Proper Nouns</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-extract-structured-data-tables">Step 8: Extract Structured Data (Tables)</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-9-differentiate-sections-and-paragraphs">Step 9: Differentiate Sections and Paragraphs</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -485,9 +485,8 @@
 </div>
 </div>
 </section>
-</section>
 <section id="step-2-define-propositions-based-on-the-data">
-<h3>Step 2: Define Propositions Based on the Data<a class="headerlink" href="#step-2-define-propositions-based-on-the-data" title="Link to this heading">#</a></h3>
+<h4>Step 2: Define Propositions Based on the Data<a class="headerlink" href="#step-2-define-propositions-based-on-the-data" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Create boolean propositions based on the columns in the CSV file.</p>
 <ul class="simple">
@@ -503,7 +502,7 @@
 </ol>
 </section>
 <section id="step-3-define-the-logical-expressions">
-<h3>Step 3: Define the Logical Expressions<a class="headerlink" href="#step-3-define-the-logical-expressions" title="Link to this heading">#</a></h3>
+<h4>Step 3: Define the Logical Expressions<a class="headerlink" href="#step-3-define-the-logical-expressions" title="Link to this heading">#</a></h4>
 <p>Create logical expressions based on the propositions defined in Step 2.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">expr1</span></code>: If color is blue and shape is a circle, then the classification is animal.</p></li>
@@ -512,21 +511,22 @@
 </ul>
 </section>
 <section id="step-4-test-the-expressions">
-<h3>Step 4: Test the Expressions<a class="headerlink" href="#step-4-test-the-expressions" title="Link to this heading">#</a></h3>
+<h4>Step 4: Test the Expressions<a class="headerlink" href="#step-4-test-the-expressions" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Test the logical expressions on each row of the DataFrame.</p></li>
 <li><p>Output the results of the expressions for each row.</p></li>
 </ol>
 <section id="step-5-add-a-compound-proposition-with-negation-and-disjunction">
-<h4>Step 5: Add a Compound Proposition with Negation and Disjunction<a class="headerlink" href="#step-5-add-a-compound-proposition-with-negation-and-disjunction" title="Link to this heading">#</a></h4>
+<h5>Step 5: Add a Compound Proposition with Negation and Disjunction<a class="headerlink" href="#step-5-add-a-compound-proposition-with-negation-and-disjunction" title="Link to this heading">#</a></h5>
 <p>Create a new complex expression that tests the following:</p>
 <ul class="simple">
 <li><p>If the object is <strong>not blue</strong> or <strong>has a smooth texture</strong>, then it is classified as <strong>not an object</strong>.</p></li>
 </ul>
 </section>
 <section id="step-6-count-satisfying-rows-for-each-expression">
-<h4>Step 6: Count Satisfying Rows for Each Expression<a class="headerlink" href="#step-6-count-satisfying-rows-for-each-expression" title="Link to this heading">#</a></h4>
+<h5>Step 6: Count Satisfying Rows for Each Expression<a class="headerlink" href="#step-6-count-satisfying-rows-for-each-expression" title="Link to this heading">#</a></h5>
 <p>Count the number of rows where each logical expression is <code class="docutils literal notranslate"><span class="pre">True</span></code> and compare the frequencies of satisfied propositions.</p>
+</section>
 </section>
 </section>
 <section id="exercise-1-2">
@@ -572,9 +572,8 @@
 </div>
 </div>
 </section>
-</section>
 <section id="step-3-encode-logical-propositions-in-fol">
-<h3>Step 3: Encode Logical Propositions in FOL<a class="headerlink" href="#step-3-encode-logical-propositions-in-fol" title="Link to this heading">#</a></h3>
+<h4>Step 3: Encode Logical Propositions in FOL<a class="headerlink" href="#step-3-encode-logical-propositions-in-fol" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Encode the provided propositions using Z3’s logic (See exercise 1.1).</p></li>
 <li><p>Example: If the object is blue and circular, then it is classified as an animal (<code class="docutils literal notranslate"><span class="pre">Implies(And(Color</span> <span class="pre">==</span> <span class="pre">&quot;blue&quot;,</span> <span class="pre">Shape</span> <span class="pre">==</span> <span class="pre">&quot;circle&quot;),</span> <span class="pre">Classification</span> <span class="pre">==</span> <span class="pre">&quot;animal&quot;)</span></code>).</p></li>
@@ -596,7 +595,7 @@
 </div>
 </div>
 <section id="step-4-solve-for-satisfiability">
-<h4>Step 4: Solve for Satisfiability<a class="headerlink" href="#step-4-solve-for-satisfiability" title="Link to this heading">#</a></h4>
+<h5>Step 4: Solve for Satisfiability<a class="headerlink" href="#step-4-solve-for-satisfiability" title="Link to this heading">#</a></h5>
 <ul class="simple">
 <li><p>Use the Z3 solver to check whether the propositions are satisfiable.</p></li>
 <li><p>Print the results.</p></li>
@@ -616,7 +615,7 @@
 </div>
 </section>
 <section id="step-5-add-additional-constraints">
-<h4>Step 5: Add Additional Constraints<a class="headerlink" href="#step-5-add-additional-constraints" title="Link to this heading">#</a></h4>
+<h5>Step 5: Add Additional Constraints<a class="headerlink" href="#step-5-add-additional-constraints" title="Link to this heading">#</a></h5>
 <ul class="simple">
 <li><p>Add a constraint that restricts certain combinations, such as “if the object is green, it cannot be circular.”</p></li>
 <li><p>Add another constraint where “polka dot objects cannot be vehicles.”</p></li>
@@ -624,8 +623,9 @@
 </section>
 </section>
 </section>
+</section>
 <section id="exercise-1-3">
-<h2>Exercise 1.3<a class="headerlink" href="#exercise-1-3" title="Link to this heading">#</a></h2>
+<h2>Exercise 1.3 [★★]<a class="headerlink" href="#exercise-1-3" title="Link to this heading">#</a></h2>
 <p>Read the CSV file <code class="docutils literal notranslate"><span class="pre">image_data.csv</span></code> and define attributes as Z3 variables based on the file’s data. Encode logical propositions and constraints using first-order logic for each row, then solve for satisfiability.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -736,13 +736,9 @@
 <section id="analysis-of-wikipedia-page-paris">
 <h4>Analysis of Wikipedia Page: Paris<a class="headerlink" href="#analysis-of-wikipedia-page-paris" title="Link to this heading">#</a></h4>
 <p>In this notebook, tasks will be performed to extract and analyze various elements from the Wikipedia page of Paris.</p>
-</section>
 <section id="step-1-download-the-html-page">
-<h4>Step 1: Download the HTML Page<a class="headerlink" href="#step-1-download-the-html-page" title="Link to this heading">#</a></h4>
-<p>First, download the HTML content of the specified Wikipedia page and save it as an HTML file.</p>
-<ul class="simple">
-<li><p><strong>Hint</strong>: Use the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library to handle the HTTP request. Remember to check the response status to confirm that the page was downloaded successfully.</p></li>
-</ul>
+<h5>Step 1: Download the HTML Page<a class="headerlink" href="#step-1-download-the-html-page" title="Link to this heading">#</a></h5>
+<p>First, download the HTML content of the specified Wikipedia page and save it as an HTML file. We use the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library to handle the HTTP request. Remember to check the response status to confirm that the page was downloaded successfully.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -764,12 +760,12 @@
 </div>
 </section>
 <section id="step-2-load-the-html-content">
-<h4>Step 2: Load the HTML Content<a class="headerlink" href="#step-2-load-the-html-content" title="Link to this heading">#</a></h4>
+<h5>Step 2: Load the HTML Content<a class="headerlink" href="#step-2-load-the-html-content" title="Link to this heading">#</a></h5>
 <p>Load the downloaded HTML file for further analysis.</p>
 <ul class="simple">
 <li><p><strong>Comment</strong>: Parsing the HTML is crucial for extracting data. Make sure to use a library like BeautifulSoup that can navigate the HTML structure effectively.</p></li>
-<li><p><strong>Hint</strong>: Familiarize yourself with the <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> methods to find elements in the HTML, such as <code class="docutils literal notranslate"><span class="pre">find()</span></code> and <code class="docutils literal notranslate"><span class="pre">find_all()</span></code>.</p></li>
 </ul>
+<p>Familiarize yourself with the <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> methods to find elements in the HTML, such as <code class="docutils literal notranslate"><span class="pre">find()</span></code> and <code class="docutils literal notranslate"><span class="pre">find_all()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
@@ -787,11 +783,13 @@
 </div>
 </section>
 <section id="step-3-extract-and-analyze-words">
-<h4>Step 3: Extract and Analyze Words<a class="headerlink" href="#step-3-extract-and-analyze-words" title="Link to this heading">#</a></h4>
+<h5>Step 3: Extract and Analyze Words<a class="headerlink" href="#step-3-extract-and-analyze-words" title="Link to this heading">#</a></h5>
 <p>Count the occurrences of each word in the page.</p>
 <ul class="simple">
-<li><p><strong>Comment</strong>: Consider normalizing the text by converting it to lowercase to avoid counting the same word in different cases separately.</p></li>
-<li><p><strong>Hint</strong>: Use regular expressions to effectively filter out non-word characters when splitting the text into words.</p></li>
+<li><p><strong>Comment</strong>: Consider normalizing the text by converting it to lowercase to avoid counting the same word in different cases separately. We u##### Étape 5 : Extraire les Images et Leurs Tailles
+Identifiez toutes les images sur la page et obtenez leurs tailles.</p></li>
+<li><p><strong>Commentaire</strong> : Soyez conscient que les images ne sont pas toujours stockées dans le même format. Assurez-vous de construire les bonnes URLs pour elles.</p></li>
+<li><p><strong>Indice</strong> : Vous devrez peut-être vérifier les attributs des balises <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> pour obtenir des informations supplémentaires, telles que la taille des images si <a class="reference external" href="http://disponible.se">disponible.se</a> regular expressions to effectively filter out non-word characters when splitting the text into words.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -813,7 +811,7 @@
 </div>
 </section>
 <section id="step-4-extract-links">
-<h4>Step 4: Extract Links<a class="headerlink" href="#step-4-extract-links" title="Link to this heading">#</a></h4>
+<h5>Step 4: Extract Links<a class="headerlink" href="#step-4-extract-links" title="Link to this heading">#</a></h5>
 <p>Identify all internal and external links from the page.</p>
 <ul class="simple">
 <li><p><strong>Comment</strong>: Understanding the difference between internal and external links is important for categorization.</p></li>
@@ -821,7 +819,7 @@
 </ul>
 </section>
 <section id="step-5-extract-images-and-their-sizes">
-<h4>Step 5: Extract Images and Their Sizes<a class="headerlink" href="#step-5-extract-images-and-their-sizes" title="Link to this heading">#</a></h4>
+<h5>Step 5: Extract Images and Their Sizes<a class="headerlink" href="#step-5-extract-images-and-their-sizes" title="Link to this heading">#</a></h5>
 <p>Identify all images on the page and get their sizes.</p>
 <ul class="simple">
 <li><p><strong>Comment</strong>: Be aware that images may not always be stored in the same format. Ensure you construct the correct URLs for them.</p></li>
@@ -829,7 +827,7 @@
 </ul>
 </section>
 <section id="step-6-extract-numbers-dates-and-geographical-coordinates">
-<h4>Step 6: Extract Numbers, Dates, and Geographical Coordinates<a class="headerlink" href="#step-6-extract-numbers-dates-and-geographical-coordinates" title="Link to this heading">#</a></h4>
+<h5>Step 6: Extract Numbers, Dates, and Geographical Coordinates<a class="headerlink" href="#step-6-extract-numbers-dates-and-geographical-coordinates" title="Link to this heading">#</a></h5>
 <p>Identify numbers, dates, and geographical coordinates from the text.</p>
 <ul class="simple">
 <li><p><strong>Comment</strong>: Different formats for dates and numbers can complicate extraction. Consider the various ways these can appear on the page.</p></li>
@@ -837,7 +835,7 @@
 </ul>
 </section>
 <section id="step-7-identify-proper-nouns">
-<h4>Step 7: Identify Proper Nouns<a class="headerlink" href="#step-7-identify-proper-nouns" title="Link to this heading">#</a></h4>
+<h5>Step 7: Identify Proper Nouns<a class="headerlink" href="#step-7-identify-proper-nouns" title="Link to this heading">#</a></h5>
 <p>Extract proper nouns from the text.</p>
 <ul class="simple">
 <li><p><strong>Comment</strong>: Proper nouns can include names of people, places, and organizations. Identifying them correctly can enhance your data analysis.</p></li>
@@ -845,7 +843,7 @@
 </ul>
 </section>
 <section id="step-8-extract-structured-data-tables">
-<h4>Step 8: Extract Structured Data (Tables)<a class="headerlink" href="#step-8-extract-structured-data-tables" title="Link to this heading">#</a></h4>
+<h5>Step 8: Extract Structured Data (Tables)<a class="headerlink" href="#step-8-extract-structured-data-tables" title="Link to this heading">#</a></h5>
 <p>Identify and extract data from tables present in the HTML.</p>
 <ul class="simple">
 <li><p><strong>Comment</strong>: Tables often contain organized data that can be useful for analysis. Make sure to capture both header and data cells.</p></li>
@@ -853,12 +851,13 @@
 </ul>
 </section>
 <section id="step-9-differentiate-sections-and-paragraphs">
-<h4>Step 9: Differentiate Sections and Paragraphs<a class="headerlink" href="#step-9-differentiate-sections-and-paragraphs" title="Link to this heading">#</a></h4>
+<h5>Step 9: Differentiate Sections and Paragraphs<a class="headerlink" href="#step-9-differentiate-sections-and-paragraphs" title="Link to this heading">#</a></h5>
 <p>Identify and separate sections and paragraphs in the content.</p>
 <ul class="simple">
 <li><p><strong>Comment</strong>: Sections help in understanding the organization of the content. Recognizing different heading levels can aid in content navigation.</p></li>
 <li><p><strong>Hint</strong>: Use appropriate tags (<code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code>, etc.) to differentiate between sections and ensure you capture their associated content, like paragraphs.</p></li>
 </ul>
+</section>
 </section>
 </section>
 </section>
@@ -1047,44 +1046,46 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-0">Exercise 1.0 [★]</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-1">Exercise 1.1 [★]</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-and-inspect-the-csv-file">Step 1: Load and Inspect the CSV File</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-propositions-based-on-the-data">Step 2: Define Propositions Based on the Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-define-the-logical-expressions">Step 3: Define the Logical Expressions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-test-the-expressions">Step 4: Test the Expressions</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-a-compound-proposition-with-negation-and-disjunction">Step 5: Add a Compound Proposition with Negation and Disjunction</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-count-satisfying-rows-for-each-expression">Step 6: Count Satisfying Rows for Each Expression</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-propositions-based-on-the-data">Step 2: Define Propositions Based on the Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-define-the-logical-expressions">Step 3: Define the Logical Expressions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-test-the-expressions">Step 4: Test the Expressions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-a-compound-proposition-with-negation-and-disjunction">Step 5: Add a Compound Proposition with Negation and Disjunction</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-count-satisfying-rows-for-each-expression">Step 6: Count Satisfying Rows for Each Expression</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-2">Exercise 1.2 [★]</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-and-import-z3">Step 1: Install and Import Z3</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-the-attributes-as-first-order-logic-variablesm">Step 2: Define the Attributes as First-Order Logic Variablesm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-encode-logical-propositions-in-fol">Step 3: Encode Logical Propositions in FOL</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-solve-for-satisfiability">Step 4: Solve for Satisfiability</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-additional-constraints">Step 5: Add Additional Constraints</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-encode-logical-propositions-in-fol">Step 3: Encode Logical Propositions in FOL</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-solve-for-satisfiability">Step 4: Solve for Satisfiability</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-additional-constraints">Step 5: Add Additional Constraints</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-3">Exercise 1.3</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-3">Exercise 1.3 [★★]</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-z3-variables-dynamically-from-csv-data">Step 2: Define Z3 Variables Dynamically from CSV Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-encode-propositions-in-fol">Step 3: Encode Propositions in FOL</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Step 4: Solve for Satisfiability</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Step 5: Add Additional Constraints</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-introduce-an-unsatisfiable-constraint">Step 6: Introduce an Unsatisfiable Constraint</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-4">Exercise 1.4 [★★]</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-wikipedia-page-paris">Analysis of Wikipedia Page: Paris</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-download-the-html-page">Step 1: Download the HTML Page</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-load-the-html-content">Step 2: Load the HTML Content</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extract-and-analyze-words">Step 3: Extract and Analyze Words</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-extract-links">Step 4: Extract Links</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-extract-images-and-their-sizes">Step 5: Extract Images and Their Sizes</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-extract-numbers-dates-and-geographical-coordinates">Step 6: Extract Numbers, Dates, and Geographical Coordinates</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-identify-proper-nouns">Step 7: Identify Proper Nouns</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-extract-structured-data-tables">Step 8: Extract Structured Data (Tables)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-9-differentiate-sections-and-paragraphs">Step 9: Differentiate Sections and Paragraphs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-wikipedia-page-paris">Analysis of Wikipedia Page: Paris</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-download-the-html-page">Step 1: Download the HTML Page</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-load-the-html-content">Step 2: Load the HTML Content</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extract-and-analyze-words">Step 3: Extract and Analyze Words</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-extract-links">Step 4: Extract Links</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-extract-images-and-their-sizes">Step 5: Extract Images and Their Sizes</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-extract-numbers-dates-and-geographical-coordinates">Step 6: Extract Numbers, Dates, and Geographical Coordinates</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-identify-proper-nouns">Step 7: Identify Proper Nouns</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-extract-structured-data-tables">Step 8: Extract Structured Data (Tables)</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#step-9-differentiate-sections-and-paragraphs">Step 9: Differentiate Sections and Paragraphs</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
