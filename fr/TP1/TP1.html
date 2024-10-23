@@ -373,7 +373,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annee-2024-2025">Année: 2024-2025</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectifs">Objectifs</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-0">Exercice 1.0 [★]</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-1">Exercise 1.1 [★]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-1">Exercice 1.1 [★]</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-1-charger-et-inspecter-le-fichier-csv">Étape 1 : Charger et Inspecter le Fichier CSV</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-2-definir-des-propositions-basees-sur-les-donnees">Étape 2 : Définir des Propositions Basées sur les Données</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-3-definir-les-expressions-logiques">Étape 3 : Définir les Expressions Logiques</a></li>
@@ -464,8 +464,8 @@
 <h3>Exercice 1.0 [★]<a class="headerlink" href="#exercice-1-0" title="Link to this heading">#</a></h3>
 <p>Testez le notebook Python Jupyter <a class="reference internal" href="#./TP0.ipynb"><span class="xref myst">rappels</span></a> et familiarisez-vous avec les différentes méthodes des bibliothèques : numpy, scikit-learn, etc.</p>
 </section>
-<section id="exercise-1-1">
-<h3>Exercise 1.1 [★]<a class="headerlink" href="#exercise-1-1" title="Link to this heading">#</a></h3>
+<section id="exercice-1-1">
+<h3>Exercice 1.1 [★]<a class="headerlink" href="#exercice-1-1" title="Link to this heading">#</a></h3>
 <p>L’exercice consiste à tester la logique propositionnelle. Le fichier CSV (<code class="docutils literal notranslate"><span class="pre">image_data.csv</span></code>) contient des attributs tels que la couleur, la forme, la taille, la texture et la classification après le processus d’analyse d’image. Définissez les propositions ci-dessous et testez les expressions logiques basées sur ces attributs pour évaluer les relations au sein des données.</p>
 <section id="etape-1-charger-et-inspecter-le-fichier-csv">
 <h4>Étape 1 : Charger et Inspecter le Fichier CSV<a class="headerlink" href="#etape-1-charger-et-inspecter-le-fichier-csv" title="Link to this heading">#</a></h4>
@@ -880,6 +880,21 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt_tab&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;averaged_perceptron_tagger&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;averaged_perceptron_tagger_eng&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;wordnet&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;maxent_ne_chunker&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;words&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;wordnet&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
 <section id="etape-1-charger-la-page-wikipedia">
 <h4>Étape 1 : Charger la Page Wikipedia<a class="headerlink" href="#etape-1-charger-la-page-wikipedia" title="Link to this heading">#</a></h4>
 <p>Commencez par charger le fichier HTML que vous avez enregistré précédemment et extraire le texte.</p>
@@ -1043,7 +1058,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annee-2024-2025">Année: 2024-2025</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectifs">Objectifs</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-0">Exercice 1.0 [★]</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-1">Exercise 1.1 [★]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1-1">Exercice 1.1 [★]</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-1-charger-et-inspecter-le-fichier-csv">Étape 1 : Charger et Inspecter le Fichier CSV</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-2-definir-des-propositions-basees-sur-les-donnees">Étape 2 : Définir des Propositions Basées sur les Données</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-3-definir-les-expressions-logiques">Étape 3 : Définir les Expressions Logiques</a></li>
