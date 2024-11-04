@@ -323,13 +323,19 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectifs">Objectifs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-1">Exercice 2.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-2">Exercice 2.2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-3">Exercice 2.3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeles-lstm">Modèles LSTM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-2">Exercice 2.2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Objectifs :</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-4">Exercice 2.4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soumission">Soumission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-3">Exercice 2.3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectif-de-l-exercice">Objectif de l’Exercice</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contexte">Contexte</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tache">Tâche</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indications">Indications</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">Références</a></li>
 </ul>
             </nav>
@@ -348,66 +354,138 @@
 <section id="objectifs">
 <h2>Objectifs<a class="headerlink" href="#objectifs" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Implémentation de Multilayer perceptron en Python</p></li>
+<li><p>Prolog</p></li>
 <li><p>Modèles LSTM</p></li>
 </ol>
 </section>
 <section id="exercice-2-1">
 <h2>Exercice 2.1<a class="headerlink" href="#exercice-2-1" title="Link to this heading">#</a></h2>
-<p>Implémenter le perceptron à plusieurs couches en Python avec les caractéristiques suivantes</p>
+<p>Vous devez modéliser une base de connaissances pour une école en utilisant GNU Prolog. Cette base doit contenir les informations suivantes :</p>
+<ul class="simple">
+<li><p>Les élèves et leurs informations personnelles (nom, prénom, date de naissance, etc.).</p></li>
+<li><p>Les groupes de projet auxquels les élèves appartiennent.</p></li>
+<li><p>La gestion des notes des élèves dans différents modules.</p></li>
+<li><p>La liste des modules avec leur nom et description.</p></li>
+</ul>
 <ol class="arabic simple">
-<li><p>Fonction d’activation configurable</p></li>
-<li><p>Nombre d’entrées configurables</p></li>
-<li><p>Nombre d’époques et taux de formation configurables</p></li>
-<li><p>Effectuer des prévisions</p></li>
-<li><p>Rétro-propagation du gradient</p></li>
+<li><p><strong>Décrivez les faits et règles</strong> nécessaires pour représenter ces informations dans votre programme Prolog.</p></li>
+<li><p><strong>Écrivez un programme en Prolog</strong> contenant des exemples de données et de règles. Par exemple, vous pourriez inclure :</p>
+<ul class="simple">
+<li><p>Une règle pour trouver tous les élèves d’un groupe de projet spécifique.</p></li>
+<li><p>Une règle pour calculer la moyenne des notes d’un élève dans un module.</p></li>
+<li><p>Une règle pour lister les modules suivis par un élève.</p></li>
+</ul>
+</li>
+<li><p><strong>Montrez des exemples de requêtes</strong> pour interroger la base de connaissances (par exemple, récupérer la liste des élèves dans un groupe, obtenir la moyenne des notes d’un élève).</p></li>
 </ol>
-<p>Tester votre modèle avec des fonctions simple.</p>
-<p>Référence: <a class="reference external" href="https://www.kaggle.com/vitorgamalemos/multilayer-perceptron-from-scratch/notebook">https://www.kaggle.com/vitorgamalemos/multilayer-perceptron-from-scratch/notebook</a></p>
 </section>
 <section id="exercice-2-2">
 <h2>Exercice 2.2<a class="headerlink" href="#exercice-2-2" title="Link to this heading">#</a></h2>
-<p>Les exemples suivants montrent comment travailler avec les différents ensembles de données de tensorflow et comment utiliser la classification à l’aide des réseaux neuronaux profonds de tensorflow.</p>
+<p>Vous travaillez sur des exemples de classification avec des réseaux de neurones profonds utilisant TensorFlow. Les exemples actuels utilisent les jeux de données suivants :</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../Projet/Data.html"><span class="std std-doc">Traitement des données dans Tensorflow</span></a></p></li>
 <li><p><a class="reference internal" href="../Projet/Introduction.html"><span class="std std-doc">Reconnaissance de l’écriture manuscrite à l’aide des données du MNIST</span></a></p></li>
 <li><p><a class="reference internal" href="../Projet/Textes.html"><span class="std std-doc">Classification des textes à l’aide des avis IMDB</span></a></p></li>
 </ul>
-<p>Vous avez les objectifs suivants :</p>
+<p><strong>Question :</strong>
+Vous allez travailler sur un exemple de classification de textes en utilisant le jeu de données <strong>Reuters</strong> disponible dans TensorFlow. Ce jeu de données contient des textes d’actualités classés dans différentes catégories, ce qui en fait un excellent jeu de données pour la classification de texte.</p>
+<p>Votre tâche est d’explorer ce jeu de données et de développer un modèle de classification de texte en utilisant des réseaux de neurones profonds dans TensorFlow. Vous avez les objectifs suivants :</p>
+<section id="id1">
+<h3>Objectifs :<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Changer les jeux de données (en utilisant les jeux de données disponibles de Tensorflow)</p></li>
-<li><p>Modifier les hyperparamètres (nombre de neurones, taux d’apprentissage,…) et comparer les rapports de classification.</p></li>
+<li><p><strong>Chargement et prétraitement des données</strong> :</p>
+<ul class="simple">
+<li><p>Chargez le jeu de données <strong>Reuters</strong> à l’aide de <code class="docutils literal notranslate"><span class="pre">tf.keras.datasets.reuters</span></code>.</p></li>
+<li><p>Prétraitez les données en veillant à convertir les textes en séquences de tokens numériques compatibles avec le modèle. Utilisez des techniques comme la tokenisation et le padding pour obtenir des séquences de longueur uniforme.</p></li>
+<li><p><strong>Conseils</strong> : Utilisez <code class="docutils literal notranslate"><span class="pre">Tokenizer</span></code> de <code class="docutils literal notranslate"><span class="pre">tf.keras.preprocessing.text</span></code> pour transformer les textes en séquences numériques et <code class="docutils literal notranslate"><span class="pre">pad_sequences</span></code> pour uniformiser la longueur des séquences.</p></li>
+</ul>
+</li>
+<li><p><strong>Construction d’un modèle de réseau de neurones</strong> :</p>
+<ul class="simple">
+<li><p>Créez un modèle de réseau de neurones profond pour la classification des textes. Expérimentez avec différents types de couches pour trouver une architecture adaptée (par exemple, couches d’embedding pour les mots, couches denses, ou couches LSTM ou GRU pour capturer la structure des séquences).</p></li>
+<li><p><strong>Conseils</strong> : Essayez d’abord une architecture simple (comme une combinaison d’Embedding et Dense), puis explorez l’ajout de couches récurrentes pour une meilleure compréhension du contexte des mots.</p></li>
+</ul>
+</li>
+<li><p><strong>Optimisation des hyperparamètres</strong> :</p>
+<ul class="simple">
+<li><p>Modifiez les hyperparamètres du modèle (par exemple, nombre de neurones, nombre de couches, taux d’apprentissage, nombre d’époques) et observez leur impact sur les performances du modèle.</p></li>
+<li><p><strong>Conseils</strong> : Commencez avec un taux d’apprentissage de base (par exemple, 0.001) et ajustez-le en fonction de la rapidité de convergence. Expérimentez également avec des tailles de batch différentes et observez leur effet.</p></li>
+</ul>
+</li>
+<li><p><strong>Entraînement et évaluation du modèle</strong> :</p>
+<ul class="simple">
+<li><p>Entraînez votre modèle en utilisant les données de Reuters et évaluez sa performance en termes de précision, rappel et score F1.</p></li>
+<li><p><strong>Conseils</strong> : Utilisez la fonction <code class="docutils literal notranslate"><span class="pre">classification_report</span></code> de <code class="docutils literal notranslate"><span class="pre">sklearn.metrics</span></code> pour obtenir un rapport de classification détaillé et <code class="docutils literal notranslate"><span class="pre">history</span></code> de Keras pour visualiser la précision et la perte au cours de l’entraînement.</p></li>
+</ul>
+</li>
+<li><p><strong>Analyse des résultats et visualisation</strong> :</p>
+<ul class="simple">
+<li><p>Comparez les différentes configurations testées en termes de performance. Incluez des graphiques pour illustrer la précision et la perte au fil des époques pour chaque configuration.</p></li>
+<li><p><strong>Conseils</strong> : Utilisez des graphiques pour représenter la précision d’entraînement et de validation au fil des époques, et comparez les modèles pour voir comment les choix d’architecture et d’hyperparamètres influencent les résultats.</p></li>
+</ul>
+</li>
+<li><p><strong>Documentation des observations et conclusions</strong> :</p>
+<ul class="simple">
+<li><p>Documentez les configurations testées (types de couches, hyperparamètres, etc.), les résultats obtenus et les observations sur les performances du modèle en fonction des ajustements effectués.</p></li>
+</ul>
+</li>
 </ol>
+</section>
 </section>
 <section id="exercice-2-3">
 <h2>Exercice 2.3<a class="headerlink" href="#exercice-2-3" title="Link to this heading">#</a></h2>
-<section id="modeles-lstm">
-<h3>Modèles LSTM<a class="headerlink" href="#modeles-lstm" title="Link to this heading">#</a></h3>
-<p><strong>Prévision des séries temporelles avec les modèles LSTM</strong> : Veuillez vérifier et lancer le code suivant
-<a class="reference external" href="https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/">https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/</a></p>
-<p>Observez comment les séquences sont générées dans ces exemples.</p>
+<p><a class="reference internal" href="../Projet/miniprojet-notebook.html"><span class="std std-doc">Mini projet - comprendre la traduction des propriétés de Wikidata</span></a></p>
+<section id="objectif-de-l-exercice">
+<h3>Objectif de l’Exercice<a class="headerlink" href="#objectif-de-l-exercice" title="Link to this heading">#</a></h3>
+<p>Dans le cadre de votre mini-projet, vous allez tester des modèles d’apprentissage profond pour prédire les séquences de traductions possibles à partir des propriétés de Wikidata.</p>
+<section id="contexte">
+<h4>Contexte<a class="headerlink" href="#contexte" title="Link to this heading">#</a></h4>
+<p>Considérez la séquence suivante saisie par l’utilisateur :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;it&#39;</span><span class="p">,</span> <span class="s1">&#39;fi&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Votre modèle doit être capable de renvoyer la langue suivante, par exemple :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;fr&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
 </section>
 </section>
-<section id="exercice-2-4">
-<h2>Exercice 2.4<a class="headerlink" href="#exercice-2-4" title="Link to this heading">#</a></h2>
-<p>Tester les modèles LSTM pour prédire les séquences possibles de traductions pour l’exercice final du mini projet.</p>
+<section id="tache">
+<h3>Tâche<a class="headerlink" href="#tache" title="Link to this heading">#</a></h3>
+<p>Votre objectif est de former un modèle de réseau neuronal capable de prédire la ou les prochaines traductions probables pour des étiquettes, descriptions ou alias. Pour cela, vous devez suivre les étapes ci-dessous :</p>
+<ol class="arabic simple">
+<li><p><strong>Préparation des Données</strong>:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../Projet/miniprojet-notebook.html"><span class="std std-doc">Comprendre la traduction des propriétés de Wikidata</span></a></p></li>
+<li><p>Utilisez la séquence de traduction des propriétés de Wikidata comme base de données.</p></li>
+<li><p>Séparez les séquences en ensembles d’entraînement et de test.</p></li>
+</ul>
+</li>
+<li><p><strong>Modélisation</strong>:</p>
+<ul class="simple">
+<li><p>Implémentez un modèle de réseau neuronal.</p></li>
+</ul>
+</li>
+<li><p><strong>Évaluation</strong>:</p>
+<ul class="simple">
+<li><p>Après l’entraînement du modèle, évaluez ses performances sur l’ensemble de test.</p></li>
+<li><p>Veuillez indiquer les mesures de précision et toute autre métrique pertinente pour évaluer la qualité des traductions prédites.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="indications">
+<h3>Indications<a class="headerlink" href="#indications" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Pensez à prétraiter vos données, notamment en nettoyant les entrées et en les normalisant.</p></li>
+<li><p>Pour améliorer la performance de votre modèle, envisagez d’ajuster les hyperparamètres et de tester différentes architectures.</p></li>
 </ul>
 </section>
-<section id="soumission">
-<h2>Soumission<a class="headerlink" href="#soumission" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Veuillez soumettre uniquement vos Jupyter Notebooks.</p></li>
-<li><p>Veuillez ne pas soumettre vos images, vos fichiers JSON, TSV et CSV.</p></li>
-<li><p>Compressez et renommez vos travaux pratiques (1 et 2) sous le nom de Name1_Name2_[Name3].zip, où Name1, Name2,… sont vos noms.</p></li>
-<li><p>Soumettez vos travaux pratiques en ligne.</p></li>
-</ul>
 </section>
 <section id="references">
 <h2>Références<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://towardsdatascience.com/multilayer-perceptron-explained-with-a-real-life-example-and-python-code-sentiment-analysis-cb408ee93141">Multilayer Perceptron Explained with a Real-Life Example and Python Code: Sentiment Analysis</a></p></li>
+<li><p><strong>Prévision des séries temporelles avec les modèles LSTM</strong> : <a class="reference external" href="https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/">Time Series Prediction with LSTM Recurrent Neural Networks in Python with Keras</a></p></li>
 </ul>
 </section>
 </section>
@@ -479,13 +557,19 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectifs">Objectifs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-1">Exercice 2.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-2">Exercice 2.2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-3">Exercice 2.3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeles-lstm">Modèles LSTM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-2">Exercice 2.2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Objectifs :</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-4">Exercice 2.4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soumission">Soumission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-3">Exercice 2.3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectif-de-l-exercice">Objectif de l’Exercice</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contexte">Contexte</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tache">Tâche</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indications">Indications</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">Références</a></li>
 </ul>
   </nav></div>
