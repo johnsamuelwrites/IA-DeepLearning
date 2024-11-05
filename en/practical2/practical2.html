@@ -323,13 +323,20 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1">Exercise 2.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-2">Exercise 2.2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-3">Exercise 2.3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lstm-models">LSTM models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-2">Exercise 2.2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-4">Exercise 2.4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-3">Exercise 2.3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Objectives</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-4">Exercise 2.4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -344,71 +351,190 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="practical-work-2">
 <h1>Practical Work 2<a class="headerlink" href="#practical-work-2" title="Link to this heading">#</a></h1>
-<p><strong>Academic year: 2022-2023</strong></p>
+<p><strong>Academic year: 2024-2025</strong></p>
 <section id="goals">
 <h2>Goals<a class="headerlink" href="#goals" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Implementation of Multilayer perceptron in Python</p></li>
-<li><p>LSTM models</p></li>
+<li><p><strong>Knowledge Modeling and Data Querying</strong>: Use a logical language to structure a knowledge base and create rules to extract specific information from the data.</p></li>
+<li><p><strong>Text and Image Classification</strong>: Design and train neural network models for text classification (exercise 2.2) and image classification (exercise 2.4), focusing on data preprocessing, hyperparameter optimization, and model performance evaluation.</p></li>
+<li><p><strong>Sequence Prediction</strong>: Develop a model for translation sequence prediction, applying sequential data preparation techniques and evaluating model performance on test data.</p></li>
 </ol>
 </section>
 <section id="exercise-2-1">
 <h2>Exercise 2.1<a class="headerlink" href="#exercise-2-1" title="Link to this heading">#</a></h2>
-<p>Implement the multi-layer Python perceptron with the following features</p>
+<p>You need to model a knowledge base for a school using GNU Prolog. This base should contain the following information:</p>
+<ul class="simple">
+<li><p>Students and their personal information (name, surname, date of birth, etc.).</p></li>
+<li><p>The project groups to which students belong.</p></li>
+<li><p>Management of students’ grades in different subjects.</p></li>
+<li><p>A list of subjects with their names and descriptions.</p></li>
+</ul>
 <ol class="arabic simple">
-<li><p>Configurable activation function</p></li>
-<li><p>Configurable number of inputs</p></li>
-<li><p>Configurable number of epochs and training rates</p></li>
-<li><p>Make predictions</p></li>
-<li><p>Back-propagation</p></li>
+<li><p><strong>Describe the facts and rules</strong> needed to represent this information in your Prolog program.</p></li>
+<li><p><strong>Write a program in Prolog</strong> containing example data and rules. For example, you could include:</p>
+<ul class="simple">
+<li><p>A rule to find all students in a specific project group.</p></li>
+<li><p>A rule to calculate the average grades of a student in a subject.</p></li>
+<li><p>A rule to list the subjects a student is enrolled in.</p></li>
+</ul>
+</li>
+<li><p><strong>Show examples of queries</strong> to retrieve information from the knowledge base (for example, getting the list of students in a group or obtaining a student’s average grade).</p></li>
 </ol>
-<p>Test your model with simple functions.</p>
-<p>Reference: <a class="reference external" href="https://www.kaggle.com/vitorgamalemos/multilayer-perceptron-from-scratch/notebook">https://www.kaggle.com/vitorgamalemos/multilayer-perceptron-from-scratch/notebook</a></p>
 </section>
 <section id="exercise-2-2">
 <h2>Exercise 2.2<a class="headerlink" href="#exercise-2-2" title="Link to this heading">#</a></h2>
-<p>The following examples show how to work with the different tensorflow datasets and how to use classification using tensorflow deep neural networks.</p>
+<p>Check the following classification examples with deep neural networks using TensorFlow.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../Project/Data.html"><span class="std std-doc">Data Processing in Tensorflow</span></a></p></li>
-<li><p><a class="reference internal" href="../Project/Introduction.html"><span class="std std-doc">Handwriting recognition using MNIST dataset</span></a></p></li>
-<li><p><a class="reference internal" href="../Project/Texts.html"><span class="std std-doc">Text classification based on IMDB reviews</span></a></p></li>
+<li><p><a class="reference internal" href="#../Projet/Data.ipynb"><span class="xref myst">Data Processing in TensorFlow</span></a></p></li>
+<li><p><a class="reference internal" href="#../Projet/Introduction.ipynb"><span class="xref myst">Handwritten Digit Recognition using the MNIST dataset</span></a></p></li>
+<li><p><a class="reference internal" href="#../Projet/Textes.ipynb"><span class="xref myst">Text Classification using IMDB Reviews</span></a></p></li>
 </ul>
-<p>You have the following goals:</p>
+<p><strong>Question:</strong>
+You will work on a text classification example using the <strong>Reuters</strong> dataset available in TensorFlow. This dataset contains news articles categorized into different topics, making it an excellent dataset for text classification.</p>
+<p>Your task is to explore this dataset and develop a text classification model using deep neural networks in TensorFlow. You have the following objectives:</p>
+<section id="objectives">
+<h3>Objectives:<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Change the datasets (using the available datasets from Tensorflow)</p></li>
-<li><p>Change the hyperparameters (number of neurons, learning rate,…) and compare the classification reports.</p></li>
+<li><p><strong>Loading and Preprocessing Data</strong>:</p>
+<ul class="simple">
+<li><p>Load the <strong>Reuters</strong> dataset using <code class="docutils literal notranslate"><span class="pre">tf.keras.datasets.reuters</span></code>.</p></li>
+<li><p>Preprocess the data by converting the texts into sequences of numerical tokens compatible with the model. Use techniques like tokenization and padding to ensure uniform sequence lengths.</p></li>
+<li><p><strong>Tips</strong>: Use <code class="docutils literal notranslate"><span class="pre">Tokenizer</span></code> from <code class="docutils literal notranslate"><span class="pre">tf.keras.preprocessing.text</span></code> to transform texts into numerical sequences, and <code class="docutils literal notranslate"><span class="pre">pad_sequences</span></code> to standardize sequence lengths.</p></li>
+</ul>
+</li>
+<li><p><strong>Building a Neural Network Model</strong>:</p>
+<ul class="simple">
+<li><p>Create a deep neural network model for text classification. Experiment with different layer types to find an appropriate architecture (e.g., embedding layers for words, dense layers, or LSTM or GRU layers to capture sequence structures).</p></li>
+<li><p><strong>Tips</strong>: Start with a simple architecture (like a combination of Embedding and Dense layers), then explore adding recurrent layers for better word context understanding.</p></li>
+</ul>
+</li>
+<li><p><strong>Hyperparameter Optimization</strong>:</p>
+<ul class="simple">
+<li><p>Modify the model’s hyperparameters (e.g., number of neurons, number of layers, learning rate, number of epochs) and observe their impact on model performance.</p></li>
+<li><p><strong>Tips</strong>: Start with a basic learning rate (e.g., 0.001) and adjust based on convergence speed. Also experiment with different batch sizes and observe their effects.</p></li>
+</ul>
+</li>
+<li><p><strong>Model Training and Evaluation</strong>:</p>
+<ul class="simple">
+<li><p>Train your model using the Reuters data and evaluate its performance in terms of accuracy, recall, and F1 score.</p></li>
+<li><p><strong>Tips</strong>: Use <code class="docutils literal notranslate"><span class="pre">classification_report</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.metrics</span></code> for a detailed classification report and Keras <code class="docutils literal notranslate"><span class="pre">history</span></code> to visualize accuracy and loss over training.</p></li>
+</ul>
+</li>
+<li><p><strong>Result Analysis and Visualization</strong>:</p>
+<ul class="simple">
+<li><p>Compare the performance of different configurations tested. Include graphs to show accuracy and loss over epochs for each configuration.</p></li>
+<li><p><strong>Tips</strong>: Use plots to represent training and validation accuracy over epochs and compare models to see how architecture and hyperparameter choices affect results.</p></li>
+</ul>
+</li>
+<li><p><strong>Document Observations and Conclusions</strong>:</p>
+<ul class="simple">
+<li><p>Document the configurations tested (layer types, hyperparameters, etc.), the results obtained, and observations on model performance based on adjustments made.</p></li>
+</ul>
+</li>
 </ol>
+</section>
 </section>
 <section id="exercise-2-3">
 <h2>Exercise 2.3<a class="headerlink" href="#exercise-2-3" title="Link to this heading">#</a></h2>
-<section id="lstm-models">
-<h3>LSTM models<a class="headerlink" href="#lstm-models" title="Link to this heading">#</a></h3>
-<p><strong>Time Series Prediction with LSTM models</strong>: Please check and run the
-following code
-<a class="reference external" href="https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/">https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/</a></p>
-<p>Observe how sequences are generated in these examples.</p>
+<p>In this exercise, you will use the <strong>CIFAR-10</strong> dataset from TensorFlow to build and evaluate a convolutional neural network (CNN) model capable of classifying images into 10 categories (airplanes, cars, birds, cats, etc.).</p>
+<section id="id1">
+<h3>Objectives<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Loading and Preprocessing Data</strong>:</p>
+<ul class="simple">
+<li><p>Load the CIFAR-10 dataset from <code class="docutils literal notranslate"><span class="pre">tf.keras.datasets.cifar10</span></code>. This dataset contains 60,000 32x32 pixel images divided into 10 classes, with 50,000 images for training and 10,000 for testing.</p></li>
+<li><p>Normalize the pixel values of the images between 0 and 1 to facilitate learning.</p></li>
+<li><p>Apply data augmentation techniques to make the model more robust. Use transformations such as rotation, zoom, and horizontal flipping to increase the diversity of the training images.</p></li>
+</ul>
+</li>
+<li><p><strong>Creating a Convolutional Neural Network (CNN) Model</strong>:</p>
+<ul class="simple">
+<li><p>Design a CNN model using convolutional and pooling layers to extract important features from the images.</p></li>
+<li><p>Suggested structure:</p>
+<ul>
+<li><p><strong>Convolutional Layer</strong>: Multiple filters (e.g., 32, 64, 128) with a small filter size (3x3), followed by ReLU activation.</p></li>
+<li><p><strong>Pooling Layer</strong>: Reduce the size of feature maps to decrease complexity (e.g., 2x2 max pooling).</p></li>
+<li><p><strong>Dense Layers</strong>: After the convolutional layers, flatten the feature maps and add one or more fully connected layers for classification.</p></li>
+<li><p><strong>Regularization</strong>: Integrate regularization techniques such as dropout or batch normalization to prevent overfitting.</p></li>
+</ul>
+</li>
+<li><p>Test different architectures by adding or removing layers to observe their impact on performance.</p></li>
+</ul>
+</li>
+<li><p><strong>Training and Optimizing the Model</strong>:</p>
+<ul class="simple">
+<li><p>Train the model using the <code class="docutils literal notranslate"><span class="pre">sparse_categorical_crossentropy</span></code> loss function, as this is a multiclass classification problem.</p></li>
+<li><p>Use the Adam optimizer and experiment with different learning rates to see their effect on convergence (e.g., start with 0.001).</p></li>
+<li><p>Adjust other hyperparameters like batch size and the number of epochs to find an optimal configuration that balances accuracy and computation time.</p></li>
+</ul>
+</li>
+<li><p><strong>Evaluating and Analyzing Performance</strong>:</p>
+<ul class="simple">
+<li><p>Evaluate the model on the test set and calculate overall accuracy as well as accuracy for each class.</p></li>
+<li><p>Generate a classification report (e.g., with <code class="docutils literal notranslate"><span class="pre">classification_report</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.metrics</span></code>) and a confusion matrix to identify classes where the model performs well and areas where improvements are possible.</p></li>
+</ul>
+</li>
+<li><p><strong>Documenting and Visualizing Results</strong>:</p>
+<ul class="simple">
+<li><p>Document the configurations tested (number of layers, hyperparameters, etc.) and the performance achieved.</p></li>
+<li><p>Visualize training and validation accuracy and loss curves over epochs to analyze the model’s learning behavior.</p></li>
+<li><p>Display examples of correct and incorrect predictions to better understand the model’s errors and identify ways to improve it.</p></li>
+</ul>
+</li>
+</ol>
 </section>
 </section>
 <section id="exercise-2-4">
 <h2>Exercise 2.4<a class="headerlink" href="#exercise-2-4" title="Link to this heading">#</a></h2>
-<p>Test the LSTM models to predict possible sequences of translations for the final exercise of the Mini Project.</p>
+<p><a class="reference internal" href="#../Projet/miniprojet-notebook.ipynb"><span class="xref myst">Mini Project - Understanding the Translation of Wikidata Properties</span></a></p>
+<p>For this mini-project, you will test deep learning models to predict possible translation sequences based on Wikidata properties.</p>
+<section id="context">
+<h3>Context<a class="headerlink" href="#context" title="Link to this heading">#</a></h3>
+<p>Consider the following sequence entered by the user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;it&#39;</span><span class="p">,</span> <span class="s1">&#39;fi&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Your model should be able to predict the next language in the sequence, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;fr&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="task">
+<h3>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h3>
+<p>Your goal is to train a neural network model capable of predicting the probable next translations for labels, descriptions, or aliases. To do this, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p><strong>Data Preparation</strong>:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../Project/miniproject-notebook.html"><span class="std std-doc">Understanding Property Translation of Wikidata</span></a></p></li>
+<li><p>Use the translation sequence of Wikidata properties as your dataset.</p></li>
+<li><p>Split the sequences into training and test sets.</p></li>
+</ul>
+</li>
+<li><p><strong>Modeling</strong>:</p>
+<ul class="simple">
+<li><p>Implement a neural network model.</p></li>
+</ul>
+</li>
+<li><p><strong>Evaluation</strong>:</p>
+<ul class="simple">
+<li><p>After training the model, evaluate its performance on the test set.</p></li>
+<li><p>Provide metrics such as accuracy and any other relevant measurements to assess the quality of the predicted translations.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="guidelines">
+<h3>Guidelines<a class="headerlink" href="#guidelines" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Consider preprocessing your data, including cleaning entries and normalizing them.</p></li>
+<li><p>To improve your model’s performance, consider adjusting hyperparameters and testing different architectures.</p></li>
 </ul>
 </section>
-<section id="submission">
-<h2>Submission<a class="headerlink" href="#submission" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Please submit <strong>only</strong> your Jupyter Notebooks.</p></li>
-<li><p>Please <strong>don’t</strong> submit your images, JSON, TSV and CSV files.</p></li>
-<li><p>Compress and rename your practical works (1 and 2) as Name1_Name2_[Name3].zip, where Name1, Name2,… are your names.</p></li>
-<li><p>Submit your project work online.</p></li>
-</ul>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://towardsdatascience.com/multilayer-perceptron-explained-with-a-real-life-example-and-python-code-sentiment-analysis-cb408ee93141">Multilayer Perceptron Explained with a Real-Life Example and Python Code: Sentiment Analysis</a></p></li>
+<li><p><strong>Time Series Prediction with LSTM models</strong>: <a class="reference external" href="https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/">Time Series Prediction with LSTM Recurrent Neural Networks in Python with Keras</a></p></li>
 </ul>
 </section>
 </section>
@@ -480,13 +606,20 @@ following code
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1">Exercise 2.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-2">Exercise 2.2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-3">Exercise 2.3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lstm-models">LSTM models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-2">Exercise 2.2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-4">Exercise 2.4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-3">Exercise 2.3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Objectives</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-4">Exercise 2.4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
