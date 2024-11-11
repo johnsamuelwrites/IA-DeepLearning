@@ -1,0 +1,898 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exercice 3.1 : Classification de Sentiment avec Augmentation du Nombre de Neurones &#8212; Artificial Intelligence and Deep Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'fr/TP3/TP3';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/deeplearning.svg" class="logo__image only-light" alt="Artificial Intelligence and Deep Learning - Home"/>
+    <img src="../../_static/deeplearning.svg" class="logo__image only-dark pst-js-only" alt="Artificial Intelligence and Deep Learning - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    IA-DeepLearning
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Français</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TP1/TP1.html">Travaux pratiques 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TP2/TP2.html">Travaux pratiques 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Projet/projet.html">Projet</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">English</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../en/README.html">Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../en/practical1/practical1.html">Practical Work 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../en/practical2/practical2.html">Practical Work 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../en/Project/project.html">Project</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/johnsamuelwrites/IA-DeepLearning/master?urlpath=lab/tree/fr/TP3/TP3.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/johnsamuelwrites/IA-DeepLearning/blob/master/fr/TP3/TP3.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/fr/TP3/TP3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercice 3.1 : Classification de Sentiment avec Augmentation du Nombre de Neurones</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercice 3.1 : Classification de Sentiment avec Augmentation du Nombre de Neurones</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3-2-classification-d-images-fine-grained-avec-augmentation-du-nombre-de-neurones">Exercice 3.2 : Classification d’Images Fine-grained avec Augmentation du Nombre de Neurones</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3-3-etudier-l-influence-de-la-taille-des-lots-sur-la-performance-du-modele">Exercice 3.3 : <strong>Étudier l’Influence de la Taille des Lots sur la Performance du Modèle</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#etapes">Étapes :</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charger-le-jeu-de-donnees">1. <strong>Charger le Jeu de Données</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-l-architecture-du-modele">2. <strong>Définir l’Architecture du Modèle</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#varier-la-taille-des-lots">3. <strong>Varier la Taille des Lots</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrainer-le-modele">4. <strong>Entraîner le Modèle</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyser-les-resultats">5. <strong>Analyser les Résultats</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracer-les-resultats">6. <strong>Tracer les Résultats</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3-4-classification-des-emotions-avec-le-jeu-de-donnees-crema-d">Exercice 3.4 : Classification des Émotions avec le Jeu de Données CREMA-D</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Étapes :</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chargement-et-pretraitement-des-donnees">1. <strong>Chargement et Prétraitement des Données</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construire-un-modele-simple-de-classification-des-emotions">2. <strong>Construire un Modèle Simple de Classification des Émotions</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-du-modele">3. <strong>Évaluation du Modèle</strong></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="exercice-3-1-classification-de-sentiment-avec-augmentation-du-nombre-de-neurones">
+<h1>Exercice 3.1 : Classification de Sentiment avec Augmentation du Nombre de Neurones<a class="headerlink" href="#exercice-3-1-classification-de-sentiment-avec-augmentation-du-nombre-de-neurones" title="Link to this heading">#</a></h1>
+<p><strong>Objectif</strong> : Créer un modèle simple de classification de texte pour classer les critiques de films en positives ou négatives. Commencez avec un petit nombre de neurones et augmentez progressivement ce nombre pour observer les effets sur la performance.</p>
+<p><strong>Données</strong> : Utilisez un sous-ensemble du jeu de données de critiques de films IMDB.</p>
+<p><strong>Étapes</strong> :</p>
+<ol class="arabic simple">
+<li><p>Commencez par une couche <code class="docutils literal notranslate"><span class="pre">Embedding</span></code>, suivie d’une couche <code class="docutils literal notranslate"><span class="pre">Dense</span></code> avec 16 neurones.</p></li>
+<li><p>Entraînez le modèle et enregistrez la précision.</p></li>
+<li><p>Augmentez progressivement le nombre de neurones dans la couche <code class="docutils literal notranslate"><span class="pre">Dense</span></code> (par exemple, de 16 à 64 puis à 128) et observez comment la précision et le temps d’entraînement sont affectés.</p></li>
+<li><p>Tracez les résultats pour la précision et la perte, y compris pour les tests de validation.</p></li>
+</ol>
+<p>Complétez le code ci-dessous.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.datasets</span> <span class="kn">import</span> <span class="n">imdb</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.sequence</span> <span class="kn">import</span> <span class="n">pad_sequences</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load and preprocess the data</span>
+<span class="n">vocab_size</span> <span class="o">=</span> <span class="mi">10000</span>  <span class="c1"># Only consider the top 10k words</span>
+<span class="n">max_length</span> <span class="o">=</span> <span class="mi">256</span>    <span class="c1"># Pad/truncate all reviews to be 256 words</span>
+
+<span class="c1"># Load IMDB data</span>
+<span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">vocab_size</span><span class="p">)</span>
+
+<span class="c1"># Pad sequences to the same length</span>
+<span class="n">x_train</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_length</span><span class="p">)</span>
+<span class="n">x_test</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_length</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/imdb.npz
+<span class=" -Color -Color-Bold">17464789/17464789</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 0us/step
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_model</span><span class="p">(</span><span class="n">dense_neurons</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">input_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">GlobalAveragePooling1D</span><span class="p">(),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">dense_neurons</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)</span>
+    <span class="p">])</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+                  <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
+                  <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neuron_counts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">]</span>  <span class="c1"># Different sizes for the Dense layer</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">neurons</span> <span class="ow">in</span> <span class="n">neuron_counts</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Training model with </span><span class="si">{</span><span class="n">neurons</span><span class="si">}</span><span class="s2"> neurons in the Dense layer&quot;</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">build_model</span><span class="p">(</span><span class="n">dense_neurons</span><span class="o">=</span><span class="n">neurons</span><span class="p">)</span>
+
+    <span class="c1"># Train the model</span>
+    <span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+        <span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>
+        <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+        <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Evaluate the model</span>
+    <span class="n">loss</span><span class="p">,</span> <span class="n">accuracy</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">[</span><span class="n">neurons</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;accuracy&#39;</span><span class="p">:</span> <span class="n">accuracy</span><span class="p">,</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="n">loss</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercice-3-2-classification-d-images-fine-grained-avec-augmentation-du-nombre-de-neurones">
+<h1>Exercice 3.2 : Classification d’Images Fine-grained avec Augmentation du Nombre de Neurones<a class="headerlink" href="#exercice-3-2-classification-d-images-fine-grained-avec-augmentation-du-nombre-de-neurones" title="Link to this heading">#</a></h1>
+<p><strong>Objectif</strong> : Créer un modèle de classification d’images de base pour classer des images de fleurs (<code class="docutils literal notranslate"><span class="pre">oxford_flowers102</span></code> - le <em>Oxford 102 Flower Dataset</em>). Commencez avec un petit nombre de neurones et augmentez-les progressivement pour observer les effets sur la performance.</p>
+<p><strong>Données</strong> : Utilisez le <em>Oxford 102 Flower Dataset</em>, qui contient des images de 102 catégories de fleurs.</p>
+<p><strong>Étapes</strong> :</p>
+<ol class="arabic simple">
+<li><p>Commencez avec des couches <code class="docutils literal notranslate"><span class="pre">Conv2D</span></code> et <code class="docutils literal notranslate"><span class="pre">MaxPooling2D</span></code> pour l’extraction des caractéristiques des images.</p></li>
+<li><p>Ajoutez une couche <code class="docutils literal notranslate"><span class="pre">Flatten</span></code> pour convertir les cartes de caractéristiques 2D en un vecteur 1D.</p></li>
+<li><p>Ajoutez une couche <code class="docutils literal notranslate"><span class="pre">Dense</span></code> avec un petit nombre de neurones (par exemple, 32), suivie d’une couche de sortie.</p></li>
+<li><p>Entraînez le modèle et enregistrez la précision.</p></li>
+<li><p>Augmentez progressivement le nombre de neurones dans la couche <code class="docutils literal notranslate"><span class="pre">Dense</span></code> (par exemple, de 32 à 128 puis à 256) pour observer les changements dans la précision et le temps d’entraînement.</p></li>
+</ol>
+<p>Complétez le code ci-dessous.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">tensorflow_datasets</span> <span class="k">as</span> <span class="nn">tfds</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the Oxford 102 Flower Dataset</span>
+<span class="n">dataset</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;oxford_flowers102&#39;</span><span class="p">,</span> <span class="n">with_info</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">as_supervised</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Split the dataset into training and testing</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">]</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set image parameters</span>
+<span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>  <span class="c1"># Resize images to this size</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
+
+<span class="c1"># Data preprocessing function to resize images and normalize pixel values</span>
+<span class="k">def</span> <span class="nf">preprocess_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">image_size</span><span class="p">)</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span> <span class="o">/</span> <span class="mf">255.0</span>  <span class="c1"># Normalize pixel values to [0, 1]</span>
+    <span class="k">return</span> <span class="n">image</span><span class="p">,</span> <span class="n">label</span>
+
+<span class="c1"># Apply preprocessing to the train and test datasets</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">preprocess_image</span><span class="p">)</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">batch_size</span><span class="p">)</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">preprocess_image</span><span class="p">)</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">batch_size</span><span class="p">)</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercice-3-3-etudier-l-influence-de-la-taille-des-lots-sur-la-performance-du-modele">
+<h1>Exercice 3.3 : <strong>Étudier l’Influence de la Taille des Lots sur la Performance du Modèle</strong><a class="headerlink" href="#exercice-3-3-etudier-l-influence-de-la-taille-des-lots-sur-la-performance-du-modele" title="Link to this heading">#</a></h1>
+<p><strong>Objectif</strong> : Cet exercice démontre comment différentes tailles de lots affectent la performance d’un modèle de réseau neuronal, y compris sa vitesse d’entraînement, sa perte, sa précision et sa capacité de généralisation.</p>
+<p><strong>Jeu de données</strong> : <strong>Fashion MNIST</strong> — un jeu de données contenant des images en niveaux de gris de 10 types de vêtements différents, avec 60 000 images d’entraînement et 10 000 images de test.</p>
+<hr class="docutils" />
+</section>
+<section id="etapes">
+<h1>Étapes :<a class="headerlink" href="#etapes" title="Link to this heading">#</a></h1>
+<section id="charger-le-jeu-de-donnees">
+<h2>1. <strong>Charger le Jeu de Données</strong><a class="headerlink" href="#charger-le-jeu-de-donnees" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Utilisez <code class="docutils literal notranslate"><span class="pre">tensorflow.keras.datasets.fashion_mnist</span></code> pour charger le jeu de données.</p></li>
+<li><p>Prétraitez les données en normalisant les valeurs des pixels dans l’intervalle <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>.</p></li>
+</ul>
+</section>
+<section id="definir-l-architecture-du-modele">
+<h2>2. <strong>Définir l’Architecture du Modèle</strong><a class="headerlink" href="#definir-l-architecture-du-modele" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Construisez un modèle simple de réseau neuronal convolutionnel (CNN) ou de réseau neuronal complètement connecté (FCNN).</p></li>
+<li><p>Le modèle doit inclure :</p>
+<ul>
+<li><p>Une couche d’entrée (pour gérer les images 28x28).</p></li>
+<li><p>Une ou plusieurs couches cachées (par exemple, Dense, Conv2D).</p></li>
+<li><p>Une couche de sortie avec 10 unités (une pour chaque catégorie de vêtement).</p></li>
+</ul>
+</li>
+<li><p>Utilisez <strong>l’activation softmax</strong> pour la couche de sortie, car il s’agit d’un problème de classification multiclasse.</p></li>
+</ul>
+</section>
+<section id="varier-la-taille-des-lots">
+<h2>3. <strong>Varier la Taille des Lots</strong><a class="headerlink" href="#varier-la-taille-des-lots" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Expérimentez avec différentes tailles de lots (par exemple, 16, 32, 64, 128, 256).</p></li>
+<li><p>Pour chaque taille de lot :</p>
+<ul>
+<li><p>Entraînez le modèle pendant un nombre fixe d’époques (par exemple, 10 époques).</p></li>
+<li><p>Enregistrez la perte d’entraînement, la perte de validation et la précision.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="entrainer-le-modele">
+<h2>4. <strong>Entraîner le Modèle</strong><a class="headerlink" href="#entrainer-le-modele" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Entraînez le modèle pour chaque taille de lot et mesurez les éléments suivants :</p>
+<ul>
+<li><p><strong>Temps d’entraînement</strong> : Combien de temps il faut pour terminer une époque.</p></li>
+<li><p><strong>Perte d’entraînement et de validation</strong> : Suivez l’évolution de la perte pendant l’entraînement.</p></li>
+<li><p><strong>Précision</strong> : Suivez les performances du modèle sur les données d’entraînement et de validation.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="analyser-les-resultats">
+<h2>5. <strong>Analyser les Résultats</strong><a class="headerlink" href="#analyser-les-resultats" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Comparez les éléments suivants :</p>
+<ul>
+<li><p><strong>Temps d’entraînement</strong> : Les tailles de lots plus grandes peuvent conduire à un entraînement plus rapide, mais elles pourraient aussi entraîner des rendements décroissants en termes de performance du modèle.</p></li>
+<li><p><strong>Perte et précision</strong> : Observez comment la taille du lot affecte la convergence de la fonction de perte et la précision sur les ensembles de données d’entraînement et de validation.</p></li>
+<li><p><strong>Surapprentissage</strong> : Vérifiez si des tailles de lots plus petites mènent à une meilleure généralisation (perte de validation plus faible) ou si des tailles de lots plus grandes entraînent un surapprentissage.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="tracer-les-resultats">
+<h2>6. <strong>Tracer les Résultats</strong><a class="headerlink" href="#tracer-les-resultats" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Tracez des graphiques comparant la perte d’entraînement, la perte de validation et la précision pour différentes tailles de lots.</p></li>
+<li><p>Tracez le temps d’entraînement pour différentes tailles de lots.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.datasets</span> <span class="kn">import</span> <span class="n">fashion_mnist</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load and preprocess the dataset</span>
+<span class="p">(</span><span class="n">train_images</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">),</span> <span class="p">(</span><span class="n">test_images</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span> <span class="o">=</span> <span class="n">fashion_mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+<span class="n">train_images</span><span class="p">,</span> <span class="n">test_images</span> <span class="o">=</span> <span class="n">train_images</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">test_images</span> <span class="o">/</span> <span class="mf">255.0</span>
+
+<span class="c1"># Reshape the images to (28, 28, 1) to match the input shape expected by CNNs</span>
+<span class="n">train_images</span> <span class="o">=</span> <span class="n">train_images</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">test_images</span> <span class="o">=</span> <span class="n">test_images</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercice-3-4-classification-des-emotions-avec-le-jeu-de-donnees-crema-d">
+<h1>Exercice 3.4 : Classification des Émotions avec le Jeu de Données CREMA-D<a class="headerlink" href="#exercice-3-4-classification-des-emotions-avec-le-jeu-de-donnees-crema-d" title="Link to this heading">#</a></h1>
+<p><strong>Objectif</strong> : Créer un modèle pour classifier les émotions à partir de clips audio de discours humain. Cet exercice se concentre sur l’identification des émotions telles que la colère, la joie, la tristesse et les tons neutres, en utilisant un prétraitement audio de base et un réseau neuronal convolutionnel.</p>
+<p><strong>Jeu de données</strong> : <strong>CREMA-D</strong> (Crowd-sourced Emotional Multimodal Actors Dataset) contient des clips audio d’acteurs exprimant six émotions : colère, dégoût, peur, joie, neutre et tristesse. Bien qu’il ne soit pas directement disponible dans <code class="docutils literal notranslate"><span class="pre">tensorflow_datasets</span></code>, il est suffisamment petit pour être prétraité et chargé efficacement dans TensorFlow.</p>
+<hr class="docutils" />
+</section>
+<section id="id1">
+<h1>Étapes :<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="chargement-et-pretraitement-des-donnees">
+<h2>1. <strong>Chargement et Prétraitement des Données</strong><a class="headerlink" href="#chargement-et-pretraitement-des-donnees" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Charger le Jeu de Données</strong> :</p>
+<ul>
+<li><p>Téléchargez le jeu de données CREMA-D depuis sa <a class="reference external" href="https://github.com/CheyneyComputerScience/CREMA-D">source officielle</a>.</p></li>
+<li><p>Organisez les fichiers audio et les étiquettes d’émotions correspondantes.</p></li>
+</ul>
+</li>
+<li><p><strong>Traitement Audio</strong> :</p>
+<ul>
+<li><p>Convertissez les formes d’onde audio en spectrogrammes ou en mel-spectrogrammes pour chaque clip audio.</p></li>
+<li><p>Normalisez les spectrogrammes et ajustez-les pour qu’ils aient une longueur constante, par exemple, 2 secondes.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="construire-un-modele-simple-de-classification-des-emotions">
+<h2>2. <strong>Construire un Modèle Simple de Classification des Émotions</strong><a class="headerlink" href="#construire-un-modele-simple-de-classification-des-emotions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Couches Convolutionnelles</strong> :</p>
+<ul>
+<li><p>Commencez par une couche <code class="docutils literal notranslate"><span class="pre">Conv2D</span></code> pour apprendre les motifs spatiaux dans le spectrogramme.</p></li>
+<li><p>Ajoutez des couches <code class="docutils literal notranslate"><span class="pre">Conv2D</span></code> supplémentaires et des couches <code class="docutils literal notranslate"><span class="pre">MaxPooling2D</span></code> pour capturer des caractéristiques de niveau supérieur.</p></li>
+</ul>
+</li>
+<li><p><strong>Couches Flatten et Dense</strong> :</p>
+<ul>
+<li><p>Aplatissez la sortie finale et faites-la passer à travers une ou deux couches <code class="docutils literal notranslate"><span class="pre">Dense</span></code> pour la classification.</p></li>
+<li><p>Utilisez une activation softmax dans la couche <code class="docutils literal notranslate"><span class="pre">Dense</span></code> finale avec six unités de sortie, une pour chaque classe d’émotion.</p></li>
+</ul>
+</li>
+<li><p><strong>Compiler et Entraîner</strong> :</p>
+<ul>
+<li><p>Utilisez l’entropie croisée catégorielle comme fonction de perte et un optimiseur comme Adam.</p></li>
+<li><p>Entraînez le modèle sur l’ensemble d’entraînement, en utilisant un ensemble de validation pour ajuster les performances.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="evaluation-du-modele">
+<h2>3. <strong>Évaluation du Modèle</strong><a class="headerlink" href="#evaluation-du-modele" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Précision</strong> :</p>
+<ul>
+<li><p>Évaluez la précision du modèle sur l’ensemble de test.</p></li>
+</ul>
+</li>
+<li><p><strong>Matrice de Confusion</strong> :</p>
+<ul>
+<li><p>Générez une matrice de confusion pour analyser quelles émotions sont bien classées et lesquelles sont fréquemment mal classées.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">CheyneyComputerScience</span><span class="o">/</span><span class="n">CREMA</span><span class="o">-</span><span class="n">D</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">librosa</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
+
+<span class="c1"># Define path to CREMA-D dataset (update path accordingly)</span>
+<span class="n">DATA_PATH</span> <span class="o">=</span> <span class="s1">&#39;/content/CREMA-D/AudioWAV&#39;</span>
+<span class="n">LABELS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ANG&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;DIS&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;FEA&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;HAP&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;NEU&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;SAD&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_audio</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="mi">16000</span><span class="p">):</span>
+    <span class="n">audio</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+    <span class="c1"># Calculate the desired length in samples</span>
+    <span class="n">target_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sr</span> <span class="o">*</span> <span class="n">max_length</span><span class="p">)</span>
+    <span class="c1"># Adjust the audio to the desired length</span>
+    <span class="n">audio</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">fix_length</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">target_length</span><span class="p">)</span>
+    <span class="c1"># Convert audio to a mel-spectrogram</span>
+    <span class="n">spectrogram</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">melspectrogram</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">audio</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+    <span class="n">spectrogram_db</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">power_to_db</span><span class="p">(</span><span class="n">spectrogram</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">spectrogram_db</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load and preprocess data</span>
+<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">targets</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_path</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.wav&#39;</span><span class="p">):</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+            <span class="n">label_str</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># e.g., &quot;ANG&quot;, &quot;DIS&quot;</span>
+            <span class="k">if</span> <span class="n">label_str</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
+                <span class="n">spectrogram</span> <span class="o">=</span> <span class="n">preprocess_audio</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spectrogram</span><span class="p">)</span>
+                <span class="n">targets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">label_str</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">targets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">DATA_PATH</span><span class="p">,</span> <span class="n">LABELS</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>  <span class="c1"># Add channel dimension for Conv2D</span>
+
+<span class="c1"># Split data into train and test sets</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./fr/TP3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercice 3.1 : Classification de Sentiment avec Augmentation du Nombre de Neurones</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3-2-classification-d-images-fine-grained-avec-augmentation-du-nombre-de-neurones">Exercice 3.2 : Classification d’Images Fine-grained avec Augmentation du Nombre de Neurones</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3-3-etudier-l-influence-de-la-taille-des-lots-sur-la-performance-du-modele">Exercice 3.3 : <strong>Étudier l’Influence de la Taille des Lots sur la Performance du Modèle</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#etapes">Étapes :</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charger-le-jeu-de-donnees">1. <strong>Charger le Jeu de Données</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-l-architecture-du-modele">2. <strong>Définir l’Architecture du Modèle</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#varier-la-taille-des-lots">3. <strong>Varier la Taille des Lots</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrainer-le-modele">4. <strong>Entraîner le Modèle</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyser-les-resultats">5. <strong>Analyser les Résultats</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracer-les-resultats">6. <strong>Tracer les Résultats</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3-4-classification-des-emotions-avec-le-jeu-de-donnees-crema-d">Exercice 3.4 : Classification des Émotions avec le Jeu de Données CREMA-D</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Étapes :</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chargement-et-pretraitement-des-donnees">1. <strong>Chargement et Prétraitement des Données</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construire-un-modele-simple-de-classification-des-emotions">2. <strong>Construire un Modèle Simple de Classification des Émotions</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-du-modele">3. <strong>Évaluation du Modèle</strong></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By John Samuel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
