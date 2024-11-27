@@ -6,14 +6,18 @@
 ## **Description du Projet : Construisez un pipeline de Deep Learning avec TensorFlow**
 
 **Objectif**  
-Développez un pipeline complet de deep learning en utilisant TensorFlow. Choisissez un domaine parmi le texte, l’audio ou les images et réalisez un projet incluant la préparation des données, la conception du modèle, l'entraînement, l’évaluation et le déploiement. Améliorez votre projet en intégrant des composantes d’IA symbolique pour ajouter des fonctionnalités ou de l’interprétabilité.
+Développez un pipeline complet de deep learning en utilisant TensorFlow. Choisissez un domaine parmi le texte, l’audio ou les images, sélectionnez un jeu de données adapté, et définissez un sujet précis pour votre projet. Développez un pipeline complet incluant la préparation des données, la conception du modèle, l'entraînement, l’évaluation et le déploiement. Améliorez votre projet en intégrant des composantes d’IA symbolique pour ajouter des fonctionnalités ou de l’interprétabilité.
 
 ---
 
 **Étapes pour réaliser le projet**  
 
-1. **Choisissez votre domaine**  
-   - Sélectionnez un domaine parmi le texte, l’audio ou les images selon vos préférences.  
+1. **Choisissez votre domaine et un sujet**
+   - Sélectionnez un domaine parmi le texte, l’audio ou les images.
+   - Définissez un sujet clair et précis lié à votre domaine. Voici quelques exemples :
+     - Texte : analyse des émotions, paraphrase, questions-réponses.
+     - Images : classification d’images, détection d’objets.
+     - Audio : reconnaissance vocale, distinction entre musique et parole, analyse des émotions. 
 
 2. **Sélectionnez un jeu de données**  
    - Choisissez un jeu de données parmi les sources proposées ou proposez le vôtre.  
@@ -49,7 +53,8 @@ Développez un pipeline complet de deep learning en utilisant TensorFlow. Choisi
 
 1. Une implémentation complète de votre pipeline avec TensorFlow.  
 2. Un rapport détaillé incluant :  
-   - La définition de la tâche et les détails du jeu de données.  
+   - Le sujet choisi, la problématique et les objectifs.
+   - Les données utilisées.  
    - Les méthodes de prétraitement.  
    - L’architecture du modèle et le processus d’entraînement.  
    - Les résultats de l’évaluation et les améliorations possibles.  
