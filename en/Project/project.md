@@ -5,25 +5,29 @@
 ## **Project Description: Build a Deep Learning Pipeline with TensorFlow**
 
 **Objective**  
-Develop a complete deep learning pipeline using TensorFlow. Choose one domain—text, audio, or images—and build a project that includes data preprocessing, model design, training, evaluation, and deployment. Enhance your project by integrating Symbolic AI components for added functionality or interpretability.
+Develop a complete deep learning pipeline using TensorFlow. Choose one domain—text, audio, or images—select a suitable dataset, and define a specific subject for your project. Develop a complete pipeline, including data preprocessing, model design, training, evaluation, and deployment.  Enhance your project by integrating Symbolic AI components for added functionality or interpretability.
 
 ---
 
 **Steps to Complete the Project**  
 
-1. **Choose Your Domain**  
-   - Select one domain from text, audio, or images based on your interest.  
+1. **Choose Your Domain and Subject**
+   - Select a domain: text, audio, or images.
+   - Define a clear and specific subject related to your chosen domain. Examples include:
+     - Text: emotion analysis, paraphrasing, question answering.
+     - Images: image classification, object detection.
+     - Audio: speech recognition, emotion detection, music vs. speech classification. 
 
-2. **Select a Dataset**  
+3. **Select a Dataset**  
    - Pick a dataset from the provided sources or propose your own.  
    - Ensure the dataset is relevant to your chosen domain and task.  
 
-3. **Preprocess the Data**  
+4. **Preprocess the Data**  
    - Clean, transform, and augment the data as needed.  
    - Use TensorFlow tools like `tf.data` or `tf.keras.preprocessing` for efficient pipelines.  
    - For text, consider tokenization or embedding; for images, apply normalization or augmentation; for audio, extract features like spectrograms or MFCCs.
 
-4. **Design and Train Your Model**  
+5. **Design and Train Your Model**  
    - Build a model suitable for your task:
      - For text: use RNNs, LSTMs, or Transformers.  
      - For images: use CNNs or pre-trained architectures like ResNet.  
@@ -31,14 +35,14 @@ Develop a complete deep learning pipeline using TensorFlow. Choose one domain—
    - Experiment with hyperparameters, activation functions, and layers.  
    - Train your model using TensorFlow and evaluate its performance on a validation set.  
 
-5. **Integrate Symbolic AI (Optional Bonus)**  
+6. **Integrate Symbolic AI (Optional Bonus)**  
    - Combine your model with rule-based or logic-driven systems to improve interpretability or accuracy.  
    - For example:
      - Use knowledge graphs in text analysis.  
      - Add reasoning components for emotion recognition in audio.  
      - Implement rule-based constraints for object detection in images.  
 
-6. **Evaluate and Deploy**  
+7. **Evaluate and Deploy**  
    - Assess your model using metrics appropriate to your task (e.g., accuracy, precision, recall).  
    - Deploy your model as an interactive application or notebook.  
 
@@ -48,12 +52,13 @@ Develop a complete deep learning pipeline using TensorFlow. Choose one domain—
 **Deliverables**  
 
 1. A complete TensorFlow implementation of your pipeline.  
-2. A detailed report covering:  
-   - Task definition and dataset details.  
+2. A detailed report covering:
+   - The chosen subject, problem statement, and objectives.
+   - The dataset used.
    - Preprocessing methods.  
    - Model architecture and training process.  
    - Evaluation results and potential improvements.  
-3. A deployed demo or app.  
+4. A deployed demo or app.  
 
 
 ## Example Notebooks
