@@ -321,9 +321,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-du-projet-construisez-un-pipeline-de-deep-learning-avec-tensorflow"><strong>Description du Projet : Construisez un pipeline de Deep Learning avec TensorFlow</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">Exemples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaine-du-projet">Domaine du projet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jeu-de-donnees">Jeu de données</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jeu-de-donnees">Jeu de données</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catalogues-existants-de-jeux-de-donnees">Catalogues existants de jeux de données</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domaines">Domaines</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sujets-possibles">Sujets possibles</a></li>
 </ul>
             </nav>
@@ -338,7 +343,87 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="projet">
 <h1>Projet<a class="headerlink" href="#projet" title="Link to this heading">#</a></h1>
-<p><strong>Année: 2022-2023</strong></p>
+<p><strong>Année: 2024-2025</strong></p>
+<section id="description-du-projet-construisez-un-pipeline-de-deep-learning-avec-tensorflow">
+<h2><strong>Description du Projet : Construisez un pipeline de Deep Learning avec TensorFlow</strong><a class="headerlink" href="#description-du-projet-construisez-un-pipeline-de-deep-learning-avec-tensorflow" title="Link to this heading">#</a></h2>
+<p><strong>Objectif</strong><br />
+Développez un pipeline complet de deep learning en utilisant TensorFlow. Choisissez un domaine parmi le texte, l’audio ou les images et réalisez un projet incluant la préparation des données, la conception du modèle, l’entraînement, l’évaluation et le déploiement. Améliorez votre projet en intégrant des composantes d’IA symbolique pour ajouter des fonctionnalités ou de l’interprétabilité.</p>
+<hr class="docutils" />
+<p><strong>Étapes pour réaliser le projet</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Choisissez votre domaine</strong></p>
+<ul class="simple">
+<li><p>Sélectionnez un domaine parmi le texte, l’audio ou les images selon vos préférences.</p></li>
+</ul>
+</li>
+<li><p><strong>Sélectionnez un jeu de données</strong></p>
+<ul class="simple">
+<li><p>Choisissez un jeu de données parmi les sources proposées ou proposez le vôtre.</p></li>
+<li><p>Assurez-vous que le jeu de données correspond à votre domaine et à votre tâche.</p></li>
+</ul>
+</li>
+<li><p><strong>Prétraitez les données</strong></p>
+<ul class="simple">
+<li><p>Nettoyez, transformez et augmentez les données si nécessaire.</p></li>
+<li><p>Utilisez les outils de TensorFlow comme <code class="docutils literal notranslate"><span class="pre">tf.data</span></code> ou <code class="docutils literal notranslate"><span class="pre">tf.keras.preprocessing</span></code> pour des pipelines efficaces.</p></li>
+<li><p>Pour le texte, pensez à la tokenisation ou aux embeddings ; pour les images, appliquez la normalisation ou l’augmentation ; pour l’audio, extrayez des caractéristiques comme les spectrogrammes ou les MFCCs.</p></li>
+</ul>
+</li>
+<li><p><strong>Concevez et entraînez votre modèle</strong></p>
+<ul class="simple">
+<li><p>Construisez un modèle adapté à votre tâche :</p>
+<ul>
+<li><p>Pour le texte : utilisez des RNN, LSTM ou Transformers.</p></li>
+<li><p>Pour les images : optez pour des CNN ou des architectures pré-entraînées comme ResNet.</p></li>
+<li><p>Pour l’audio : combinez des couches d’extraction de caractéristiques avec des RNN ou des CNN.</p></li>
+</ul>
+</li>
+<li><p>Expérimentez avec les hyperparamètres, les fonctions d’activation et les couches.</p></li>
+<li><p>Entraînez votre modèle avec TensorFlow et évaluez sa performance sur un ensemble de validation.</p></li>
+</ul>
+</li>
+<li><p><strong>Intégrez de l’IA symbolique (Bonus facultatif)</strong></p>
+<ul class="simple">
+<li><p>Combinez votre modèle avec des systèmes basés sur des règles ou des logiques pour améliorer l’interprétabilité ou la précision.</p></li>
+<li><p>Par exemple :</p>
+<ul>
+<li><p>Utilisez des graphes de connaissances dans l’analyse de texte.</p></li>
+<li><p>Ajoutez des composantes de raisonnement pour la reconnaissance des émotions dans l’audio.</p></li>
+<li><p>Implémentez des contraintes basées sur des règles pour la détection d’objets dans les images.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Évaluez et déployez</strong></p>
+<ul class="simple">
+<li><p>Évaluez votre modèle en utilisant des métriques adaptées à votre tâche (par exemple : précision, rappel, F1).</p></li>
+<li><p>Déployez votre modèle sous forme d’application interactive ou de notebook.</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p><strong>Livrables</strong></p>
+<ol class="arabic simple">
+<li><p>Une implémentation complète de votre pipeline avec TensorFlow.</p></li>
+<li><p>Un rapport détaillé incluant :</p>
+<ul class="simple">
+<li><p>La définition de la tâche et les détails du jeu de données.</p></li>
+<li><p>Les méthodes de prétraitement.</p></li>
+<li><p>L’architecture du modèle et le processus d’entraînement.</p></li>
+<li><p>Les résultats de l’évaluation et les améliorations possibles.</p></li>
+</ul>
+</li>
+<li><p>Une démo ou une application déployée.</p></li>
+</ol>
+<p><strong>Ressources</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kaggle.com/datasets">Kaggle Datasets</a></p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org/datasets">TensorFlow Datasets</a></p></li>
+<li><p><a class="reference external" href="https://wordnet.princeton.edu/download">WordNet</a></p></li>
+<li><p><a class="reference external" href="http://www.image-net.org/">ImageNet</a></p></li>
+</ul>
+<p>Réalisez ce projet pour acquérir une expérience pratique dans la conception et l’implémentation de systèmes de deep learning appliqués à des problèmes concrets.</p>
+</section>
 <section id="exemples">
 <h2>Exemples<a class="headerlink" href="#exemples" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -358,14 +443,40 @@
 </section>
 <section id="jeu-de-donnees">
 <h2>Jeu de données<a class="headerlink" href="#jeu-de-donnees" title="Link to this heading">#</a></h2>
+<section id="catalogues-existants-de-jeux-de-donnees">
+<h3>Catalogues existants de jeux de données<a class="headerlink" href="#catalogues-existants-de-jeux-de-donnees" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.kaggle.com/datasets">https://www.kaggle.com/datasets</a></p></li>
 <li><p><a class="reference external" href="https://www.tensorflow.org/datasets">https://www.tensorflow.org/datasets</a></p></li>
 <li><p><a class="reference external" href="https://wordnet.princeton.edu/download">https://wordnet.princeton.edu/download</a></p></li>
 <li><p><a class="reference external" href="http://www.image-net.org/">http://www.image-net.org/</a></p></li>
-<li><p>…</p></li>
 </ul>
 </section>
+<section id="domaines">
+<h3>Domaines<a class="headerlink" href="#domaines" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Texte</strong> :</p>
+<ul>
+<li><p>Commencez avec des jeux de données comme les critiques IMDB, SQuAD ou CoNLL-2003.</p></li>
+<li><p>Utilisez des embeddings pré-entraînés comme GloVe, Word2Vec ou BERT.</p></li>
+</ul>
+</li>
+<li><p><strong>Images</strong> :</p>
+<ul>
+<li><p>Utilisez des jeux de données comme CIFAR-10, ImageNet ou Oxford Flowers.</p></li>
+<li><p>Essayez le transfert d’apprentissage avec les modèles pré-entraînés de TensorFlow.</p></li>
+</ul>
+</li>
+<li><p><strong>Audio</strong> :</p>
+<ul>
+<li><p>Choisissez des jeux de données comme LibriSpeech ou UrbanSound8K.</p></li>
+<li><p>Prétraitez avec des techniques spécifiques à l’audio comme les spectrogrammes.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
 <section id="sujets-possibles">
 <h2>Sujets possibles<a class="headerlink" href="#sujets-possibles" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -485,9 +596,14 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-du-projet-construisez-un-pipeline-de-deep-learning-avec-tensorflow"><strong>Description du Projet : Construisez un pipeline de Deep Learning avec TensorFlow</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">Exemples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaine-du-projet">Domaine du projet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jeu-de-donnees">Jeu de données</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jeu-de-donnees">Jeu de données</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catalogues-existants-de-jeux-de-donnees">Catalogues existants de jeux de données</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domaines">Domaines</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sujets-possibles">Sujets possibles</a></li>
 </ul>
   </nav></div>
