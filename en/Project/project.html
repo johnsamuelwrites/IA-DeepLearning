@@ -320,9 +320,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-description-build-a-deep-learning-pipeline-with-tensorflow"><strong>Project Description: Build a Deep Learning Pipeline with TensorFlow</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-notebooks">Example Notebooks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-domains">Project domains</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#existing-catalogues">Existing catalogues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domains">Domains</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-topics">Possible topics</a></li>
 </ul>
             </nav>
@@ -337,7 +342,79 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="project">
 <h1>Project<a class="headerlink" href="#project" title="Link to this heading">#</a></h1>
-<p><strong>Academic year: 2022-2023</strong></p>
+<p><strong>Academic year: 2024-2025</strong></p>
+<section id="project-description-build-a-deep-learning-pipeline-with-tensorflow">
+<h2><strong>Project Description: Build a Deep Learning Pipeline with TensorFlow</strong><a class="headerlink" href="#project-description-build-a-deep-learning-pipeline-with-tensorflow" title="Link to this heading">#</a></h2>
+<p><strong>Objective</strong><br />
+Develop a complete deep learning pipeline using TensorFlow. Choose one domain—text, audio, or images—and build a project that includes data preprocessing, model design, training, evaluation, and deployment. Enhance your project by integrating Symbolic AI components for added functionality or interpretability.</p>
+<hr class="docutils" />
+<p><strong>Steps to Complete the Project</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Choose Your Domain</strong></p>
+<ul class="simple">
+<li><p>Select one domain from text, audio, or images based on your interest.</p></li>
+</ul>
+</li>
+<li><p><strong>Select a Dataset</strong></p>
+<ul class="simple">
+<li><p>Pick a dataset from the provided sources or propose your own.</p></li>
+<li><p>Ensure the dataset is relevant to your chosen domain and task.</p></li>
+</ul>
+</li>
+<li><p><strong>Preprocess the Data</strong></p>
+<ul class="simple">
+<li><p>Clean, transform, and augment the data as needed.</p></li>
+<li><p>Use TensorFlow tools like <code class="docutils literal notranslate"><span class="pre">tf.data</span></code> or <code class="docutils literal notranslate"><span class="pre">tf.keras.preprocessing</span></code> for efficient pipelines.</p></li>
+<li><p>For text, consider tokenization or embedding; for images, apply normalization or augmentation; for audio, extract features like spectrograms or MFCCs.</p></li>
+</ul>
+</li>
+<li><p><strong>Design and Train Your Model</strong></p>
+<ul class="simple">
+<li><p>Build a model suitable for your task:</p>
+<ul>
+<li><p>For text: use RNNs, LSTMs, or Transformers.</p></li>
+<li><p>For images: use CNNs or pre-trained architectures like ResNet.</p></li>
+<li><p>For audio: combine feature extraction layers with RNNs or CNNs.</p></li>
+</ul>
+</li>
+<li><p>Experiment with hyperparameters, activation functions, and layers.</p></li>
+<li><p>Train your model using TensorFlow and evaluate its performance on a validation set.</p></li>
+</ul>
+</li>
+<li><p><strong>Integrate Symbolic AI (Optional Bonus)</strong></p>
+<ul class="simple">
+<li><p>Combine your model with rule-based or logic-driven systems to improve interpretability or accuracy.</p></li>
+<li><p>For example:</p>
+<ul>
+<li><p>Use knowledge graphs in text analysis.</p></li>
+<li><p>Add reasoning components for emotion recognition in audio.</p></li>
+<li><p>Implement rule-based constraints for object detection in images.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Evaluate and Deploy</strong></p>
+<ul class="simple">
+<li><p>Assess your model using metrics appropriate to your task (e.g., accuracy, precision, recall).</p></li>
+<li><p>Deploy your model as an interactive application or notebook.</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p><strong>Deliverables</strong></p>
+<ol class="arabic simple">
+<li><p>A complete TensorFlow implementation of your pipeline.</p></li>
+<li><p>A detailed report covering:</p>
+<ul class="simple">
+<li><p>Task definition and dataset details.</p></li>
+<li><p>Preprocessing methods.</p></li>
+<li><p>Model architecture and training process.</p></li>
+<li><p>Evaluation results and potential improvements.</p></li>
+</ul>
+</li>
+<li><p>A deployed demo or app.</p></li>
+</ol>
+</section>
 <section id="example-notebooks">
 <h2>Example Notebooks<a class="headerlink" href="#example-notebooks" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -357,13 +434,38 @@
 </section>
 <section id="datasets">
 <h2>Datasets<a class="headerlink" href="#datasets" title="Link to this heading">#</a></h2>
+<section id="existing-catalogues">
+<h3>Existing catalogues<a class="headerlink" href="#existing-catalogues" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.kaggle.com/datasets">https://www.kaggle.com/datasets</a></p></li>
 <li><p><a class="reference external" href="https://www.tensorflow.org/datasets">https://www.tensorflow.org/datasets</a></p></li>
 <li><p><a class="reference external" href="https://wordnet.princeton.edu/download">https://wordnet.princeton.edu/download</a></p></li>
 <li><p><a class="reference external" href="http://www.image-net.org/">http://www.image-net.org/</a></p></li>
-<li><p>…</p></li>
 </ul>
+</section>
+<section id="domains">
+<h3>Domains<a class="headerlink" href="#domains" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Text</strong>:</p>
+<ul>
+<li><p>Start with datasets like IMDB reviews, SQuAD, or CoNLL-2003.</p></li>
+<li><p>Use pre-trained embeddings like GloVe, Word2Vec, or BERT.</p></li>
+</ul>
+</li>
+<li><p><strong>Images</strong>:</p>
+<ul>
+<li><p>Use datasets such as CIFAR-10, ImageNet, or Oxford Flowers.</p></li>
+<li><p>Try transfer learning with TensorFlow’s pre-trained models.</p></li>
+</ul>
+</li>
+<li><p><strong>Audio</strong>:</p>
+<ul>
+<li><p>Choose datasets like LibriSpeech or UrbanSound8K.</p></li>
+<li><p>Preprocess with audio-specific techniques like spectrograms.</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 <section id="possible-topics">
 <h2>Possible topics<a class="headerlink" href="#possible-topics" title="Link to this heading">#</a></h2>
@@ -475,9 +577,14 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-description-build-a-deep-learning-pipeline-with-tensorflow"><strong>Project Description: Build a Deep Learning Pipeline with TensorFlow</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-notebooks">Example Notebooks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-domains">Project domains</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#existing-catalogues">Existing catalogues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domains">Domains</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-topics">Possible topics</a></li>
 </ul>
   </nav></div>
