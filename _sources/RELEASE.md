@@ -1,3 +1,23 @@
+# v1.7
+===============================================================================
+- Update projet description
+- Add practicals
+- Add examples from course slides
+- Update code and remove experimental
+- Add code with tensorflow for iris dataset
+- Add example of MLP
+- Update practicals - TP2
+- Add example on Perceptron
+- Update extensions to be installed
+- Update instructions
+- Correct errors
+- Replace exercices by step-by-step version and add propositional/predicate
+- Add data file
+- Update headings
+- Add recalls jupyter notebook
+- Add first-order logic examples
+- Add Propositional logic examples
+
 # v1.6
 ===============================================================================
 - Add Examples related to NLP
