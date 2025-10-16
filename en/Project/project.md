@@ -1,6 +1,6 @@
 # Project
 
-**Academic year: 2024-2025**
+**Academic year: 2025-2026**
 
 ## **Project Description: Build a Deep Learning Pipeline with TensorFlow**
 

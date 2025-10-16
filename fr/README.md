@@ -1,7 +1,7 @@
 # Instructions
 Sujets de travaux pratiques d'intelligence artificielle et d'apprentissage profond
 
-## Année: 2024-2025
+## Année: 2025-2026
 ###  Sujets de travaux pratiques
 * [TP1](TP1/TP1.ipynb)
 * [TP2](TP2/TP2.md)

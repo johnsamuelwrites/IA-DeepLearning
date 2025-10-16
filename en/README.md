@@ -1,7 +1,7 @@
 # Instructions
 Exercises for practical sessions and projet work of Artificial Intelligence and Deep Learning 
 
-## Academic year: 2024-2025
+## Academic year: 2025-2026
 ### Exercises 
 * [Practicals 1](practical1/practical1.ipynb)
 * [Practicals 2](practical2/practical2.md)
