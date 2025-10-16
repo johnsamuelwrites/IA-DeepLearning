@@ -1,7 +1,7 @@
 
 # Projet
 
-**Année: 2024-2025**
+**Année: 2025-2026**
 
 ## **Description du Projet : Construisez un pipeline de Deep Learning avec TensorFlow**
 
