@@ -1,0 +1,43 @@
+version: 1
+project:
+  title: Artificial Intelligence and Deep Learning
+  authors:
+    - name: John Samuel
+  copyright: 2020-2026
+  exclude:
+    - _build
+    - Thumbs.db
+    - .DS_Store
+    - '**.ipynb_checkpoints'
+  github: johnsamuelwrites/IA-DeepLearning
+  thebe:
+    binder:
+      repo: johnsamuelwrites/IA-DeepLearning
+      provider: github
+      url: https://mybinder.org
+      ref: master
+  toc:
+    - file: README.md
+    - title: Français
+      children:
+        - file: fr/README.md
+        - file: fr/TP1/TP0.ipynb
+        - file: fr/TP1/TP1.ipynb
+        - file: fr/TP2/TP2.md
+        - file: fr/TP3/TP3.ipynb
+        - file: fr/Projet/miniprojet.md
+        - file: fr/Projet/projet.md
+    - title: English
+      children:
+        - file: en/README.md
+        - file: en/practical1/practical0.ipynb
+        - file: en/practical1/practical1.ipynb
+        - file: en/practical2/practical2.md
+        - file: en/practical3/practical3.ipynb
+        - file: en/Project/miniproject.md
+        - file: en/Project/project.md
+site:
+  options:
+    logo: deeplearning.svg
+    folders: true
+  template: book-theme
