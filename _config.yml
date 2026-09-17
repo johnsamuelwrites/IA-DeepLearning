@@ -2,7 +2,7 @@
 # Book settings
 title                       : Artificial Intelligence and Deep Learning  # The title of the book. Will be placed in the left navbar.
 author                      : John Samuel  # The author of the book
-copyright                   : "2021"  
+copyright                   : "2020-2026"
 logo                        : "deeplearning.svg"  
 # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
 exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]

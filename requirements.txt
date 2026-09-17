@@ -1,15 +1,27 @@
 papermill
+numpy
 pandas
 scikit-learn
 matplotlib
-ipython 
+ipython
 ipykernel
 ipywidgets
 jupyter-core
 tensorflow
+tensorflow_datasets
 seaborn
 holoviews
 bokeh
 mlxtend
-tensorflow_datasets
+networkx
 mathjax>=0.1.2
+# TP1: logic, web scraping and NLP
+z3-solver
+requests
+beautifulsoup4
+nltk
+spacy
+gensim
+wordcloud
+# TP3: audio (CREMA-D)
+librosa

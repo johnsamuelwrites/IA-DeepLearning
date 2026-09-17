@@ -1,9 +1,9 @@
 # Instructions
 Sujets de travaux pratiques d'intelligence artificielle et d'apprentissage profond
 
-## Année: 2025-2026
+## Année: 2026-2027
 ###  Sujets de travaux pratiques
-* [TP1](TP1/TP1.ipynb)
+* [TP1](TP1/TP1.ipynb) ([rappels](TP1/TP0.ipynb))
 * [TP2](TP2/TP2.md)
 * [TP3](TP3/TP3.ipynb)
 * [Mini projet](Projet/miniprojet.md)
@@ -11,71 +11,69 @@ Sujets de travaux pratiques d'intelligence artificielle et d'apprentissage profo
 
 #### Objectifs
 
-L'objectif des travaux pratiques est de créer un projet pour comprendre
+L'objectif des travaux pratiques est de préparer le projet en pratiquant
 les différents aspects d'intelligence artificielle et d'apprentissage profond. Suite à l'accomplissement
-de tous les exercices, vous serez captable de
+de tous les exercices, vous serez capable de
 
 - mettre en œuvre les sujets suivants :
     - intelligence artificielle symbolique
-    - Le réseau de neurones artificiels
-    - L’apprentissage profond
+    - le réseau de neurones artificiels
+    - l'apprentissage profond
+- implémenter un perceptron et un perceptron multicouche (propagation avant, rétropropagation) en NumPy
 - créer des modèles de réseaux de neurones en utilisant différentes structures et fonctions d'activation
-- paramétrer et optimiser les réseaux de neurones 
-- tester les modèles existants de réseaux neuronaux récurrents comme le LTSM et les réseaux neuronaux convolutifs
+- paramétrer et optimiser les réseaux de neurones
+- tester les modèles existants de réseaux neuronaux récurrents comme le LSTM et les réseaux neuronaux convolutifs
 - écrire et exécuter des programmes simples dans le langage de programmation Prolog
 
 #### Instructions
 
 1.  Tous les travaux pratiques sont basés sur les aspects que vous avez
-    déjà appris pendant vos cours. Utilisez-bien vos supports cours.
+    déjà appris pendant vos cours. Utilisez bien vos supports de cours.
 2.  Travailler en binôme.
-3.  Il est obligatoire de citer tous les sources (e.g. internet,
-    groupes)
+3.  Il est obligatoire de citer toutes les sources (e.g. internet,
+    groupes, assistants d'IA).
 4.  Les séances sont encadrées par 2 enseignants.
 
-#### Evaluation
+#### Évaluation
 
-1.  Les travaux pratiques correspondent à 40% de votre note finale
-2.  Vous avez deux travaux pratiques et un projet. Chaque travail pratique (TP)
-    comporte plusieurs exercices. Chaque exercice est noté. 
-3.  Total points pour tous les travaux pratiques et le projet: 20
-4.  Rendu en ligne.
-5.  Chaque question a un niveau de difficulté
+1.  **Seul le projet est évalué** : il constitue 100 % de la note finale.
+2.  Les trois travaux pratiques (TP) **ne sont pas notés et ne sont pas à rendre**.
+    Ils permettent de mettre en application les notions du cours et
+    préparent le projet.
+3.  Les critères d'évaluation du projet sont décrits dans [le sujet du projet](Projet/projet.md).
+4.  La date limite de soumission du projet est précisée sur e-campus.
+5.  Chaque question de TP a un niveau de difficulté
     -   ★: Facile
     -   ★★: Difficulté moyenne
     -   ★★★: Difficile
 
-#### Rendus
+#### Rendu du projet
 
-Il y a deux parties de rendu: rapport d'auto-évaluation et les sources
+Le rendu se fait en ligne (e-campus) et concerne **uniquement le projet**.
 
 Votre dossier de rendu doit contenir les fichiers suivants:
 
-- a.  README: rapport d'auto-évaluation
-- b.  CONTRIBUTORS: Noms et prénoms de contributeurs
-- c.  src/ : le code source dans le répertoire *src* 
+- a.  README: le rapport du projet (voir [le sujet du projet](Projet/projet.md))
+- b.  CONTRIBUTORS: noms et prénoms des contributeurs
+- c.  src/ : le code source (notebooks et scripts) dans le répertoire *src*
 
-Votre rendu doit renommer comme groupe_N1_N2, où N1 et N2 sont les
-noms (e.g., groupe_DUPONT_SMITH.).
+Votre rendu doit être nommé groupe_N1_N2, où N1 et N2 sont les
+noms (e.g., groupe_DUPONT_SMITH).
 
-Ecrivez README et CONTRIBUTORS en format markdown.
+Écrivez README et CONTRIBUTORS en format markdown.
 
-Le contenu de README rapport d'auto-évaluation : TP N (N: [1..2])
-
-- i.  Bibliothèques
-- ii. Références: les URLs, les groupes
-- iii. Difficulté: niveau de difficulté (facile, moyenne, difficile)
-- iv. Commentaires (optionnels): remarques etc.
-
+Veuillez ne pas soumettre les jeux de données (fichiers CSV, JSON, TSV, images, audio) ni les
+modèles entraînés : indiquez plutôt comment les obtenir ou les régénérer.
 
 #### Liste de contrôle
 
-Avant de déposer votre travail pratique, vérifiez si vous respectez la
+Avant de déposer votre projet, vérifiez si vous respectez la
 liste de contrôle suivante:
 
--   ✅ Les noms (prénom et noms) de la binôme sont présents dans le
+-   ✅ Les noms (prénom et noms) du binôme sont présents dans le
     fichier CONTRIBUTORS
 -   ✅ Le fichier README est complètement rempli.
+-   ✅ Toutes les sources sont citées.
 -   ✅ Votre code est bien commenté.
 -   ✅ Votre code peut être exécuté sans aucune erreur (et si possible,
     sans aucun avertissement).
@@ -84,7 +82,7 @@ liste de contrôle suivante:
 
 Pour référence, vous pouvez consulter le répertoire suivant:
 <https://github.com/johnsamuelwrites/IA-DeepLearning>. Il contient des modèles de
-code pour tous les exercices des deux travaux pratiques et le projet.
+code pour les exercices des trois travaux pratiques et pour le projet.
 
 Vous pouvez le consulter en ligne en utilisant le lien ci-dessus ou le
 cloner sur votre machine à l'aide du terminal en utilisant les

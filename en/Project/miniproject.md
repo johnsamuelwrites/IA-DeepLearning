@@ -1,7 +1,9 @@
-Academic year: 2022-2023
+Academic year: 2026-2027
 ------------------------
 
 # Mini Project
+
+This mini project is an example and a warm-up for exercise 2.4 of Practicals 2. It is not graded and is not to be submitted: only the [project](project.md) is graded.
 
 ## Goals
 
@@ -549,8 +551,6 @@ short-term memory) or word embedding models.
 
 ## Submission
 
--   Rename your notebook as Name1\_Name2\_\[Name3\].ipynb, where Name1,
-    Name2 are your names.
--   Submit your notebook online.
--   Please **don\'t** submit your JSON, TSV and CSV files.
+This mini project is not to be submitted. You may reuse its code and observations in your project;
+in that case, do not submit the JSON, TSV and CSV files (see the [project submission instructions](../README.md)).
 

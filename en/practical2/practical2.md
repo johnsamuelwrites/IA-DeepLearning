@@ -1,14 +1,48 @@
 # Practical Work 2
 
-**Academic year: 2025-2026**
+**Academic year: 2026-2027**
+
+The practicals are not graded and are not to be submitted: only the project is graded.
 
 
 ### Goals
+0. **Neural networks in NumPy**: Implement a perceptron and a multilayer perceptron (forward propagation, loss, backpropagation) without any deep learning library (exercise 2.0), to understand what Keras automates afterwards.
+
 1. **Knowledge Modeling and Data Querying**: Use a logical language to structure a knowledge base and create rules to extract specific information from the data.
 
-2. **Text and Image Classification**: Design and train neural network models for text classification (exercise 2.2) and image classification (exercise 2.4), focusing on data preprocessing, hyperparameter optimization, and model performance evaluation.
+2. **Text and Image Classification**: Design and train neural network models for text classification (exercise 2.2) and image classification (exercise 2.3), focusing on data preprocessing, hyperparameter optimization, and model performance evaluation.
 
 3. **Sequence Prediction**: Develop a model for translation sequence prediction, applying sequential data preparation techniques and evaluating model performance on test data.
+
+## Exercise 2.0 [★★]
+
+Before using Keras (exercises 2.2 and 2.3), you will build a perceptron and then a multilayer perceptron (MLP) **in NumPy only**, following lecture 2 (perceptron, forward propagation, cross-entropy, backpropagation, gradient descent). The lecture code is available in [`examples/neural_network/perceptron.py`](../../examples/neural_network/perceptron.py) and [`examples/neural_network/mlp.py`](../../examples/neural_network/mlp.py); reuse and complete it.
+
+#### Step 1: Perceptron on a linearly separable problem
+- Load the Iris dataset (`sklearn.datasets.load_iris`) and keep only two classes (*setosa* and *versicolor*) and two features (petal length and width).
+- Standardize the features and split the data into training and test sets (`train_test_split`).
+- Train the lecture's `Perceptron` class (`ajuster`) and measure the accuracy on the test set (`predire`).
+- Plot the points and the decision boundary (the line $w_1 x_1 + w_2 x_2 + b = 0$). Vary `taux_apprentissage` and `n_iterations` and record, for each configuration, the number of iterations needed before the weights stop changing.
+
+#### Step 2: The limits of the perceptron
+- Build the XOR dataset: `X = [[0,0],[0,1],[1,0],[1,1]]`, `y = [0,1,1,0]`.
+- Train the perceptron and display its predictions. What is the best accuracy you can obtain? Explain why, using the decision boundary.
+
+#### Step 3: A NumPy MLP for XOR
+- Reuse the lecture functions `propagation_avant`, `calcul_perte`, `retropropagation` and `entrainer_mlp` (ReLU in the hidden layers, sigmoid at the output, binary cross-entropy).
+- Train a network `couches = [2, 4, 1]` on XOR. Modify `entrainer_mlp` so that it **returns the loss at every epoch** and plot the loss curve.
+- Does the network learn XOR on every run? Restart the training several times (random initialization) and comment; try a centred initialization (`np.random.randn(...) * 0.1`) and another hidden layer size.
+
+#### Step 4: A NumPy MLP for Iris (3 classes)
+- Start from the lecture script `mlp.py` (4 inputs, *one-hot* encoding of the 3 classes) and compare at least three architectures, for example `[4, 3, 3]`, `[4, 8, 3]` and `[4, 8, 8, 3]`, as well as two learning rates (for example 0.01 and 0.1).
+- For each configuration, plot the loss over the epochs and record the accuracy on the test set. Present the results in a table.
+- Question: a sigmoid output with binary cross-entropy treats each class independently. Replace it with a *softmax* output and categorical cross-entropy (see lecture 3) and compare.
+
+#### Step 5: The same network in Keras
+- Rebuild the best architecture of step 4 with `tf.keras.Sequential` (`Dense` layers, `optimizer='sgd'`), train it for the same number of epochs and compare the accuracy and the loss curve with your NumPy version.
+- Note what Keras does for you (initialization, gradient computation, weight updates, mini-batches).
+
+Document your observations in the notebook: they will help you justify your architecture choices in the project.
 
 ## Exercise 2.1
 You need to model a knowledge base for a school using GNU Prolog. This base should contain the following information:
@@ -29,9 +63,9 @@ You need to model a knowledge base for a school using GNU Prolog. This base shou
 ## Exercise 2.2
 Check the following classification examples with deep neural networks using TensorFlow. 
 
-- [Data Processing in TensorFlow](../Projet/Data.ipynb)
-- [Handwritten Digit Recognition using the MNIST dataset](../Projet/Introduction.ipynb)
-- [Text Classification using IMDB Reviews](../Projet/Textes.ipynb)
+- [Data Processing in TensorFlow](../Project/Data.ipynb)
+- [Handwritten Digit Recognition using the MNIST dataset](../Project/Introduction.ipynb)
+- [Text Classification using IMDB Reviews](../Project/Texts.ipynb)
 
 **Question:**
 You will work on a text classification example using the **Reuters** dataset available in TensorFlow. This dataset contains news articles categorized into different topics, making it an excellent dataset for text classification.
@@ -42,8 +76,8 @@ Your task is to explore this dataset and develop a text classification model usi
 
 1. **Loading and Preprocessing Data**:
    - Load the **Reuters** dataset using `tf.keras.datasets.reuters`.
-   - Preprocess the data by converting the texts into sequences of numerical tokens compatible with the model. Use techniques like tokenization and padding to ensure uniform sequence lengths.
-   - **Tips**: Use `Tokenizer` from `tf.keras.preprocessing.text` to transform texts into numerical sequences, and `pad_sequences` to standardize sequence lengths.
+   - The dataset is already tokenized: each text is a sequence of word indices (`num_words` bounds the vocabulary size). What remains is to make the sequences the same length (padding / truncation).
+   - **Tips**: Use `pad_sequences` from `tf.keras.utils` to standardize sequence lengths. If you start from raw text (for example, decoded with `reuters.get_word_index()`), use the Keras 3 `TextVectorization` layer rather than the legacy `Tokenizer`.
 
 2. **Building a Neural Network Model**:
    - Create a deep neural network model for text classification. Experiment with different layer types to find an appropriate architecture (e.g., embedding layers for words, dense layers, or LSTM or GRU layers to capture sequence structures).
@@ -98,7 +132,7 @@ In this exercise, you will use the **CIFAR-10** dataset from TensorFlow to build
    - Display examples of correct and incorrect predictions to better understand the model's errors and identify ways to improve it.
 
 ## Exercise 2.4
-[Mini Project - Understanding the Translation of Wikidata Properties](../Projet/miniprojet-notebook.ipynb)
+[Mini Project - Understanding the Translation of Wikidata Properties](../Project/miniproject-notebook.ipynb)
 
 For this mini-project, you will test deep learning models to predict possible translation sequences based on Wikidata properties.
 

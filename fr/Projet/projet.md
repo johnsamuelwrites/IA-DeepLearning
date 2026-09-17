@@ -1,7 +1,7 @@
 
 # Projet
 
-**Année: 2025-2026**
+**Année: 2026-2027**
 
 ## **Description du Projet : Construisez un pipeline de Deep Learning avec TensorFlow**
 
@@ -52,13 +52,34 @@ Développez un pipeline complet de deep learning en utilisant TensorFlow. Choisi
 **Livrables**  
 
 1. Une implémentation complète de votre pipeline avec TensorFlow.  
-2. Un rapport détaillé incluant :  
+2. Un rapport détaillé (fichier README du rendu) incluant :  
    - Le sujet choisi, la problématique et les objectifs.
-   - Les données utilisées.  
+   - Les données utilisées (source, taille, licence) et la manière de les obtenir.  
    - Les méthodes de prétraitement.  
-   - L’architecture du modèle et le processus d’entraînement.  
-   - Les résultats de l’évaluation et les améliorations possibles.  
-3. Une démo ou une application déployée.  
+   - L’architecture du modèle, le processus d’entraînement et les expérimentations menées.  
+   - Les résultats de l’évaluation, l’analyse des erreurs, les limites et les améliorations possibles.  
+   - Les sources utilisées (documentation, articles, dépôts, assistants d’IA) et la contribution de chaque membre du binôme.  
+3. Une démo ou une application déployée (notebook exécutable, application web, interface en ligne de commande, etc.).  
+
+---
+
+**Évaluation et rendu**  
+
+Le projet constitue **100 % de la note du cours** ; les travaux pratiques ne sont pas notés et ne sont pas à rendre.
+Le rendu se fait en ligne (e-campus) selon les [instructions de rendu](../README.md) (dossier `groupe_N1_N2` avec README, CONTRIBUTORS et `src/`). La date limite est précisée sur e-campus.
+
+**Critères d’évaluation (sur 20)**
+
+| Critère | Points | Ce qui est attendu |
+|---|---|---|
+| 1. Problématique et données | 4 | Sujet clair et réalisable ; jeu de données adapté et décrit ; prétraitement justifié (nettoyage, découpage entraînement/validation/test, augmentation, tokenisation, spectrogrammes…). |
+| 2. Modèle et entraînement | 6 | Architecture adaptée à la tâche et justifiée par rapport au cours (MLP, CNN, RNN/LSTM/GRU, Transformer, transfert d’apprentissage) ; expérimentations documentées sur les hyperparamètres (taux d’apprentissage, taille de lot, époques, régularisation) ; courbes d’apprentissage. |
+| 3. Évaluation et analyse | 4 | Métriques adaptées à la tâche (précision, rappel, F1, matrice de confusion, etc.) ; comparaison des configurations ; analyse des erreurs et des limites ; discussion honnête des résultats. |
+| 4. Code et rapport | 4 | Code lisible, commenté et reproductible (exécution sans erreur, instructions d’installation) ; rapport complet et structuré ; sources citées ; CONTRIBUTORS renseigné. |
+| 5. Démo et déploiement | 2 | Une démonstration fonctionnelle permettant de tester le modèle sur de nouvelles entrées. |
+| Bonus : IA symbolique | +2 | Intégration pertinente d’une composante symbolique (règles, logique, graphe de connaissances, Prolog, Z3…) qui améliore l’interprétabilité ou les résultats. La note totale est plafonnée à 20. |
+
+Le rapport et le code doivent être le travail du binôme ; toute réutilisation de code, de modèle pré-entraîné ou de texte généré doit être citée. Une soutenance orale courte pourra être demandée pour vérifier la compréhension du projet.
 
 **Ressources**  
 - [Kaggle Datasets](https://www.kaggle.com/datasets)  

@@ -1,14 +1,48 @@
 # Travaux pratiques 2
 
-**Année: 2025-2026**
+**Année: 2026-2027**
+
+Les travaux pratiques ne sont pas notés et ne sont pas à rendre : seul le projet est évalué.
 
 ## Objectifs
 
+0. **Réseaux de neurones en NumPy** : Implémenter un perceptron et un perceptron multicouche (propagation avant, perte, rétropropagation) sans bibliothèque d'apprentissage profond (exercice 2.0), afin de comprendre ce que Keras automatise ensuite.
+
 1. **Modélisation de connaissances et interrogation de données** : Utiliser un langage logique pour structurer une base de connaissances et créer des règles permettant d’extraire des informations spécifiques à partir des données.
 
-2. **Classification de textes et d'images** : Concevoir et entraîner des modèles de réseaux de neurones pour la classification de textes (exercice 2.2) et d'images (exercice 2.4), en maîtrisant le prétraitement des données, l'optimisation des hyperparamètres, et l'évaluation des performances des modèles.
+2. **Classification de textes et d'images** : Concevoir et entraîner des modèles de réseaux de neurones pour la classification de textes (exercice 2.2) et d'images (exercice 2.3), en maîtrisant le prétraitement des données, l'optimisation des hyperparamètres, et l'évaluation des performances des modèles.
 
 3. **Prédiction de séquences** : Développer un modèle de prédiction pour des séquences de traductions, en appliquant des techniques de préparation de données séquentielles et en évaluant les performances du modèle sur des données de test.
+
+## Exercice 2.0 [★★]
+
+Avant d'utiliser Keras (exercices 2.2 et 2.3), vous allez construire un perceptron puis un perceptron multicouche (MLP) **en NumPy uniquement**, en suivant le cours 2 (perceptron, propagation avant, entropie croisée, rétropropagation, descente de gradient). Le code du cours est disponible dans [`examples/neural_network/perceptron.py`](../../examples/neural_network/perceptron.py) et [`examples/neural_network/mlp.py`](../../examples/neural_network/mlp.py) ; réutilisez-le et complétez-le.
+
+#### Étape 1 : Perceptron sur un problème linéairement séparable
+- Chargez le jeu de données Iris (`sklearn.datasets.load_iris`) et gardez seulement deux classes (*setosa* et *versicolor*) et deux caractéristiques (longueur et largeur des pétales).
+- Standardisez les caractéristiques et séparez les données en ensembles d'entraînement et de test (`train_test_split`).
+- Entraînez la classe `Perceptron` du cours (`ajuster`) et mesurez la précision sur l'ensemble de test (`predire`).
+- Tracez les points et la frontière de décision (la droite $w_1 x_1 + w_2 x_2 + b = 0$). Faites varier `taux_apprentissage` et `n_iterations` et notez, pour chaque configuration, le nombre d'itérations nécessaires avant que les poids ne changent plus.
+
+#### Étape 2 : Les limites du perceptron
+- Construisez le jeu de données XOR : `X = [[0,0],[0,1],[1,0],[1,1]]`, `y = [0,1,1,0]`.
+- Entraînez le perceptron et affichez ses prédictions. Quelle précision maximale obtient-on ? Expliquez pourquoi, à l'aide de la frontière de décision.
+
+#### Étape 3 : Un MLP en NumPy pour XOR
+- Réutilisez les fonctions `propagation_avant`, `calcul_perte`, `retropropagation` et `entrainer_mlp` du cours (ReLU dans les couches cachées, sigmoïde en sortie, entropie croisée binaire).
+- Entraînez un réseau `couches = [2, 4, 1]` sur XOR. Modifiez `entrainer_mlp` pour qu'elle **retourne la perte à chaque époque** et tracez la courbe de perte.
+- Le réseau apprend-il XOR à chaque exécution ? Relancez l'entraînement plusieurs fois (initialisation aléatoire) et commentez ; essayez une initialisation centrée (`np.random.randn(...) * 0.1`) et une autre taille de couche cachée.
+
+#### Étape 4 : Un MLP en NumPy pour Iris (3 classes)
+- Reprenez le script `mlp.py` du cours (4 entrées, encodage *one-hot* des 3 classes) et comparez au moins trois architectures, par exemple `[4, 3, 3]`, `[4, 8, 3]` et `[4, 8, 8, 3]`, ainsi que deux taux d'apprentissage (par exemple 0.01 et 0.1).
+- Pour chaque configuration, tracez la perte au fil des époques et relevez la précision sur l'ensemble de test. Présentez les résultats dans un tableau.
+- Question : la sortie sigmoïde avec entropie croisée binaire traite chaque classe indépendamment. Remplacez-la par une sortie *softmax* avec entropie croisée catégorielle (voir cours 3) et comparez.
+
+#### Étape 5 : Le même réseau en Keras
+- Reconstruisez la meilleure architecture de l'étape 4 avec `tf.keras.Sequential` (couches `Dense`, `optimizer='sgd'`), entraînez-la avec le même nombre d'époques et comparez la précision et la courbe de perte avec votre version NumPy.
+- Notez ce que Keras fait à votre place (initialisation, calcul des gradients, mise à jour des poids, mini-lots).
+
+Documentez vos observations dans le notebook : elles vous serviront pour justifier vos choix d'architecture dans le projet.
 
 ## Exercice 2.1
 
@@ -43,8 +77,8 @@ Votre tâche est d'explorer ce jeu de données et de développer un modèle de c
 
 1. **Chargement et prétraitement des données** : 
    - Chargez le jeu de données **Reuters** à l’aide de `tf.keras.datasets.reuters`.
-   - Prétraitez les données en veillant à convertir les textes en séquences de tokens numériques compatibles avec le modèle. Utilisez des techniques comme la tokenisation et le padding pour obtenir des séquences de longueur uniforme.
-   - **Conseils** : Utilisez `Tokenizer` de `tf.keras.preprocessing.text` pour transformer les textes en séquences numériques et `pad_sequences` pour uniformiser la longueur des séquences.
+   - Le jeu de données est déjà tokenisé : chaque texte est une séquence d'indices de mots (`num_words` limite la taille du vocabulaire). Il reste à uniformiser la longueur des séquences (padding / troncature).
+   - **Conseils** : Utilisez `pad_sequences` de `tf.keras.utils` pour uniformiser la longueur des séquences. Si vous partez de textes bruts (par exemple, décodés avec `reuters.get_word_index()`), utilisez la couche `TextVectorization` de Keras 3 plutôt que l'ancien `Tokenizer`.
 
 2. **Construction d’un modèle de réseau de neurones** : 
    - Créez un modèle de réseau de neurones profond pour la classification des textes. Expérimentez avec différents types de couches pour trouver une architecture adaptée (par exemple, couches d'embedding pour les mots, couches denses, ou couches LSTM ou GRU pour capturer la structure des séquences).

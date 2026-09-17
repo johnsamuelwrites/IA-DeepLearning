@@ -1,11 +1,11 @@
 # IA-DeepLearning
 Practical sessions for IA and Deep Learning
 
-## Année: 2021-2022
+## Année: 2026-2027
 ## Français
 ### Sujets de travaux pratiques et projet
 * [Instructions](fr/README.md)
-* [TP1](fr/TP1/TP1.ipynb)
+* [TP1](fr/TP1/TP1.ipynb) ([rappels](fr/TP1/TP0.ipynb))
 * [TP2](fr/TP2/TP2.md)
 * [TP3](fr/TP3/TP3.ipynb)
 * [Mini projet](fr/Projet/miniprojet.md) ([Notebook](fr/Projet/miniprojet-notebook.ipynb))
@@ -14,7 +14,7 @@ Practical sessions for IA and Deep Learning
 ## English 
 ### Exercises
 * [Instructions](en/README.md)
-* [Practicals 1](en/practical1/practical1.ipynb)
+* [Practicals 1](en/practical1/practical1.ipynb) ([recap](en/practical1/practical0.ipynb))
 * [Practicals 2](en/practical2/practical2.md)
 * [Practicals 3](en/practical3/practical3.ipynb)
 * [Mini project](en/Project/miniproject.md) ([Notebook](en/Project/miniproject-notebook.ipynb))

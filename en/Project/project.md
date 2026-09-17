@@ -1,6 +1,6 @@
 # Project
 
-**Academic year: 2025-2026**
+**Academic year: 2026-2027**
 
 ## **Project Description: Build a Deep Learning Pipeline with TensorFlow**
 
@@ -52,13 +52,34 @@ Develop a complete deep learning pipeline using TensorFlow. Choose one domain—
 **Deliverables**  
 
 1. A complete TensorFlow implementation of your pipeline.  
-2. A detailed report covering:
+2. A detailed report (the README of your submission) covering:
    - The chosen subject, problem statement, and objectives.
-   - The dataset used.
+   - The dataset used (source, size, licence) and how to obtain it.
    - Preprocessing methods.  
-   - Model architecture and training process.  
-   - Evaluation results and potential improvements.  
-4. A deployed demo or app.  
+   - Model architecture, training process and the experiments carried out.  
+   - Evaluation results, error analysis, limitations and potential improvements.  
+   - The sources used (documentation, papers, repositories, AI assistants) and the contribution of each member of the pair.  
+3. A deployed demo or app (runnable notebook, web application, command-line interface, etc.).  
+
+---
+
+**Evaluation and submission**  
+
+The project accounts for **100% of the course grade**; the practicals are not graded and are not to be submitted.
+Submission is online (e-campus) following the [submission instructions](../README.md) (folder `group_N1_N2` with README, CONTRIBUTORS and `src/`). The deadline is given on e-campus.
+
+**Grading criteria (out of 20)**
+
+| Criterion | Points | What is expected |
+|---|---|---|
+| 1. Problem statement and data | 4 | Clear and feasible subject; suitable and well-described dataset; justified preprocessing (cleaning, train/validation/test split, augmentation, tokenization, spectrograms, …). |
+| 2. Model and training | 6 | Architecture suited to the task and justified with respect to the course (MLP, CNN, RNN/LSTM/GRU, Transformer, transfer learning); documented experiments on hyperparameters (learning rate, batch size, epochs, regularization); learning curves. |
+| 3. Evaluation and analysis | 4 | Metrics suited to the task (precision, recall, F1, confusion matrix, …); comparison of configurations; error analysis and limitations; honest discussion of the results. |
+| 4. Code and report | 4 | Readable, commented and reproducible code (runs without errors, installation instructions); complete and well-structured report; sources cited; CONTRIBUTORS filled in. |
+| 5. Demo and deployment | 2 | A working demonstration that lets the model be tried on new inputs. |
+| Bonus: symbolic AI | +2 | Relevant integration of a symbolic component (rules, logic, knowledge graph, Prolog, Z3, …) that improves interpretability or results. The total grade is capped at 20. |
+
+The report and the code must be the work of the pair; any reuse of code, pre-trained models or generated text must be cited. A short oral presentation may be requested to check the understanding of the project.
 
 
 ## Example Notebooks

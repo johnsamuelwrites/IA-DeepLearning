@@ -138,3 +138,7 @@ datasets/
 *.csv
 *.json
 *.txt
+
+# Files the course itself ships (the *.csv / *.txt rules above would hide them)
+!requirements.txt
+!data/image_data.csv

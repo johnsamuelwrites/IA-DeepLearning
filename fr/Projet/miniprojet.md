@@ -1,7 +1,9 @@
-Année: 2022-2023
+Année: 2026-2027
 ----------------
 
 # Mini Projet
+
+Ce mini-projet sert d'exemple et d'entraînement pour l'exercice 2.4 du TP2. Il n'est pas noté et n'est pas à rendre : seul le [projet](projet.md) est évalué.
 
 ## Objectifs
 -    Comprendre le mode de traduction
@@ -549,9 +551,7 @@ modèle ? \...
 **Indice:** Vous pouvez utiliser un réseau neuronal récurrent avec LSTM (Long
 mémoire à court terme) ou des modèles de 'word embeddings'.
 
-## Dépôt
+## Rendu
 
-- Renommez votre carnet en Nom1\_Nom2\_\[Nom3\].ipynb, où Nom1,
-    Nom2 sont vos noms.
-- Déposez votre notebook en ligne.
-- Veuillez ne pas soumettre vos fichiers JSON, TSV et CSV.
+Ce mini-projet n'est pas à rendre. Vous pouvez en réutiliser le code et les observations dans votre projet ;
+dans ce cas, ne soumettez pas les fichiers JSON, TSV et CSV (voir les [instructions de rendu du projet](../README.md)).
